@@ -190,27 +190,12 @@ add_climate_covariates = function(scenario, start_year, end_year) {
   
   df_timeseries = read_csv(paste0("data/processed/trajectories_", scenario, "_", start_year, "_", end_year, "_timeseries_rf.csv" ))
   
-  df_ts_check = df_timeseries %>%
-    group_by(Lon, Lat, PID) %>%
-    filter(Year >= year_disturbance,
-           PID ==1)
-  
   df_point_values = read_csv(paste0("data/processed/trajectories_", scenario, "_", start_year, "_", end_year, "_pointvalues_rf.csv" ))
   
   df_covariates = read_csv(paste0(paste0("data/processed/covariates_", scenario, "_", start_year, "_", end_year, "_growingseason.csv")), show_col_types = F)
   
-  
   df = left_join(df_timeseries, df_covariates) %>%
     left_join(df_point_values)
-  
-  df_1 = df_ %>%
-    filter(PID == 1 & Lon < -150)
-  
-  df_mean = df %>%
-    group_by(Year, PFT) %>%
-    summarise(relative = mean(relative))
-  
-  test = df_ts_check[df_ts_check$Lat == 62.25 & df_ts_check$Lon == -162.75 & df_ts_check$PID == 1,]
   
   write_csv(df, paste0("data/random_forest/data_", scenario, "_", start_year, "_", end_year, ".csv" ))
 }
@@ -222,4 +207,14 @@ add_climate_covariates("ssp585", 2015, 2040)
 covariates_picontrol = add_climate_covariates("picontrol", 2075, 2100)
 add_climate_covariates("ssp126", 2075, 2100)
 add_climate_covariates("ssp585", 2075, 2100)
+
+
+######
+
+df = read_csv("data/random_forest/data_ssp585_2015_2040.csv")
+
+na_count <-sapply(df, function(y) sum(length(which(is.na(y)))))
+
+na_count <- data.frame(na_count)
+
 
