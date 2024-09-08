@@ -28,32 +28,6 @@ check_and_fill_pfts = function(df) {
 }
 
 
-prepare_pft_plotting_wo_tene = function(df) {
-  df$pft <- factor(df$pft, levels = c("bns", "tundra", "bne", "tebs", "ibs"))
-  pfts <<- c("tebs" = "#D55E00", "ibs" = "#E69F00",  "bne" = "#0072B2",   
-             "bns" = "#56B4E9", "tundra" = "#009E73")
-  return(df)
-}
-
-add_pft_scale = function() {
-  scale_fill_manual(values = pfts, name = "Dominant vegetation type", drop = TRUE,
-                    labels = c("Pioneer\nbroadleaf",  "Temperate\nbroadleaf",  
-                               "Needleaf\nevergreen",  "Needleleaf\nsummergreen",
-                               "Tundra"))
-}
-
-add_common_layout = function(fontsize) {
-  theme_classic() %+replace%
-    theme(axis.title = element_text(size = fontsize),
-          legend.background = element_rect(fill='transparent', color = NA),
-          legend.box.background = element_rect(fill='transparent', color = NA),
-          panel.background = element_rect(fill = "transparent", colour = NA),  
-          plot.background = element_rect(fill = "transparent", colour = NA),
-          strip.background = element_rect(fill = "transparent", color = NA),
-          strip.text = element_text(size = fontsize),
-          text = element_text(size = fontsize))
-}
-
 long_names_pfts = function(x) {
   x = gsub("ibs", "Pioneering broadleaf", x)
   x = gsub("tebs", "Temperate broadleaf", x)
@@ -61,7 +35,7 @@ long_names_pfts = function(x) {
   x = gsub("bine", "Shade-intolerant\nneedleleaf evergreen", x)
   x = gsub("bns", "Needleleaf summergreen", x)
   x = gsub("tene", "Temperate needleleaf", x)
-  x = gsub("tundra", "Tundra", x)
+  x = gsub("tundra", "Non-tree V.", x)
   x = gsub("soil", "Bare soil", x)
   x = gsub("mixed forest", "Mixed forest", x)
   x = gsub("otherc", "Conifers (other)", x)
@@ -76,7 +50,7 @@ long_names_pfts_species = function(x) {
   x = gsub("bine", "Shade-intolerant\nneedleleaf evergreen", x)
   x = gsub("bns", "Needleleaf summergreen", x)
   x = gsub("tene", "Temperate needleleaf", x)
-  x = gsub("tundra", "Tundra \n(Shrubs, Grasses)", x)
+  x = gsub("tundra", "Non-tree V. \n(Shrubs, Grasses)", x)
   x = gsub("soil", "Bare soil", x)
   x = gsub("mixed forest", "Mixed forest", x)
   x = gsub("otherc", "Conifers (other) \n(Pine, Larch)", x)
@@ -91,7 +65,7 @@ long_names_pfts_twolines = function(x) {
   x = gsub("bine", "Shade-intolerant\nneedleleaf evergreen", x)
   x = gsub("bns", "Needleleaf\nsummergreen", x)
   x = gsub("tene", "Temperate\nneedleleaf", x)
-  x = gsub("tundra", "Tundra", x)
+  x = gsub("tundra", "Non-tree V.", x)
   x = gsub("soil", "Bare soil", x)
   x = sub("mixed", "Mixed \n(none > 50 %)")
   return(x)
@@ -101,7 +75,7 @@ long_names_to_species = function(x) {
   x = gsub("Pioneering broadleaf", "Pioneering broadleaf \n(Birch, Aspen)", x)
   x = gsub("Temperate broadleaf", "Temperate broadleaf \n(Maple, Beech)", x)
   x = gsub("Needleleaf evergreen", "Needleleaf evergreen \n(Spruce)", x)
-  x = gsub("Tundra", "Tundra \n(Shrubs, Grasses)", x)
+  x = gsub("Tundra", "Non-tree V. \n(Shrubs, Grasses)", x)
   x = gsub("Conifers (other)", "Conifers (other) \n(Pine, Larch)", x)
 }
 
@@ -126,15 +100,6 @@ long_names_scenarios_twolines = function(x) {
 }
 
 
-add_common_layout = function(fontsize) {
-  theme_bw() %+replace%
-    theme(text = element_text(fontsize),
-          legend.background = element_rect(fill='transparent', color = NA), # make plot background transparent, especially helpful for presentations
-          legend.box.background = element_rect(fill='transparent', color = NA),
-          panel.background = element_rect(fill = "transparent", colour = NA),  
-          plot.background = element_rect(fill = "transparent", colour = NA),
-          strip.background = element_rect(fill = "#e5e5e5ff")) #zero margins to make paneling sub panels more contolled
-}
 
 subgrid_location = function(df) {
   df = df %>%

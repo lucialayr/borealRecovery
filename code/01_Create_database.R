@@ -26,7 +26,6 @@ read_write_dataset_var = function(configuration, run, variable) {
   
   
   dbWriteTable(con, paste0(configuration), df, append = T) 
-  #dbWriteTable(con, paste0(configuration, "_", variable), df, append = T) 
   
   rm(df)
   
@@ -36,12 +35,12 @@ read_write_dataset_var = function(configuration, run, variable) {
   
 } #function to load one run folder of one scenario
 
-s = c("ssp126", "ssp585", "picontrol") #c("ssp370", "ssp126", "ssp585", "picontrol") #specify scenarios
-d = c("150") #specifiy disturbance of scenario
-v = c("anpp") #specifiy variables 
+s = c("ssp370", "ssp126", "ssp585", "picontrol") #specify scenarios
+d = c("150") #specify disturbance of scenario
+v = c("anpp", "cmass", "exp_est", "fpc") #specify variables 
 
 # adapted to read in npp data
-configurations = paste0(s, "_d", d, "_npp")  #create scenario tags
+configurations = paste0(s, "_d", d)  #create scenario tags. might need to be adapted if folder is namees differently
 
 input = expand.grid(run = seq(1, 160), vars = v, scenario = configurations) #create a table with all unique combinations of scenario, run folder and variable
 

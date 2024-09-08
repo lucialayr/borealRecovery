@@ -1,3 +1,8 @@
+#initial check again ABoVE data to see if AGC is in the right order of magnitude
+#(note: we will not expact it to match exacple due to land use ad disturbance regimes applied,
+#that is not the focus of the analysis, this is more a sanity check)
+
+
 library(tidyverse)
 
 install.packages("scico")
@@ -28,13 +33,9 @@ ggplot() + theme_bw() +
   scico::scale_fill_scico_d(palette = "lapaz", begin = .3, end = .8, name = "", direction = -1)
 
 df_diff = df %>%
-  mutate(data = data*0.064) %>%
+  mutate(data = data*0.05) %>%
   right_join(df_lpj) %>%
   mutate(diff = Total - data)
 
 ggplot() + geom_tile(data = df_diff, aes(x = Lon, y = Lat, fill = diff)) +
   scico::scale_fill_scico(palette = "vik", midpoint = 0)
-
-##decision: model is higher than data and interestingly also higher than in last study, even thought in last study disturbance probably was lower
-# I took the .ins file from last study so only thing it could be is nitrogen deposition. Also i did not start from state so maybe it is also due to stochasticity.
-# anyways, I will move forward from here as it looks ok and the higher values in the model can be explained by 1) the lack of fire 2) the lack of land use and 3) the low disturbances intervall

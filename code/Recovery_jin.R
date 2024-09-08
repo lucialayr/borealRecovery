@@ -56,6 +56,46 @@ ggsave("figures/ABoVE/extend.png", height = 2)
 # Maybe it would be worthwhile to simulate the whole Boreal forest, not just the selection from the previous study. 
 # Anyways, we'll take all data that is within the core ABoVE domain
 
+
+###next we want to divide LPJ output into the different eocregions
+ecoregion_ii = st_read("data/external/NA_CEC_Eco_Level2.shp") %>%
+  sf::st_transform(crs = "EPSG:4326") %>%
+  sf::st_make_valid()
+
+above_shp = terra::rast("data/external/ABoVE_Study_Domain.tif") %>% #get above domain, project, resample to lpjguess resolution and get coordinates
+  terra::project("EPSG:4326") %>%
+  terra::as.polygons() %>%
+  sf::st_as_sf() %>%
+  filter(ABoVE_Study_Domain == 1)
+
+lpj_shp = lpjguess_grid %>%
+  terra::as.polygons() %>%
+  st_as_sf() %>%
+  st_geometry() %>%
+  sf::st_transform(crs = "EPSG:4326") %>%
+  st_make_valid() %>%
+  st_intersection(ecoregion_ii, .) %>%
+  st_intersection(above_shp) %>%
+  select("NA_L2NAME")
+
+lpjguess_grid = read_table("data/picontrol_d150/cmass.out", show_col_types = F) %>%
+  filter(Year == 2000) %>%
+  select(Lon, Lat, Total) %>%
+  terra::rast(crs = "EPSG:4326") %>% 
+  terra::as.polygons(aggregate = F) %>%
+  st_as_sf() %>%
+  st_make_valid() %>%
+  sf::st_join(lpj_shp) %>%
+  filter(!is.na(NA_L2NAME))
+
+
+lpjguess_ecoregion = lpjguess_grid %>%
+  rename(ecoregion = NA_L2NAME) %>%
+  mutate(Lon = round(st_coordinates(st_centroid(geometry))[, 1], 2),
+         Lat = round(st_coordinates(st_centroid(geometry))[, 2], 2)) %>%
+  as.data.frame() %>%
+  select(-geometry, -Total) %>%
+  distinct(Lon, Lat, .keep_all = TRUE) #keep only first ecoregion (not ideal but only thing that works for now)
 #We'll also need a function to relcassify LPJ-GUESS vegetation to the categories from the paper
 
 reclassify_vegetation = function(x) {
@@ -76,11 +116,11 @@ bin_data_for_plot = function(df, variable) {
   
   df_binned = df %>%
     mutate(age_bin = cut(age, breaks = age_bins, labels = labels, right = FALSE)) %>%
-    group_by(age_bin, PFT) %>%
+    group_by(age_bin, PFT, ecoregion) %>%
     summarize(variable = mean(!!rlang::sym(variable), na.rm = TRUE)) %>%
     ungroup() %>%
     mutate(PFT = reclassify_vegetation(tolower(PFT))) %>%
-    group_by(age_bin, PFT) %>%
+    group_by(age_bin, PFT, ecoregion) %>%
     summarize(variable = sum(variable, na.rm = TRUE))
   
   df_binned$PFT <- factor(df_binned$PFT, levels = rev(c('Everg. Forest', 'Decid. Forest', "Shrubs, Herb. & Sparse Veg.", 'Non-Vegetated')))
@@ -93,18 +133,17 @@ bin_data_for_plot = function(df, variable) {
 #2. Plot FPC. 
 
 #Since the paper plots vegetation cover percentage, we'll first plot FPC
-
-fpc = read_csv("data/processed/trajectories_picontrol_2015_2040_fpc_200.csv") %>%
-  right_join(above) %>% #crop to ABoVE domain via right join
+fpc = read_csv("data/processed/trajectories_picontrol_2015_2040_fpc_200.csv")  %>%
+  inner_join(lpjguess_ecoregion) %>% #crop to ecoregions 
   filter(!is.na(age)) %>% #filter for locations that are in ABoVE but not in model ouput
   filter(age != 0, age != 1) %>% #delete year of disturbance, no meaningful data
-  group_by(Lon, Lat, age, PID) %>%
+  group_by(Lon, Lat, age, PID, ecoregion) %>%
   pivot_wider(names_from = PFT, values_from = fpc) %>%
   filter(age < 61) %>% #filter to age range of paper
   mutate(across(everything(), ~replace_na(.x, 0))) %>% #fill in missing values
   mutate(Soil = if_else(BNE + IBS + TeBS + Tundra + otherC < 1, 1 - (BNE + IBS + TeBS + Tundra + otherC), 0)) %>% #alculate soil fraction
   pivot_longer(cols = c(BNE, IBS, TeBS, Tundra, otherC, Soil), names_to = "PFT", values_to = "fpc") %>%
-  group_by(age, PFT) %>% #make plot read, aggregate
+  group_by(age, PFT, ecoregion) %>% #make plot read, aggregate
   summarize(fpc = mean(fpc)) %>%
   bin_data_for_plot("fpc")
 
@@ -127,9 +166,17 @@ fpc = read_csv("data/processed/trajectories_picontrol_2015_2040_fpc_200.csv") %>
           plot.background = element_rect(fill = "transparent", colour = NA),
           strip.background = element_rect(fill = "transparent", color = NA)))
 
+fpc$ecoregion = factor(fpc$ecoregion, levels = c("ALASKA BOREAL INTERIOR", "TAIGA CORDILLERA",
+                                                  "TAIGA PLAIN", "TAIGA SHIELD", 
+                                                   "BOREAL CORDILLERA", "BOREAL PLAIN"))
+
 (p2 = ggplot() +
-    theme_minimal() +
-    geom_bar(data = fpc[fpc$PFT != "Non-Vegetated", ], aes(x = age_bin, y = variable, fill = PFT), stat = "identity", position = "fill", alpha = 0.7, color = "black") +
+    theme_classic() +
+    facet_wrap(~ecoregion, ncol = 2) +
+    geom_bar(data = fpc[fpc$PFT != "Non-Vegetated" & fpc$ecoregion %in% c("ALASKA BOREAL INTERIOR", "BOREAL CORDILLERA",
+                                                                          "TAIGA PLAIN", "TAIGA SHIELD", 
+                                                                          "TAIGA CORDILLERA",  "BOREAL PLAIN") , ], 
+             aes(x = age_bin, y = variable, fill = PFT), stat = "identity", position = "fill", alpha = 0.7, color = "black") +
     scale_x_discrete(name = "Year since disturbance", expand = c(0,0)) +
     scale_y_continuous(name = "", expand = c(0,0)) +
     scale_fill_manual(name = "Vegetation class", drop = TRUE,
@@ -140,12 +187,16 @@ fpc = read_csv("data/processed/trajectories_picontrol_2015_2040_fpc_200.csv") %>
           axis.text.x = element_text(size = 15, angle = 90, hjust = 1, vjust = 0.5),
           axis.text.y = element_text(size = 15),
           axis.title.x = element_text(vjust = 10),
+          legend.position = "bottom",
+          legend.direction = "horizontal",
           legend.background = element_rect(fill='transparent', color = NA),
           legend.box.background = element_rect(fill='transparent', color = NA),
           panel.background = element_rect(fill = "transparent", colour = NA),  
           plot.background = element_rect(fill = "transparent", colour = NA),
           strip.background = element_rect(fill = "transparent", color = NA)))
 
+
+ggsave("trajectories_by_ecoregions.pdf", scale = 1)
 
 legend = get_legend(p1)
 

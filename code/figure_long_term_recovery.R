@@ -9,21 +9,46 @@ install.packages("scico")
 library(cowplot)
 library(scico)
 
-end_year = 2040
-start_year = 2015
+
+
+theme_set(
+  theme_classic() + 
+    theme(
+      axis.text = element_text(color = "black", size = 15),
+      axis.title = element_text(color = "black", size = 15),
+      plot.title = element_text(color = "black", size = 15),
+      plot.subtitle = element_text(color = "black", size = 15),
+      plot.caption = element_text(color = "black", size = 15),
+      strip.text = element_text(color = "black", size = 15),
+      legend.text = element_text(color = "black", size = 15),
+      legend.title = element_text(color = "black", size = 15),
+      axis.line = element_line(color = "black"),
+      panel.grid.major.y = element_line(color = "grey80", linewidth = 0.25),
+      legend.background = element_rect(fill='transparent', color = NA),
+      legend.box.background = element_rect(fill='transparent', color = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),  
+      plot.background = element_rect(fill = "transparent", colour = NA),
+      strip.background = element_rect(fill = "transparent", color = NA)
+    )
+)
 
 con = dbConnect(duckdb(), dbdir = "patches2.duckdb", read_only = FALSE) #create the database
 dbListTables(con)
 
+scenario = "picontrol"
+end_year = 2040
+start_year = 2015
 
-get_one_scenario = function(scenario, end_year, start_year) {
+get_one_scenario = function(scenario, start_year, end_year) {
+  
+  
   
   locations_disturbed = dbGetQuery(con, paste0("SELECT PID, Lon, Lat, Year, ndist FROM '", scenario, "_d150_cmass' WHERE Year BETWEEN ", start_year, " AND ", 
                                                end_year, " AND dhist = 1 AND PFT = 'BNE';")) %>% unique()
   
   df_class1 = read_csv(paste0("data/results/all_binary_data_", start_year, "_", end_year,".csv")) %>%
     filter(class == 1, s == long_names_scenarios(scenario)) %>%
-    select(Lon, Lat, PID) %>%
+    dplyr::select(Lon, Lat, PID) %>%
     inner_join(locations_disturbed) %>%
     rename(year_disturbance = Year)
   
@@ -53,21 +78,31 @@ get_one_scenario = function(scenario, end_year, start_year) {
   
 }
 
-data = list()
-
-for (s in c("picontrol", "ssp126", "ssp585")) {
-  df = get_one_scenario(s, start_year = start_year, end_year = end_year)
+get_data = function(start_year, end_year) {
   
-  data = append(data, list(df))
+ 
+  
+  data = list()
+  
+  for (s in c("picontrol", "ssp126", "ssp585")) {
+    df = get_one_scenario(s, start_year = start_year, end_year = end_year)
+    
+    data = append(data, list(df))
+    
+  }
+  
+  df = purrr::reduce(data, bind_rows) %>%
+    mutate(s = long_names_scenarios(s))
+  
+  df$PFT = factor(df$PFT, levels = rev(c( "Needleleaf evergreen", "Pioneering broadleaf" ,   
+                                          "Conifers (other)", "Temperate broadleaf" , 
+                                          "Non-tree V.")))
+  
+  return(df)
   
 }
 
-df = purrr::reduce(data, bind_rows) %>%
-  mutate(s = long_names_scenarios(s))
-
-df$PFT = factor(df$PFT, levels = rev(c( "Needleleaf evergreen", "Pioneering broadleaf" ,   
-                                        "Conifers (other)", "Temperate broadleaf" , 
-                                        "Tundra")))
+df = get_data(2015, 2040)
 
 df_mean = df %>%
   group_by(PFT, age, s) %>%
@@ -75,71 +110,54 @@ df_mean = df %>%
 
 npatches = df %>%
   ungroup() %>%
-  select(age, Lon, Lat, PID, s) %>%
+  dplyr::select(age, Lon, Lat, PID, s) %>%
   unique() %>%
   group_by(age, s) %>%
   count() %>%
   filter(age %in% c(2, 100, 150, 200, 250, 280)) 
 
-fontsize = 15
-
-(p1 = ggplot() + theme_bw() +
+(p1 = ggplot() + 
     geom_line(data = npatches, aes(x = age, y = n, group = s), color = "black") +
-    geom_point(data = npatches, aes(x = age, y = n, shape = s), color = "black") +
+    geom_point(data = npatches, aes(x = age, y = n, shape = s), color = "black", size = 3) +
     scale_x_continuous(name = "Year after disturbance", expand = c(0,0), breaks = c(0, 100, 200, 300), limits = c(0, 300)) +
-    scale_y_continuous(name = "Number of \npatches    ", breaks = c(0, 3000, 6000))  +
+    scale_y_continuous(name = "Number of patches    ", breaks = c(0, 3500, 7000), expand = c(0,0), limits = c(0, 7000))  +
     scale_shape_discrete(name = "Scenario") +
-    theme(axis.title = element_text(size = fontsize),
-          legend.background = element_rect(fill='transparent', color = NA),
-          legend.box.background = element_rect(fill='transparent', color = NA),
-          legend.position = "bottom",
+    theme(legend.position = "bottom",
+          legend.title.position = "top",
           legend.text = element_text(size = 13),
           legend.title = element_text(size = 15),
           legend.direction = "horizontal",
-          panel.grid.x = element_blank(),
-          axis.title.y = element_text(hjust = 1.5),
-          panel.background = element_rect(fill = "transparent", colour = NA),  
-          plot.background = element_rect(fill = "transparent", colour = NA),
-          strip.background = element_rect(fill = "transparent", color = NA),
-          strip.text = element_text(size = fontsize),
-          text = element_text(size = fontsize)))
+          legend.location = "plot",
+          legend.justification = "left",
+          plot.margin = unit(c(1,0.5,0,0), "cm")) +
+    guides(shape = guide_legend(nrow = 2, byrow = T)))
 
-(p2 = ggplot() + theme_bw() +
+(p2 = ggplot() + 
     geom_line(data = df[df$PID %in% c(1, 2), ], linewidth = .05, alpha = .05,
               aes(x = age, y = relative, color = PFT, group = interaction(Lon, Lat, PID,PFT))) +
     geom_line(data = df_mean, aes(x = age, y = relative_mean, color = PFT, group = PFT), linewidth = 1) +
-    facet_grid(rows = vars(s)) +
+    facet_wrap(~s, ncol = 1) +
     scale_color_manual(name = "Plant functional types (PFTs)", drop = TRUE,
-                       values = c("Needleleaf evergreen" = "#0072B2", "Pioneering broadleaf" = "#E69F00",
-                                  "Conifers (other)" = "#56B4E9", "Temperate broadleaf" = "#D55E00",   
-                                  "Tundra" = "#009E73"),
-                       breaks = c( "Needleleaf evergreen", "Pioneering broadleaf" ,   
-                                   "Conifers (other)", "Temperate broadleaf" , 
-                                   "Tundra")) +
+                       values = c("Needleleaf evergreen" = "#0072B2", "Conifers (other)" = "#56B4E9", "Non-tree V." = "#009E73",
+                                  "Pioneering broadleaf" = "#E69F00", "Temperate broadleaf" = "#D55E00"),
+                       breaks = c( "Needleleaf evergreen", "Conifers (other)",  "Non-tree V.",
+                                    "Pioneering broadleaf", "Temperate broadleaf")) +
     scale_x_continuous(name = "Year after disturbance", expand = c(0,0), breaks = c(0, 100, 200, 300), limits = c(0, 300)) +
     scale_y_continuous(name = paste0("Share of aboveground carbon"), expand = c(0,0), limits = c(0, 1),
                        breaks = c(0.50, 1.00)) +
-    theme(axis.title = element_text(size = fontsize),
-          legend.background = element_rect(fill='transparent', color = NA),
-          legend.box.background = element_rect(fill='transparent', color = NA),
-          legend.position = "bottom",
-          legend.text = element_text(size = 13),
-          legend.title = element_text(size = 15),
+    theme(legend.position = "bottom",
           legend.direction = "horizontal",
           legend.title.position = "top",
-          panel.grid.x = element_blank(),
-          panel.background = element_rect(fill = "transparent", colour = NA),  
-          plot.background = element_rect(fill = "transparent", colour = NA),
-          strip.background = element_rect(fill = "transparent", color = NA),
-          strip.text = element_text(size = fontsize),
-          text = element_text(size = fontsize)) +
+          legend.location = "plot",
+          legend.justification = "left",
+          plot.margin = unit(c(0,-3,0,0), "cm")) +
     guides(color = guide_legend(override.aes = list(linewidth = 2),
                                 nrow = 2, byrow = T)))
 
 
-plot_grid(p2, p1, ncol = 1, rel_heights = c(1, 0.3), align = "hv", labels = c("(a)", "(b)"), axis = "lr")
+plot_grid(p2, p1, ncol = 2, rel_widths = c(1, 0.6), align = "hv", labels = c("(a)", "(b)"), axis = "bt")
 
 
-ggsave("figures/results/long_term_recovery.pdf", width = 9, height = 8)
+ggsave("figures/results/long_term_recovery.pdf", width = 10, height = 7, scale = 1)
 
 
