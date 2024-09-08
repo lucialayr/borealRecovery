@@ -8,21 +8,33 @@ Per default, this repository only contains the data that directly feeds into the
 
 ## Reproducing the analysis
 
-This analysis were performed on an RStudioCloud using R Version 4.4.1 (2024-06-14) running under Ubuntu 22.04.3. See below for packages and version. 
+This analysis was performed on an RStudioCloud using R Version 4.4.1 (2024-06-14) running under Ubuntu 22.04.3. See below for packages and version. 
 
-### Creating the duckdb database 
+#### (Create the duckdb database)
 
-Per default, the database will be created. The script to do so are attached. If you want to reproduce, please contact me for the original data.
+Not neccesary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
 
-### Creating trajectory data
+### Create trajectory data
 
-Creates 100 year recovery trajectories for the three scenarios (*Control*, *SSP1-RCP2.6*, *SSP5-RCP8.5*) and two time periods (*2015 - 2040*, *2070 - 2100*). For every combination, this script produces three datasets:
+Creates 100 year recovery trajectories for the three scenarios (*Control*, *SSP1-RCP2.6*, *SSP5-RCP8.5*) and two time periods (*2015 - 2040*, *2075 - 2100*). This will be the base data for most figures. For every combination, this script produces three datasets:
 
-1. Timeseries data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_timeseries_rf.csv`
+**1.** Timeseries data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_timeseries_rf.csv`
 
-2. Point data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_pointvalues_rf.csv`
+**2.** Point data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_pointvalues_rf.csv`
 
-3. All data of 1. and 2. as well as environmental covariates used for random forest analysis. This dataset is large and difficult to handle. All analyses except the random forest model will use 1. and 2.
+**3.** Input data for random forest: `data/random_forest/data_`, scenario, `_`, start_year, `_`, end_year, `.csv`
+
+Dataset **3.** contains all data of **1.** and **2.** as well as environmental covariates used for random forest analysis. This dataset is large and difficult to handle and will not be used except for the random forest analysis.
+
+
+### Create random forest model
+
+### Create plots
+
+The data underlying plots is found in `data/final`. Each subplot gets its own dataset. Plots have descriptive names, since the numbering is not the same in the paper and the thesis. Script `*_processed_final.R` will produce data. Scripts `*_final_plot.R` will create plots. 
+
+Dependcies between plots:
+
 
 
 
@@ -47,12 +59,16 @@ Creates 100 year recovery trajectories for the three scenarios (*Control*, *SSP1
 ├── **data** &#x1F4C1;  *model output on various steps of processing*
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└── processed &#x1F4C1;  *pre-processed data that feeds into several figures*
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── random_forest &#x1F4C1;  *inout and output data of random forest model*
   
 │&nbsp; &nbsp; &nbsp; &nbsp;└── final &#x1F4C1;  *The data directly underlying the figures, generated with  `*_processed_final.R`*
 
 │&nbsp; &nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; &nbsp;└── shp &#x1F4C1; *The shapefiles used for plotting maps.*
   
 │&nbsp; &nbsp; &nbsp; &nbsp;└── covariates &#x1F4C1;  *Climate data*  &#x26C8;
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── single_pft &#x1F4C1;  *Single PFT runs to determine theoretical niches*  &#x1F332;  &#x1f333;
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└── ext &#x1F4C1;  *External helper files*
   
