@@ -126,7 +126,7 @@ plot_trajectories_niche = function(start_year, end_year) {
                            line_grob, legend, rel_heights = c(0.66, 0.05, 0.3), ncol = 1),
                  ncol = 2, rel_widths = c(1, 1), labels = c( "(a)", "(b)"), hjust = 0))
   
-  ggsave(paste("plots/trajectories_nicht_", start_year, "_", end_year, ".pdf"), width = 10, height = 7.75, scale = 1) 
+  ggsave(paste("plots/trajectories_niche_", start_year, "_", end_year, ".pdf"), width = 10, height = 7.75, scale = 1) 
   
   return(p)
   

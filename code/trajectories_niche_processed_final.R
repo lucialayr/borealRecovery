@@ -126,7 +126,7 @@ final_trajectories_niche_A = function(start_year, end_year) {
     
     data = append(data, list(df_timeseries))
     
-    df_carbon = read_csv(paste0("data/processed/trajectories_", s, "_", start_year, "_", end_year, "_total_carbon.csv" )) %>%
+    df_carbon = read_csv(paste0("data/processed/agc_recovery_", scenario, "_", start_year, "_", end_year, "_.csv" )) %>%
       mutate(s = s)
     
     data_carbon = append(data_carbon, list(df_carbon))
@@ -186,24 +186,6 @@ final_trajectories_niche_A = function(start_year, end_year) {
 final_trajectories_niche_A(2015, 2040)
 
 final_trajectories_niche_A(2075, 2100)
-
-end_year = 2040
-start_year = 2015
-
-p2 = trajectories_100years(start_year = start_year, end_year = end_year)
-
-legend = get_legend(p2)
-
-line_grob = linesGrob(y = unit(c(0.5, 0.5), "npc"), gp = gpar(col = "black", lwd = 0.5))
-
-(p = plot_grid(p2 + theme(legend.position = "None"), 
-               plot_grid(p1 + theme(legend.margin=margin(0,0,0,0),
-                                    legend.box.margin=margin(-10,-10,-10,-10)), 
-                         line_grob, legend, rel_heights = c(0.66, 0.05, 0.3), ncol = 1),
-               ncol = 2, rel_widths = c(1, 1), labels = c( "(a)", "(b)"), hjust = 0))
-
-ggsave("figures/results/niche_trajectories_2015_2040.pdf", width = 10, height = 7.75, scale = 1) 
-
 
 
 

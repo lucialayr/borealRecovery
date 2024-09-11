@@ -5,6 +5,8 @@ library(dplyr)
 library(terra)
 library(sf)
 
+#test
+git staus
 install.packages("cowplot")
 install.packages("rnaturalearth")
 install.packages("rnaturalearthdata")
@@ -250,5 +252,5 @@ legend = get_legend(p2)
 plot_grid(p1, p2, labels = c("(a)", "(b)"), rel_widths = c(0.7, 1), align = "hv", axis = "b")
 
 
-ggsave("figures/results/recovery_validation.pdf", height = 8,  scale = 0.85)
+ggsave("figures/results/recovery_validation.pdf", width = 10)
 
