@@ -1,0 +1,253 @@
+PFT,age_bin,ecoregion,value,dataset
+Decid. Forest,02-05,Alaska Boreal Interior,0.01566667455364008,LPJ-GUESS
+Decid. Forest,02-05,Boreal Cordillera,0.015125915448175289,LPJ-GUESS
+Decid. Forest,02-05,Boreal Plain,0.026203597566846384,LPJ-GUESS
+Decid. Forest,02-05,Taiga Cordillera,0.016401206467067643,LPJ-GUESS
+Decid. Forest,02-05,Taiga Plain,0.021562405133864437,LPJ-GUESS
+Decid. Forest,02-05,Taiga Shield,0.018858726930243975,LPJ-GUESS
+Everg. Forest,02-05,Alaska Boreal Interior,0.013662724499266098,LPJ-GUESS
+Everg. Forest,02-05,Boreal Cordillera,0.014519074264853096,LPJ-GUESS
+Everg. Forest,02-05,Boreal Plain,0.020568221484255786,LPJ-GUESS
+Everg. Forest,02-05,Taiga Cordillera,0.024027201762309897,LPJ-GUESS
+Everg. Forest,02-05,Taiga Plain,0.025033039343500416,LPJ-GUESS
+Everg. Forest,02-05,Taiga Shield,0.037344969403876424,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",02-05,Alaska Boreal Interior,0.9706706009470938,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",02-05,Boreal Cordillera,0.9703550102869716,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",02-05,Boreal Plain,0.9532281809488978,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",02-05,Taiga Cordillera,0.9595715917706225,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",02-05,Taiga Plain,0.9534045555226351,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",02-05,Taiga Shield,0.9437963036658795,LPJ-GUESS
+Decid. Forest,06-09,Alaska Boreal Interior,0.01268930371020338,LPJ-GUESS
+Decid. Forest,06-09,Boreal Cordillera,0.010473149308986664,LPJ-GUESS
+Decid. Forest,06-09,Boreal Plain,0.0406795491987877,LPJ-GUESS
+Decid. Forest,06-09,Taiga Cordillera,0.014811293153891163,LPJ-GUESS
+Decid. Forest,06-09,Taiga Plain,0.029854709001180115,LPJ-GUESS
+Decid. Forest,06-09,Taiga Shield,0.02035372678501721,LPJ-GUESS
+Everg. Forest,06-09,Alaska Boreal Interior,0.02485789645932867,LPJ-GUESS
+Everg. Forest,06-09,Boreal Cordillera,0.0268891849815465,LPJ-GUESS
+Everg. Forest,06-09,Boreal Plain,0.04585123641172353,LPJ-GUESS
+Everg. Forest,06-09,Taiga Cordillera,0.03302369806904622,LPJ-GUESS
+Everg. Forest,06-09,Taiga Plain,0.04390763709213233,LPJ-GUESS
+Everg. Forest,06-09,Taiga Shield,0.04907794517278602,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",06-09,Alaska Boreal Interior,0.9624527998304679,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",06-09,Boreal Cordillera,0.9626376657094668,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",06-09,Boreal Plain,0.9134692143894888,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",06-09,Taiga Cordillera,0.9521650087770627,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",06-09,Taiga Plain,0.9262376539066877,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",06-09,Taiga Shield,0.9305683280421968,LPJ-GUESS
+Decid. Forest,10-19,Alaska Boreal Interior,0.019762545484701192,LPJ-GUESS
+Decid. Forest,10-19,Boreal Cordillera,0.011255564576397597,LPJ-GUESS
+Decid. Forest,10-19,Boreal Plain,0.09648799814177933,LPJ-GUESS
+Decid. Forest,10-19,Taiga Cordillera,0.01685819306534953,LPJ-GUESS
+Decid. Forest,10-19,Taiga Plain,0.05897600872943443,LPJ-GUESS
+Decid. Forest,10-19,Taiga Shield,0.025271549774869832,LPJ-GUESS
+Everg. Forest,10-19,Alaska Boreal Interior,0.07446363336335257,LPJ-GUESS
+Everg. Forest,10-19,Boreal Cordillera,0.08436981449032994,LPJ-GUESS
+Everg. Forest,10-19,Boreal Plain,0.13686373048763387,LPJ-GUESS
+Everg. Forest,10-19,Taiga Cordillera,0.09069349286283737,LPJ-GUESS
+Everg. Forest,10-19,Taiga Plain,0.12086413573211531,LPJ-GUESS
+Everg. Forest,10-19,Taiga Shield,0.10606472532335864,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",10-19,Alaska Boreal Interior,0.9057738211519463,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",10-19,Boreal Cordillera,0.9043746209332724,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",10-19,Boreal Plain,0.7666482713705869,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",10-19,Taiga Cordillera,0.8924483140718131,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",10-19,Taiga Plain,0.8201598555384503,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",10-19,Taiga Shield,0.8686637249017716,LPJ-GUESS
+Decid. Forest,20-29,Alaska Boreal Interior,0.03799932760014545,LPJ-GUESS
+Decid. Forest,20-29,Boreal Cordillera,0.014281513229950717,LPJ-GUESS
+Decid. Forest,20-29,Boreal Plain,0.2700488502420836,LPJ-GUESS
+Decid. Forest,20-29,Taiga Cordillera,0.024533789920243146,LPJ-GUESS
+Decid. Forest,20-29,Taiga Plain,0.15391333720321518,LPJ-GUESS
+Decid. Forest,20-29,Taiga Shield,0.03585421037134969,LPJ-GUESS
+Everg. Forest,20-29,Alaska Boreal Interior,0.19680410688095495,LPJ-GUESS
+Everg. Forest,20-29,Boreal Cordillera,0.22853273203871463,LPJ-GUESS
+Everg. Forest,20-29,Boreal Plain,0.3443502470466946,LPJ-GUESS
+Everg. Forest,20-29,Taiga Cordillera,0.22986382174011252,LPJ-GUESS
+Everg. Forest,20-29,Taiga Plain,0.32478596033921464,LPJ-GUESS
+Everg. Forest,20-29,Taiga Shield,0.2220512434020648,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",20-29,Alaska Boreal Interior,0.7651965655188996,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",20-29,Boreal Cordillera,0.7571857547313346,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",20-29,Boreal Plain,0.3856009027112219,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",20-29,Taiga Cordillera,0.7456023883396444,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",20-29,Taiga Plain,0.5213007024575701,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",20-29,Taiga Shield,0.7420945462265855,LPJ-GUESS
+Decid. Forest,30-39,Alaska Boreal Interior,0.05458640039639786,LPJ-GUESS
+Decid. Forest,30-39,Boreal Cordillera,0.01594829108137678,LPJ-GUESS
+Decid. Forest,30-39,Boreal Plain,0.37689360366389696,LPJ-GUESS
+Decid. Forest,30-39,Taiga Cordillera,0.03457953452851854,LPJ-GUESS
+Decid. Forest,30-39,Taiga Plain,0.23366981408224297,LPJ-GUESS
+Decid. Forest,30-39,Taiga Shield,0.05077395767694617,LPJ-GUESS
+Everg. Forest,30-39,Alaska Boreal Interior,0.33970238275282083,LPJ-GUESS
+Everg. Forest,30-39,Boreal Cordillera,0.3876363096030223,LPJ-GUESS
+Everg. Forest,30-39,Boreal Plain,0.36229851717085904,LPJ-GUESS
+Everg. Forest,30-39,Taiga Cordillera,0.4208836194862249,LPJ-GUESS
+Everg. Forest,30-39,Taiga Plain,0.44740685124552115,LPJ-GUESS
+Everg. Forest,30-39,Taiga Shield,0.3569438294333269,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",30-39,Alaska Boreal Interior,0.6057112168507813,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",30-39,Boreal Cordillera,0.5964153993156008,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",30-39,Boreal Plain,0.2608078791652441,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",30-39,Taiga Cordillera,0.5445368459852565,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",30-39,Taiga Plain,0.3189233346722358,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",30-39,Taiga Shield,0.5922822128897269,LPJ-GUESS
+Decid. Forest,40-49,Alaska Boreal Interior,0.06089001909833478,LPJ-GUESS
+Decid. Forest,40-49,Boreal Cordillera,0.014536279308530325,LPJ-GUESS
+Decid. Forest,40-49,Boreal Plain,0.48659053476050335,LPJ-GUESS
+Decid. Forest,40-49,Taiga Cordillera,0.037476651312076885,LPJ-GUESS
+Decid. Forest,40-49,Taiga Plain,0.2785149246325929,LPJ-GUESS
+Decid. Forest,40-49,Taiga Shield,0.0624880359552637,LPJ-GUESS
+Everg. Forest,40-49,Alaska Boreal Interior,0.45376189783269977,LPJ-GUESS
+Everg. Forest,40-49,Boreal Cordillera,0.5087400314040961,LPJ-GUESS
+Everg. Forest,40-49,Boreal Plain,0.3103787657905259,LPJ-GUESS
+Everg. Forest,40-49,Taiga Cordillera,0.5665059902070233,LPJ-GUESS
+Everg. Forest,40-49,Taiga Plain,0.48008380266887735,LPJ-GUESS
+Everg. Forest,40-49,Taiga Shield,0.46683238895471274,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",40-49,Alaska Boreal Interior,0.4853480830689655,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",40-49,Boreal Cordillera,0.4767236892873736,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",40-49,Boreal Plain,0.2030306994489707,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",40-49,Taiga Cordillera,0.3960173584808999,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",40-49,Taiga Plain,0.24140127269852968,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",40-49,Taiga Shield,0.47067957509002356,LPJ-GUESS
+Decid. Forest,50-59,Alaska Boreal Interior,0.062692774761134,LPJ-GUESS
+Decid. Forest,50-59,Boreal Cordillera,0.012064202117735692,LPJ-GUESS
+Decid. Forest,50-59,Boreal Plain,0.603153686555222,LPJ-GUESS
+Decid. Forest,50-59,Taiga Cordillera,0.03644607323896138,LPJ-GUESS
+Decid. Forest,50-59,Taiga Plain,0.324451988343654,LPJ-GUESS
+Decid. Forest,50-59,Taiga Shield,0.07334753802893179,LPJ-GUESS
+Everg. Forest,50-59,Alaska Boreal Interior,0.5434600941841097,LPJ-GUESS
+Everg. Forest,50-59,Boreal Cordillera,0.58852715139434,LPJ-GUESS
+Everg. Forest,50-59,Boreal Plain,0.2584976425004916,LPJ-GUESS
+Everg. Forest,50-59,Taiga Cordillera,0.6837189438915192,LPJ-GUESS
+Everg. Forest,50-59,Taiga Plain,0.5108303556638433,LPJ-GUESS
+Everg. Forest,50-59,Taiga Shield,0.5598752323283086,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",50-59,Alaska Boreal Interior,0.3938471310547562,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",50-59,Boreal Cordillera,0.39940864648792423,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",50-59,Boreal Plain,0.13834867094428632,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",50-59,Taiga Cordillera,0.2798349828695193,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",50-59,Taiga Plain,0.1647176559925027,LPJ-GUESS
+"Shrubs, Herb. & Sparse Veg.",50-59,Taiga Shield,0.36677722964275955,LPJ-GUESS
+Everg. Forest,02-05,Alaska Boreal Interior,0.2682839067595243,Observations
+Decid. Forest,02-05,Alaska Boreal Interior,0.04678045137071425,Observations
+"Shrubs, Herb. & Sparse Veg.",02-05,Alaska Boreal Interior,0.6849356418697614,Observations
+Everg. Forest,06-09,Alaska Boreal Interior,0.23731139919882902,Observations
+Decid. Forest,06-09,Alaska Boreal Interior,0.04582266819771729,Observations
+"Shrubs, Herb. & Sparse Veg.",06-09,Alaska Boreal Interior,0.7168659326034538,Observations
+Everg. Forest,10-19,Alaska Boreal Interior,0.27030694418746254,Observations
+Decid. Forest,10-19,Alaska Boreal Interior,0.06775642467793248,Observations
+"Shrubs, Herb. & Sparse Veg.",10-19,Alaska Boreal Interior,0.661936631134605,Observations
+Everg. Forest,20-29,Alaska Boreal Interior,0.32291330507688576,Observations
+Decid. Forest,20-29,Alaska Boreal Interior,0.1053969306512084,Observations
+"Shrubs, Herb. & Sparse Veg.",20-29,Alaska Boreal Interior,0.5716897642719059,Observations
+Everg. Forest,30-39,Alaska Boreal Interior,0.3756788328927306,Observations
+Decid. Forest,30-39,Alaska Boreal Interior,0.14401530473302576,Observations
+"Shrubs, Herb. & Sparse Veg.",30-39,Alaska Boreal Interior,0.48030586237424366,Observations
+Everg. Forest,40-49,Alaska Boreal Interior,0.41475176494834143,Observations
+Decid. Forest,40-49,Alaska Boreal Interior,0.16185017489670456,Observations
+"Shrubs, Herb. & Sparse Veg.",40-49,Alaska Boreal Interior,0.4233980601549541,Observations
+Everg. Forest,50-59,Alaska Boreal Interior,0.4401293514001287,Observations
+Decid. Forest,50-59,Alaska Boreal Interior,0.1650367851058163,Observations
+"Shrubs, Herb. & Sparse Veg.",50-59,Alaska Boreal Interior,0.39483386349405497,Observations
+Everg. Forest,02-05,Boreal Cordillera,0.2832407936731012,Observations
+Decid. Forest,02-05,Boreal Cordillera,0.016403642982470795,Observations
+"Shrubs, Herb. & Sparse Veg.",02-05,Boreal Cordillera,0.700355563344428,Observations
+Everg. Forest,06-09,Boreal Cordillera,0.2834991837531346,Observations
+Decid. Forest,06-09,Boreal Cordillera,0.01661244833495249,Observations
+"Shrubs, Herb. & Sparse Veg.",06-09,Boreal Cordillera,0.6998883679119129,Observations
+Everg. Forest,10-19,Boreal Cordillera,0.37923312500991646,Observations
+Decid. Forest,10-19,Boreal Cordillera,0.038368362338020004,Observations
+"Shrubs, Herb. & Sparse Veg.",10-19,Boreal Cordillera,0.5823985126520635,Observations
+Everg. Forest,20-29,Boreal Cordillera,0.5186548412515135,Observations
+Decid. Forest,20-29,Boreal Cordillera,0.07926140066469246,Observations
+"Shrubs, Herb. & Sparse Veg.",20-29,Boreal Cordillera,0.40208375808379404,Observations
+Everg. Forest,30-39,Boreal Cordillera,0.595824863846739,Observations
+Decid. Forest,30-39,Boreal Cordillera,0.08569379910660505,Observations
+"Shrubs, Herb. & Sparse Veg.",30-39,Boreal Cordillera,0.318481337046656,Observations
+Everg. Forest,40-49,Boreal Cordillera,0.6255790311517333,Observations
+Decid. Forest,40-49,Boreal Cordillera,0.0880924532068221,Observations
+"Shrubs, Herb. & Sparse Veg.",40-49,Boreal Cordillera,0.2863285156414447,Observations
+Everg. Forest,50-59,Boreal Cordillera,0.6566259458309511,Observations
+Decid. Forest,50-59,Boreal Cordillera,0.07993270874290008,Observations
+"Shrubs, Herb. & Sparse Veg.",50-59,Boreal Cordillera,0.2634413454261488,Observations
+Everg. Forest,02-05,Boreal Plain,0.3024655066977045,Observations
+Decid. Forest,02-05,Boreal Plain,0.0752607237855195,Observations
+"Shrubs, Herb. & Sparse Veg.",02-05,Boreal Plain,0.6222737695167759,Observations
+Everg. Forest,06-09,Boreal Plain,0.3655773630583247,Observations
+Decid. Forest,06-09,Boreal Plain,0.08987390996849152,Observations
+"Shrubs, Herb. & Sparse Veg.",06-09,Boreal Plain,0.5445487269731838,Observations
+Everg. Forest,10-19,Boreal Plain,0.4449913001259536,Observations
+Decid. Forest,10-19,Boreal Plain,0.14841922751527586,Observations
+"Shrubs, Herb. & Sparse Veg.",10-19,Boreal Plain,0.40658947235877047,Observations
+Everg. Forest,20-29,Boreal Plain,0.4957577796402806,Observations
+Decid. Forest,20-29,Boreal Plain,0.24338117467896117,Observations
+"Shrubs, Herb. & Sparse Veg.",20-29,Boreal Plain,0.26086104568075824,Observations
+Everg. Forest,30-39,Boreal Plain,0.4493511741488913,Observations
+Decid. Forest,30-39,Boreal Plain,0.33573382364568355,Observations
+"Shrubs, Herb. & Sparse Veg.",30-39,Boreal Plain,0.2149150022054251,Observations
+Everg. Forest,40-49,Boreal Plain,0.44734324101253586,Observations
+Decid. Forest,40-49,Boreal Plain,0.3772217213361393,Observations
+"Shrubs, Herb. & Sparse Veg.",40-49,Boreal Plain,0.17543503765132482,Observations
+Everg. Forest,50-59,Boreal Plain,0.4713800775152725,Observations
+Decid. Forest,50-59,Boreal Plain,0.36587495486768384,Observations
+"Shrubs, Herb. & Sparse Veg.",50-59,Boreal Plain,0.1627449676170436,Observations
+Everg. Forest,02-05,Taiga Cordillera,0.24241321243100275,Observations
+Decid. Forest,02-05,Taiga Cordillera,0.004103941069105324,Observations
+"Shrubs, Herb. & Sparse Veg.",02-05,Taiga Cordillera,0.753482846499892,Observations
+Everg. Forest,06-09,Taiga Cordillera,0.24304817086657643,Observations
+Decid. Forest,06-09,Taiga Cordillera,0.004977121521931307,Observations
+"Shrubs, Herb. & Sparse Veg.",06-09,Taiga Cordillera,0.7519747076114922,Observations
+Everg. Forest,10-19,Taiga Cordillera,0.3278197097182759,Observations
+Decid. Forest,10-19,Taiga Cordillera,0.01719195192385,Observations
+"Shrubs, Herb. & Sparse Veg.",10-19,Taiga Cordillera,0.6549883383578741,Observations
+Everg. Forest,20-29,Taiga Cordillera,0.4975433954059481,Observations
+Decid. Forest,20-29,Taiga Cordillera,0.0290357761632102,Observations
+"Shrubs, Herb. & Sparse Veg.",20-29,Taiga Cordillera,0.47342082843084166,Observations
+Everg. Forest,30-39,Taiga Cordillera,0.60477664747417,Observations
+Decid. Forest,30-39,Taiga Cordillera,0.04536276574449377,Observations
+"Shrubs, Herb. & Sparse Veg.",30-39,Taiga Cordillera,0.3498605867813362,Observations
+Everg. Forest,40-49,Taiga Cordillera,0.6735539872003935,Observations
+Decid. Forest,40-49,Taiga Cordillera,0.05572816885155768,Observations
+"Shrubs, Herb. & Sparse Veg.",40-49,Taiga Cordillera,0.27071784394804876,Observations
+Everg. Forest,50-59,Taiga Cordillera,0.7686851663791424,Observations
+Decid. Forest,50-59,Taiga Cordillera,0.06112402832662643,Observations
+"Shrubs, Herb. & Sparse Veg.",50-59,Taiga Cordillera,0.17019080529423114,Observations
+Everg. Forest,02-05,Taiga Plain,0.24039408078785968,Observations
+Decid. Forest,02-05,Taiga Plain,0.01656486684067116,Observations
+"Shrubs, Herb. & Sparse Veg.",02-05,Taiga Plain,0.7430410523714692,Observations
+Everg. Forest,06-09,Taiga Plain,0.24158136886663198,Observations
+Decid. Forest,06-09,Taiga Plain,0.021125089689373332,Observations
+"Shrubs, Herb. & Sparse Veg.",06-09,Taiga Plain,0.7372935414439946,Observations
+Everg. Forest,10-19,Taiga Plain,0.28911966113043097,Observations
+Decid. Forest,10-19,Taiga Plain,0.03493430886893992,Observations
+"Shrubs, Herb. & Sparse Veg.",10-19,Taiga Plain,0.6759460300006291,Observations
+Everg. Forest,20-29,Taiga Plain,0.4238552758447259,Observations
+Decid. Forest,20-29,Taiga Plain,0.06808497949998839,Observations
+"Shrubs, Herb. & Sparse Veg.",20-29,Taiga Plain,0.5080597446552858,Observations
+Everg. Forest,30-39,Taiga Plain,0.48611740583109936,Observations
+Decid. Forest,30-39,Taiga Plain,0.13140279292658802,Observations
+"Shrubs, Herb. & Sparse Veg.",30-39,Taiga Plain,0.3824798012423127,Observations
+Everg. Forest,40-49,Taiga Plain,0.49054555005608164,Observations
+Decid. Forest,40-49,Taiga Plain,0.2540625773354533,Observations
+"Shrubs, Herb. & Sparse Veg.",40-49,Taiga Plain,0.255391872608465,Observations
+Everg. Forest,50-59,Taiga Plain,0.412793633564801,Observations
+Decid. Forest,50-59,Taiga Plain,0.4304989758769321,Observations
+"Shrubs, Herb. & Sparse Veg.",50-59,Taiga Plain,0.15670739055826696,Observations
+Everg. Forest,02-05,Taiga Shield,0.1765036745152603,Observations
+Decid. Forest,02-05,Taiga Shield,6.992638077874604e-4,Observations
+"Shrubs, Herb. & Sparse Veg.",02-05,Taiga Shield,0.8227970616769523,Observations
+Everg. Forest,06-09,Taiga Shield,0.19161009872500664,Observations
+Decid. Forest,06-09,Taiga Shield,0.0010089783340176284,Observations
+"Shrubs, Herb. & Sparse Veg.",06-09,Taiga Shield,0.8073809229409757,Observations
+Everg. Forest,10-19,Taiga Shield,0.25987211136193383,Observations
+Decid. Forest,10-19,Taiga Shield,0.0013701769391879796,Observations
+"Shrubs, Herb. & Sparse Veg.",10-19,Taiga Shield,0.7387577116988782,Observations
+Everg. Forest,20-29,Taiga Shield,0.38458167512712427,Observations
+Decid. Forest,20-29,Taiga Shield,0.0031623267290515813,Observations
+"Shrubs, Herb. & Sparse Veg.",20-29,Taiga Shield,0.6122559981438241,Observations
+Everg. Forest,30-39,Taiga Shield,0.4470785244159042,Observations
+Decid. Forest,30-39,Taiga Shield,0.005415164900403935,Observations
+"Shrubs, Herb. & Sparse Veg.",30-39,Taiga Shield,0.5475063106836918,Observations
+Everg. Forest,40-49,Taiga Shield,0.5777343888015084,Observations
+Decid. Forest,40-49,Taiga Shield,0.009529256391385669,Observations
+"Shrubs, Herb. & Sparse Veg.",40-49,Taiga Shield,0.4127363548071059,Observations
+Everg. Forest,50-59,Taiga Shield,0.8063925054800893,Observations
+Decid. Forest,50-59,Taiga Shield,0.02609801745744398,Observations
+"Shrubs, Herb. & Sparse Veg.",50-59,Taiga Shield,0.16750947706246666,Observations
