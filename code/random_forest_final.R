@@ -3,7 +3,7 @@ source("code/utils.R")
 
 library(tidyverse)
 
-plot_accuracy = function(timespan) {
+random_forest_A_final = function(timespan) {
   
    data = list()
     
@@ -66,11 +66,10 @@ plot_accuracy = function(timespan) {
       mutate(class = case_when(true_labels == 0 ~ "Conifer recovery",
                                true_labels == 1 ~ "Deciduous transient"))
     
-    write_csv(df_predictive_power, paste0("data/results/predictive_power_", timespan, ".csv"))
+    write_csv(df_predictive_power, paste0("data/final/random_forest_A_", timespan, ".csv"))
 }  
 
-
-plot_feature_importance = function(timespan) {
+random_forest_B_final  = function(timespan) {
   
  data = list()
     
@@ -135,20 +134,14 @@ plot_feature_importance = function(timespan) {
       mutate(n = as.numeric(n)) %>%
       full_join(expand_names)
     
-   write_csv(importance_ranking, paste0("data/results/importance_ranking_", timespan, ".csv"))
+   write_csv(importance_ranking, paste0("data/final/random_forest_A_", timespan, ".csv"))
 }
 
-###
+random_forest_A_final("2015_2040")
+random_forest_B_final("2015_2040")
 
-(p1 = plot_accuracy(timespan = "2015_2040"))
-
-(p2 = plot_feature_importance("2015_2040"))
-
-plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"))
-
-ggsave("figures/results/results_rf_2015_2040.pdf",  width = 12, scale = 0.95)
-
-
+random_forest_A_final("2075_2100")
+random_forest_B_final("2075_2100")
 ###
 
 

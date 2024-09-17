@@ -34,7 +34,7 @@ theme_set(
 
 random_forest_A_plot = function(timespan) {
   
-  df_predictive_power = read_csv(paste0("data/results/predictive_power_", timespan, ".csv"))
+  df_predictive_power = read_csv(paste0("data/final/random_forest_B_", timespan, ".csv"))
 
   df_predictive_power$true_labels = factor(df_predictive_power$true_labels, levels = c(1,0))
   df_predictive_power$class = factor(df_predictive_power$class, levels = (c("Conifer recovery", "Deciduous transient")))
@@ -61,7 +61,7 @@ random_forest_A_plot = function(timespan) {
 
 random_forest_B_plot = function(timespan) {
 
-  importance_ranking = read_csv(paste0("data/results/importance_ranking_", timespan, ".csv"))
+  importance_ranking = read_csv(paste0("data/final/random_forest_B_", timespan, ".csv"))
   
   importance_ranking$names = factor(importance_ranking$names, levels = rev(c("pr_yearlysum_1", "pr_yearlysum_2", "pr_yearlysum_3",
                                                                              "tas_gs_dailyavg_1", "tas_gs_dailyavg_2", "tas_gs_dailyavg_3",

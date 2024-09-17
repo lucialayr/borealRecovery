@@ -126,7 +126,7 @@ final_trajectories_niche_A = function(start_year, end_year) {
     
     data = append(data, list(df_timeseries))
     
-    df_carbon = read_csv(paste0("data/processed/agc_recovery_", scenario, "_", start_year, "_", end_year, "_.csv" )) %>%
+    df_carbon = read_csv(paste0("data/processed/agc_recovery_", s, "_", start_year, "_", end_year, "_.csv" )) %>%
       mutate(s = s)
     
     data_carbon = append(data_carbon, list(df_carbon))
