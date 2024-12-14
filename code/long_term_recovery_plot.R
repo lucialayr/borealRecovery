@@ -75,7 +75,7 @@ long_term_recovery_A_plot_png = function() {
     summarize(relative_mean = mean(relative))
   
   (p2 = ggplot() + 
-      geom_line(data = df[df$PID %in% c(1, 2), ], linewidth = .01, alpha = 1,
+      geom_line(data = df[df$PID %in% c(1, 2), ], linewidth = .02, alpha = 1,
                 aes(x = age, y = relative, color = PFT, group = interaction(Lon, Lat, PID,PFT))) +
       geom_line(data = df_mean, aes(x = age, y = relative_mean, color = PFT, group = PFT), linewidth = 1) +
       facet_wrap(~s, ncol = 1) +
