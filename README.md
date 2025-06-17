@@ -12,7 +12,7 @@ This analysis was performed on an RStudioCloud using R Version 4.4.1 (2024-06-14
 
 #### (Create the duckdb database)
 
-Not neccesary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
+Not necessary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
 
 ### Create trajectory data
 
@@ -90,4 +90,12 @@ Dependcies between plots:
   - [ ] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
   - [x] Random Forest (F6)
 - [ ] Make sure all final data is reproducible from zenodo database
-- [ ] 
+  - [ ] Validation (F3): *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [ ] Trajectories + Niche (F4) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [ ] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [ ] Random Forest (F6) *needs `data/random_forest`*
+- [ ] Random forest model
+  - [ ] Expand on documentation
+  - [ ] Link to Mohit's code
+- [ ] Document dependencies between scripts
+  
