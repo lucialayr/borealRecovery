@@ -1,13 +1,14 @@
 setwd("~/Desktop/PhD/borealRecovery")
 source("code/utils.R")
 
-library(dplyr)
+library(tidyverse)
 library(terra)
 library(sf)
 library(cowplot)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(scico)
+
 
 theme_set(
   theme_classic() + 
