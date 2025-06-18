@@ -1,11 +1,6 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
+setwd("~/Desktop/PhD/borealRecovery")
 source("code/utils.R")
 
-install.packages("scico")
-install.packages("ggnewscale")
-install.packages("cowplot")
-install.packages("rnaturalearth")
-install.packages("rnaturalearthdata")
 
 library(tidyverse)
 library(sf)

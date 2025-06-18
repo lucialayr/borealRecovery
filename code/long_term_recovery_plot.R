@@ -1,11 +1,8 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
+setwd("~/Desktop/PhD/borealRecovery")
 source("code/utils.R")
 
 library(duckdb)
 library(tidyverse)
-
-install.packages("cowplot")
-install.packages("scico")
 library(cowplot)
 library(scico)
 

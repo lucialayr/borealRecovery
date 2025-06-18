@@ -1,83 +1,37 @@
-s,rank,labels,names,category,n
-Control,1,0,pr_yearlysum_1,Climate,19
-Control,1,3,tas_gs_dailyavg_1,Climate,3
-Control,1,4,tas_gs_dailyavg_2,Climate,76
-Control,1,5,tas_gs_dailyavg_3,Climate,1
-Control,2,4,tas_gs_dailyavg_2,Climate,18
-Control,2,5,tas_gs_dailyavg_3,Climate,1
-Control,2,6,tas_gs_dailymin_1,Climate,10
-Control,2,7,tas_gs_dailymin_2,Climate,2
-Control,2,9,tas_gs_dailymax_1,Climate,25
-Control,2,11,tas_gs_dailymax_3,Climate,1
-Control,2,12,rsds_gs_dailyavg_1,Climate,28
-Control,2,13,rsds_gs_dailyavg_2,Climate,9
-Control,2,14,rsds_gs_dailyavg_3,Climate,5
-Control,3,12,rsds_gs_dailyavg_1,Climate,1
-Control,3,16,clay_fraction,Soil,1
-Control,3,17,ph_soil,Soil,4
-Control,3,19,silt_fraction,Soil,91
-Control,3,20,soilcarbon,Soil,2
-Control,4,17,ph_soil,Soil,1
-Control,4,21,sum_exp_est_2_10,Initial Recruitment,98
-Control,5,22,sum_anpp_2_10,Initial Recruitment,99
-SSP1-RCP2.6,1,3,tas_gs_dailyavg_1,Climate,15
-SSP1-RCP2.6,1,4,tas_gs_dailyavg_2,Climate,1
-SSP1-RCP2.6,1,5,tas_gs_dailyavg_3,Climate,1
-SSP1-RCP2.6,1,6,tas_gs_dailymin_1,Climate,28
-SSP1-RCP2.6,1,8,tas_gs_dailymin_3,Climate,2
-SSP1-RCP2.6,1,9,tas_gs_dailymax_1,Climate,52
-SSP1-RCP2.6,2,9,tas_gs_dailymax_1,Climate,47
-SSP1-RCP2.6,2,12,rsds_gs_dailyavg_1,Climate,32
-SSP1-RCP2.6,2,13,rsds_gs_dailyavg_2,Climate,10
-SSP1-RCP2.6,2,14,rsds_gs_dailyavg_3,Climate,10
-SSP1-RCP2.6,3,15,bulkdensity_soil,Soil,2
-SSP1-RCP2.6,3,16,clay_fraction,Soil,51
-SSP1-RCP2.6,3,17,ph_soil,Soil,42
-SSP1-RCP2.6,3,20,soilcarbon,Soil,4
-SSP1-RCP2.6,4,21,sum_exp_est_2_10,Initial Recruitment,99
-SSP1-RCP2.6,5,22,sum_anpp_2_10,Initial Recruitment,99
-SSP5-RCP8.5,1,0,pr_yearlysum_1,Climate,77
-SSP5-RCP8.5,1,1,pr_yearlysum_2,Climate,1
-SSP5-RCP8.5,1,2,pr_yearlysum_3,Climate,3
-SSP5-RCP8.5,1,5,tas_gs_dailyavg_3,Climate,3
-SSP5-RCP8.5,1,6,tas_gs_dailymin_1,Climate,10
-SSP5-RCP8.5,1,8,tas_gs_dailymin_3,Climate,1
-SSP5-RCP8.5,1,10,tas_gs_dailymax_2,Climate,1
-SSP5-RCP8.5,1,11,tas_gs_dailymax_3,Climate,3
-SSP5-RCP8.5,2,4,tas_gs_dailyavg_2,Climate,1
-SSP5-RCP8.5,2,5,tas_gs_dailyavg_3,Climate,8
-SSP5-RCP8.5,2,6,tas_gs_dailymin_1,Climate,12
-SSP5-RCP8.5,2,7,tas_gs_dailymin_2,Climate,1
-SSP5-RCP8.5,2,8,tas_gs_dailymin_3,Climate,4
-SSP5-RCP8.5,2,11,tas_gs_dailymax_3,Climate,70
-SSP5-RCP8.5,2,13,rsds_gs_dailyavg_2,Climate,3
-SSP5-RCP8.5,3,11,tas_gs_dailymax_3,Climate,26
-SSP5-RCP8.5,3,12,rsds_gs_dailyavg_1,Climate,7
-SSP5-RCP8.5,3,13,rsds_gs_dailyavg_2,Climate,47
-SSP5-RCP8.5,3,14,rsds_gs_dailyavg_3,Climate,16
-SSP5-RCP8.5,3,18,sand_fraction,Soil,3
-SSP5-RCP8.5,4,21,sum_exp_est_2_10,Initial Recruitment,99
-SSP5-RCP8.5,5,22,sum_anpp_2_10,Initial Recruitment,99
-Control,0,0,pr_yearlysum_1,Climate,NA
-Control,0,1,pr_yearlysum_2,Climate,NA
-Control,0,2,pr_yearlysum_3,Climate,NA
-Control,0,3,tas_gs_dailyavg_1,Climate,NA
-Control,0,4,tas_gs_dailyavg_2,Climate,NA
-Control,0,5,tas_gs_dailyavg_3,Climate,NA
-Control,0,6,tas_gs_dailymin_1,Climate,NA
-Control,0,7,tas_gs_dailymin_2,Climate,NA
-Control,0,8,tas_gs_dailymin_3,Climate,NA
-Control,0,9,tas_gs_dailymax_1,Climate,NA
-Control,0,10,tas_gs_dailymax_2,Climate,NA
-Control,0,11,tas_gs_dailymax_3,Climate,NA
-Control,0,12,rsds_gs_dailyavg_1,Climate,NA
-Control,0,13,rsds_gs_dailyavg_2,Climate,NA
-Control,0,14,rsds_gs_dailyavg_3,Climate,NA
-Control,0,15,bulkdensity_soil,Soil,NA
-Control,0,16,clay_fraction,Soil,NA
-Control,0,17,ph_soil,Soil,NA
-Control,0,18,sand_fraction,Soil,NA
-Control,0,19,silt_fraction,Soil,NA
-Control,0,20,soilcarbon,Soil,NA
-Control,0,21,sum_exp_est_2_10,Initial Recruitment,NA
-Control,0,22,sum_anpp_2_10,Initial Recruitment,NA
+true_labels,s,m,share_mean,share_sd,class
+0,Control,1,0.7086408961408962,0.004033638296944438,Conifer recovery
+0,Control,2,0.8048594923594924,0.005747788345879702,Conifer recovery
+0,Control,3,0.7195755633255633,0.03327707633063912,Conifer recovery
+0,Control,4,0.9126521626521626,0.003193855580454363,Conifer recovery
+0,Control,5,0.8602612665112666,0.003983151649634535,Conifer recovery
+0,Control,6,0.9327246827246828,0.002951697237565356,Conifer recovery
+0,SSP1-RCP2.6,1,0.833090371473176,0.003167456837181889,Conifer recovery
+0,SSP1-RCP2.6,2,0.7746451206021319,0.005241623076097738,Conifer recovery
+0,SSP1-RCP2.6,3,0.8370914880638525,0.001157885600575035,Conifer recovery
+0,SSP1-RCP2.6,4,0.9484507304364008,0.002613436379527256,Conifer recovery
+0,SSP1-RCP2.6,5,0.8512246311632187,0.005467762149797916,Conifer recovery
+0,SSP1-RCP2.6,6,0.948347342410802,0.0029726720376483736,Conifer recovery
+0,SSP5-RCP8.5,1,0.8728765787589317,0.004222570317857118,Conifer recovery
+0,SSP5-RCP8.5,2,0.6153541447659094,0.006871389936564947,Conifer recovery
+0,SSP5-RCP8.5,3,0.8536953242835595,0,Conifer recovery
+0,SSP5-RCP8.5,4,0.9638466109054344,0.0035761308671237355,Conifer recovery
+0,SSP5-RCP8.5,5,0.7254140195316666,0.011873152467844128,Conifer recovery
+0,SSP5-RCP8.5,6,0.9638161402867286,0.0031037890506855474,Conifer recovery
+1,Control,1,0.6674711718959506,0.0071434325965333825,Deciduous transient
+1,Control,2,0.6297360456652492,0.006789510520327232,Deciduous transient
+1,Control,3,0.7154988570917774,5.082365690312047e-4,Deciduous transient
+1,Control,4,0.829483201164617,0.006517431108602884,Deciduous transient
+1,Control,5,0.76007866273353,0.00795588536377502,Deciduous transient
+1,Control,6,0.8631447215518012,0.006358011537488359,Deciduous transient
+1,SSP1-RCP2.6,1,0.8036507017398737,0.003350252027241663,Deciduous transient
+1,SSP1-RCP2.6,2,0.8366742952730214,0.004645829410904282,Deciduous transient
+1,SSP1-RCP2.6,3,0.6598468764073859,0.003141417899164775,Deciduous transient
+1,SSP1-RCP2.6,4,0.9144309335392138,0.0026858212581172226,Deciduous transient
+1,SSP1-RCP2.6,5,0.8874275052619002,0.004265994246788068,Deciduous transient
+1,SSP1-RCP2.6,6,0.9222709350097885,0.0038343043572945917,Deciduous transient
+1,SSP5-RCP8.5,1,0.5936046977713645,0.005041275542427435,Deciduous transient
+1,SSP5-RCP8.5,2,0.8720137886804553,0.004320807767882446,Deciduous transient
+1,SSP5-RCP8.5,3,0.6051587301587301,0,Deciduous transient
+1,SSP5-RCP8.5,4,0.9154641654641654,0.0038219946851657674,Deciduous transient
+1,SSP5-RCP8.5,5,0.9056537598204265,0.004009781667825593,Deciduous transient
+1,SSP5-RCP8.5,6,0.9569404361071028,0.0018474072553323483,Deciduous transient

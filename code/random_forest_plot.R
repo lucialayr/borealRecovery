@@ -1,9 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
+setwd("~/Desktop/PhD/borealRecovery")
 source("code/utils.R")
-
-install.packages("scico")
-install.packages("cowplot")
-install.packages("ggnewscale")
 
 library(tidyverse)
 library(scico)
@@ -34,7 +30,7 @@ theme_set(
 
 random_forest_A_plot = function(timespan) {
   
-  df_predictive_power = read_csv(paste0("data/final/random_forest_B_", timespan, ".csv"))
+  df_predictive_power = read_csv(paste0("data/final/random_forest_A_", timespan, ".csv"))
 
   df_predictive_power$true_labels = factor(df_predictive_power$true_labels, levels = c(1,0))
   df_predictive_power$class = factor(df_predictive_power$class, levels = (c("Conifer recovery", "Deciduous transient")))
@@ -106,13 +102,14 @@ random_forest_B_plot = function(timespan) {
 ###
 
 random_forest_plot = function(timespan) {
-  (p1 = plot_accuracy(timespan = "2015_2040"))
+  (p1 = random_forest_A_plot(timespan))
   
-  (p2 = plot_feature_importance(timespan))
+  (p2 = random_forest_B_plot(timespan))
   
   plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"))
   
   ggsave(paste0("plots/results_rf_", timespan, ".pdf"),  width = 12, scale = 0.95)
+  ggsave(paste0("plots/results_rf_", timespan, ".png"),  width = 12, height = 7, scale = 0.95)
   
 }
 

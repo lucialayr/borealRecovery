@@ -1,11 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
+setwd("~/Desktop/PhD/borealRecovery")
 source("code/utils.R")
-
-install.packages("scico")
-install.packages("cowplot")
-install.packages("ggnewscale")
-install.packages("rnaturalearth")
-install.packages("rnaturalearthdata")
 
 library(tidyverse)
 library(stats)
@@ -146,6 +140,7 @@ maps_regression_plot = function(start_year, end_year) {
             ncol = 2, hjust = 0)
   
   ggsave(paste0("plots/maps_regression_", start_year, "_", end_year ,".pdf"), height = 6.25, width = 10, scale = 1)
+  ggsave(paste0("plots/maps_regression_", start_year, "_", end_year ,".png"), height = 6.25, width = 10, scale = 1, dpi = 300)
   
 }
 
@@ -175,6 +170,7 @@ histograms_length_transient = function() {
     theme(legend.position = c(0.15,0.88))
   
   ggsave("plots/histogram_transient_length.pdf", width = 10, height = 5.5, scale = 1)
+  ggsave("plots/histogram_transient_length.png", width = 10, height = 5.5, scale = 1)
   
   
   
@@ -192,6 +188,7 @@ create_plot_linear = function() {
  plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"), hjust = 0.07)
  
  ggsave("plots/regression_unscaled.pdf", width = 11)
+ ggsave("plots/regression_unscaled.png", width = 11, height = 6.5)
 
 }
 

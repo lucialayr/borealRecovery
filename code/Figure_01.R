@@ -1,9 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
+setwd("~/Desktop/PhD/disturbanceBorealLPJ")
 source("code/utils.R")
-
-
-install.packages("scico")
-install.packages("cowplot")
 
 library(duckdb)
 library(purrr)
