@@ -1,7 +1,7 @@
 setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
 source("code/utils.R")
 
-library(dplyr)
+library(tidyverse)
 library(terra)
 library(sf)
 
@@ -13,6 +13,7 @@ library(cowplot)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(scico)
+
 
 theme_set(
   theme_classic() + 
@@ -116,6 +117,7 @@ validation_plot = function() {
   plot_grid(validation_A, validation_B, labels = c("(a)", "(b)"), rel_widths = c(0.7, 1), align = "hv", axis = "b")
   
   ggsave("plots/recovery_validation.pdf", width = 10)
+  ggsave("plots/recovery_validation.png", width = 10)
   
 }
 

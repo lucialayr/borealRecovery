@@ -85,7 +85,7 @@ Dependcies between plots:
 ## todo
 
 - [ ] Make sure all plots are reproducible from github repo
-  - [ ] Validation (F3): *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [x] Validation (F3)
   - [x] Trajectories + Niche (F4) 
   - [ ] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
   - [x] Random Forest (F6)
