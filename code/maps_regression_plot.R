@@ -147,8 +147,6 @@ maps_regression_plot = function(start_year, end_year) {
 maps_regression_plot(2015, 2040)
 maps_regression_plot(2075, 2100)
 
-
-
 histograms_length_transient = function() {
   
   df1 = read_csv(paste0("data/final/maps_regression_B_patches_2015_2040.csv")) %>%
