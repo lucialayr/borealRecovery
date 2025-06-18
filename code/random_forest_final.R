@@ -134,7 +134,7 @@ random_forest_B_final  = function(timespan) {
       mutate(n = as.numeric(n)) %>%
       full_join(expand_names)
     
-   write_csv(importance_ranking, paste0("data/final/random_forest_A_", timespan, ".csv"))
+   write_csv(importance_ranking, paste0("data/final/random_forest_B_", timespan, ".csv"))
 }
 
 random_forest_A_final("2015_2040")

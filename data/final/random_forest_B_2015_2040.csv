@@ -1,0 +1,77 @@
+s,rank,labels,names,category,n
+Control,1,0,pr_yearlysum_1,Climate,41
+Control,1,1,pr_yearlysum_2,Climate,3
+Control,1,2,pr_yearlysum_3,Climate,17
+Control,1,3,tas_gs_dailyavg_1,Climate,2
+Control,1,4,tas_gs_dailyavg_2,Climate,27
+Control,1,5,tas_gs_dailyavg_3,Climate,9
+Control,2,3,tas_gs_dailyavg_1,Climate,34
+Control,2,4,tas_gs_dailyavg_2,Climate,13
+Control,2,5,tas_gs_dailyavg_3,Climate,14
+Control,2,12,rsds_gs_dailyavg_1,Climate,1
+Control,2,13,rsds_gs_dailyavg_2,Climate,23
+Control,2,14,rsds_gs_dailyavg_3,Climate,14
+Control,3,16,clay_fraction,Soil,5
+Control,3,17,ph_soil,Soil,20
+Control,3,18,sand_fraction,Soil,6
+Control,3,19,silt_fraction,Soil,50
+Control,3,20,soilcarbon,Soil,18
+Control,4,21,sum_exp_est_2_10,Initial Recruitment,99
+Control,5,22,sum_anpp_2_10,Initial Recruitment,99
+SSP1-RCP2.6,1,3,tas_gs_dailyavg_1,Climate,3
+SSP1-RCP2.6,1,6,tas_gs_dailymin_1,Climate,34
+SSP1-RCP2.6,1,7,tas_gs_dailymin_2,Climate,52
+SSP1-RCP2.6,1,8,tas_gs_dailymin_3,Climate,10
+SSP1-RCP2.6,2,7,tas_gs_dailymin_2,Climate,1
+SSP1-RCP2.6,2,9,tas_gs_dailymax_1,Climate,15
+SSP1-RCP2.6,2,10,tas_gs_dailymax_2,Climate,83
+SSP1-RCP2.6,3,15,bulkdensity_soil,Soil,94
+SSP1-RCP2.6,3,16,clay_fraction,Soil,1
+SSP1-RCP2.6,3,17,ph_soil,Soil,1
+SSP1-RCP2.6,3,18,sand_fraction,Soil,3
+SSP1-RCP2.6,4,21,sum_exp_est_2_10,Initial Recruitment,99
+SSP1-RCP2.6,5,22,sum_anpp_2_10,Initial Recruitment,99
+SSP5-RCP8.5,1,4,tas_gs_dailyavg_2,Climate,20
+SSP5-RCP8.5,1,6,tas_gs_dailymin_1,Climate,4
+SSP5-RCP8.5,1,7,tas_gs_dailymin_2,Climate,5
+SSP5-RCP8.5,1,8,tas_gs_dailymin_3,Climate,70
+SSP5-RCP8.5,2,8,tas_gs_dailymin_3,Climate,28
+SSP5-RCP8.5,2,9,tas_gs_dailymax_1,Climate,70
+SSP5-RCP8.5,2,10,tas_gs_dailymax_2,Climate,1
+SSP5-RCP8.5,3,9,tas_gs_dailymax_1,Climate,28
+SSP5-RCP8.5,3,11,tas_gs_dailymax_3,Climate,7
+SSP5-RCP8.5,3,12,rsds_gs_dailyavg_1,Climate,50
+SSP5-RCP8.5,3,13,rsds_gs_dailyavg_2,Climate,1
+SSP5-RCP8.5,3,14,rsds_gs_dailyavg_3,Climate,10
+SSP5-RCP8.5,3,16,clay_fraction,Soil,2
+SSP5-RCP8.5,3,17,ph_soil,Soil,1
+SSP5-RCP8.5,4,15,bulkdensity_soil,Soil,1
+SSP5-RCP8.5,4,16,clay_fraction,Soil,29
+SSP5-RCP8.5,4,18,sand_fraction,Soil,63
+SSP5-RCP8.5,4,19,silt_fraction,Soil,2
+SSP5-RCP8.5,4,20,soilcarbon,Soil,1
+SSP5-RCP8.5,4,21,sum_exp_est_2_10,Initial Recruitment,3
+SSP5-RCP8.5,5,22,sum_anpp_2_10,Initial Recruitment,99
+Control,0,0,pr_yearlysum_1,Climate,NA
+Control,0,1,pr_yearlysum_2,Climate,NA
+Control,0,2,pr_yearlysum_3,Climate,NA
+Control,0,3,tas_gs_dailyavg_1,Climate,NA
+Control,0,4,tas_gs_dailyavg_2,Climate,NA
+Control,0,5,tas_gs_dailyavg_3,Climate,NA
+Control,0,6,tas_gs_dailymin_1,Climate,NA
+Control,0,7,tas_gs_dailymin_2,Climate,NA
+Control,0,8,tas_gs_dailymin_3,Climate,NA
+Control,0,9,tas_gs_dailymax_1,Climate,NA
+Control,0,10,tas_gs_dailymax_2,Climate,NA
+Control,0,11,tas_gs_dailymax_3,Climate,NA
+Control,0,12,rsds_gs_dailyavg_1,Climate,NA
+Control,0,13,rsds_gs_dailyavg_2,Climate,NA
+Control,0,14,rsds_gs_dailyavg_3,Climate,NA
+Control,0,15,bulkdensity_soil,Soil,NA
+Control,0,16,clay_fraction,Soil,NA
+Control,0,17,ph_soil,Soil,NA
+Control,0,18,sand_fraction,Soil,NA
+Control,0,19,silt_fraction,Soil,NA
+Control,0,20,soilcarbon,Soil,NA
+Control,0,21,sum_exp_est_2_10,Initial Recruitment,NA
+Control,0,22,sum_anpp_2_10,Initial Recruitment,NA
