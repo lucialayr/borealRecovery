@@ -1,6 +1,15 @@
-data
-data*
+data/ssp*
+data/covariates
+data/picontrol*
+data/results
+data/single_pftgit 
+data/raw/*
 code_theresa
+data_theresa
+data_mohit
+data_theresa.sh
+code/old_code
+plots
 *duckdb*
 *.png
 *.tex
