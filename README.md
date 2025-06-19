@@ -12,7 +12,7 @@ This analysis was performed on an RStudioCloud using R Version 4.4.1 (2024-06-14
 
 #### (Create the duckdb database)
 
-Not neccesary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
+Not necessary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
 
 ### Create data
 
@@ -85,4 +85,24 @@ Run the `*_final.R` scripts to reproduce the final data underlying the plots The
 
 ## R packages used
 
+
 `rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3)               `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)      `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)  `splines` 
+
+
+## todo
+
+- [ ] Make sure all plots are reproducible from github repo
+  - [x] Validation (F3)
+  - [x] Trajectories + Niche (F4) 
+  - [x] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [x] Random Forest (F6)
+- [ ] Make sure all final data is reproducible from zenodo database
+  - [ ] Validation (F3): *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [ ] Trajectories + Niche (F4) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [ ] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [ ] Random Forest (F6) *needs `data/random_forest`*
+- [ ] Random forest model
+  - [ ] Expand on documentation
+  - [ ] Link to Mohit's code
+- [ ] Document dependencies between scripts
+

@@ -1,6 +1,8 @@
 setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
 source("code/utils.R")
 
+install.packages("duckdb", version = "1.0.0")
+
 library(duckdb)
 library(tidyverse)
 library(terra)
@@ -9,7 +11,7 @@ library(zoo)
 
 agc_cabon_processed = function(scenario, start_year, end_year) {
   
-  con = dbConnect(duckdb(), dbdir = "patches2.duckdb", read_only = FALSE) #create the database
+  con = dbConnect(duckdb(), dbdir = "patches2.duckdb", read_only = FALSE) 
   dbListTables(con)
   
   # get unique identifier of all patches disturbed between `start_year` and `end_year`
