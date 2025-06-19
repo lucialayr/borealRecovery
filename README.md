@@ -14,29 +14,35 @@ This analysis was performed on an RStudioCloud using R Version 4.4.1 (2024-06-14
 
 Not neccesary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
 
-### Create trajectory data
+### Create data
+
+First run all `*_processed.R* scripts to process data from the data base. There are three files:
+
+#### 1. `composition_trajectories_processed.R`
 
 Creates 100 year recovery trajectories for the three scenarios (*Control*, *SSP1-RCP2.6*, *SSP5-RCP8.5*) and two time periods (*2015 - 2040*, *2075 - 2100*). This will be the base data for most figures. For every combination, this script produces three datasets:
 
-**1.** Timeseries data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_timeseries_rf.csv`
+1. Timeseries data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_timeseries_rf.csv`
 
-**2.** Point data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_pointvalues_rf.csv`
+2. Point data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_pointvalues_rf.csv`
 
-**3.** Input data for random forest: `data/random_forest/data_`, scenario, `_`, start_year, `_`, end_year, `.csv`
+3. Input data for random forest: `data/random_forest/data_`, scenario, `_`, start_year, `_`, end_year, `.csv`
 
-Dataset **3.** contains all data of **1.** and **2.** as well as environmental covariates used for random forest analysis. This dataset is large and difficult to handle and will not be used except for the random forest analysis.
+Dataset 3. contains all data of 1. and 2. as well as environmental covariates used for random forest analysis. This dataset is large and difficult to handle and will not be used except for the random forest analysis.
+
+#### 2. `agc_trajectories_processed.R`
+
+Creates 100 year recovery trajectories of aboveground carbon
+
+#### 3. `classified_trajectories_processed.R`
+
+Takes trajectories created with `composition_trajectories_processed.R` and classifies them according to methodology of the paper.
 
 
 ### Create random forest model
 
 ### Create plots
-
-The data underlying plots is found in `data/final`. Each subplot gets its own dataset. Plots have descriptive names, since the numbering is not the same in the paper and the thesis. Script `*_processed_final.R` will produce data. Scripts `*_final_plot.R` will create plots. 
-
-Dependcies between plots:
-
-
-
+Run the `*_final.R` scripts to reproduce the final data underlying the plots Then run the `*_plot.R` scripts to recreate all figures. Plots have descriptive names, since the numbering is not the same in the paper and the thesis.
 
 ## Folder structure
 
@@ -50,7 +56,7 @@ Dependcies between plots:
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└──  `util.R`&#x1F4C4; *various helper functions for plotting*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_subset_processed.R`&#x1F4C4; *creates processed data from subset*
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_processed.R`&#x1F4C4; *creates processed data from database*
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_processed_final.R`&#x1F4C4; *creates final data from processed*
 
@@ -79,4 +85,4 @@ Dependcies between plots:
 
 ## R packages used
 
-`rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3)               `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)      `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)   
+`rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3)               `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)      `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)  `splines` 

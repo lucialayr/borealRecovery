@@ -99,7 +99,6 @@ random_forest_B_final  = function(timespan) {
           separate_rows(Codes, sep = ", ") %>%  
           rename(labels = Codes) %>%  
           mutate(labels = as.numeric(labels),
-                 rank = row_number(),
                  s = long_names_scenarios(s),
                  i = i) %>%
           left_join(feature_names)
@@ -121,18 +120,19 @@ random_forest_B_final  = function(timespan) {
                               category = c(rep("Climate", 3*5),
                                            rep("Soil", 6),
                                            rep("Initial Recruitment", 2))) %>%
-      mutate(labels = row_number() - 1,
-             s = long_names_scenarios("picontrol"),
-             rank = 0)
+      mutate(labels = row_number() - 1)
     
     
     importance_feature = purrr::reduce(data, bind_rows) 
     
     importance_ranking = importance_feature %>%
-      group_by(s, rank, labels, names, category) %>%
+      group_by(s, labels, names, category) %>%
       count(.drop = FALSE) %>%
       mutate(n = as.numeric(n)) %>%
-      full_join(expand_names)
+      full_join(expand_names) %>%
+      group_by(s) %>%
+      mutate(top_five = ifelse(n %in% sort(n, decreasing = TRUE)[1:5], 1, 0.25)) %>%
+      ungroup()
     
    write_csv(importance_ranking, paste0("data/final/random_forest_B_", timespan, ".csv"))
 }

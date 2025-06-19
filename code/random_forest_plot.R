@@ -61,7 +61,7 @@ random_forest_A_plot = function(timespan) {
 
 random_forest_B_plot = function(timespan) {
 
-  importance_ranking = read_csv(paste0("data/final/random_forest_B_", timespan, ".csv"))
+  importance_ranking = read_csv(paste0("data/final/random_forest_B_", timespan, ".csv")) 
   
   importance_ranking$names = factor(importance_ranking$names, levels = rev(c("pr_yearlysum_1", "pr_yearlysum_2", "pr_yearlysum_3",
                                                                              "tas_gs_dailyavg_1", "tas_gs_dailyavg_2", "tas_gs_dailyavg_3",
@@ -71,7 +71,7 @@ random_forest_B_plot = function(timespan) {
                                                                              'bulkdensity_soil', 'clay_fraction', 'ph_soil', 'sand_fraction', 'silt_fraction', 'soilcarbon', 
                                                                              'sum_exp_est_2_10', 'sum_anpp_2_10')))
   
-  (p2 = ggplot() +
+   (p2 = ggplot() +
       coord_flip() +
       geom_vline(xintercept = "pr_yearlysum_1", color = "grey50", linewidth = 0.5) +
       geom_vline(xintercept = "tas_gs_dailyavg_1", color = "grey50", linewidth = 0.5) +
@@ -81,22 +81,25 @@ random_forest_B_plot = function(timespan) {
       geom_vline(xintercept = 'bulkdensity_soil', color = "grey50", linewidth = 0.5) +
       geom_vline(xintercept = 'sum_exp_est_2_10', color = "grey50", linewidth = 0.5) +
       facet_wrap(~s, ncol = 3) +
-      geom_line(data  = importance_ranking, aes(x = names, y = rank, group = rank), color = "black") +
-      geom_point(data  = importance_ranking, aes(x = names, y = rank, fill = category, size = n), shape = 21, color = "black") +
+      geom_line(data  = importance_ranking, aes(x = names, y = 1, group = s), color = "black") +
+      geom_point(data  = importance_ranking, aes(x = names, y = 1, fill = category, size = n, alpha = top_five), shape = 21, color = "black") +
       scale_color_scico_d(name = "Category", palette = "navia", begin = .4, end = .9) +
       scale_fill_scico_d(name = "Category", palette = "navia", begin = .4, end = .9) +
-      scale_size_continuous(name = "Number of iterations", breaks = c(1, 50, 100), range = c(1, 7)) +
+      scale_size_continuous(name = "Number of iterations", breaks = c(1, 50, 100), labels = c(1, 50, 100), limits = c(1,100),
+                            range = c(1, 7)) +
       scale_x_discrete(name = "Feature variables", labels =  rev(c(expression(P["0-33"]), expression(P["34-66"]), expression(P["67-99"]), 
                                                                    expression(T[G~"0-33"]), expression(T[G~"34-66"]), expression(T[G~"67-99"]),
                                                                    expression(T[G^"min"~"0-33"]), expression(T[G^"min"~"34-66"]), expression(T[G^"min"~"67-99"]), 
                                                                    expression(T[G^"max"~"0-33"]), expression(T[G^"max"~"34-66"]), expression(T[G^"max"~"67-99"]), 
                                                                    expression(R["0-33"]), expression(R["34-66"]), expression(R["67-99"]), 
                                                                    expression(rho[S]), expression(chi[sl]), expression(chi[sn]), expression(chi[c]), "pH", expression(C[S]),
-                                                                   expression(lambda[i]), expression(NPP))),
+                                                                   expression(lambda['10']), expression(NPP['10']))),
                        expand = c(0.04, 0.04)) +
-      scale_y_continuous(name = "Importance rank", expand = c(0.1, 0.1), limits = c(1, 5)) +
+      scale_y_discrete(expand = c(0.1, 0.1)) +
+      scale_alpha(range = c(0.25, 1), guide = "none") +
       theme(legend.position = "bottom",
-            legend.direction = "vertical") +
+            legend.direction = "vertical",
+            axis.title.x = element_blank()) +
       guides(fill = guide_legend(override.aes = list(size = 4))))
   
   return(p2)
@@ -112,7 +115,8 @@ random_forest_plot = function(timespan) {
   
   plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"))
   
-  ggsave(paste0("plots/results_rf_", timespan, ".pdf"),  width = 12, scale = 0.95)
+  ggsave(paste0("plots/results_rf_", timespan, ".pdf"),  width = 12, height = 6.75, scale = 0.95)
+  ggsave(paste0("plots/results_rf_", timespan, ".png"),  width = 12, height = 6.75, scale = 0.95)
   
 }
 

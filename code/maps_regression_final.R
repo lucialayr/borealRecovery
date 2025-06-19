@@ -36,12 +36,6 @@ classify_trajectories = function(s, start_year, end_year) {
     filter(sum(cmass) > 0) %>%
     ungroup()
   
-  test = read_csv(paste0("data/processed/trajectories_", s, "_", start_year, "_", end_year, "_timeseries_rf.csv"))
-  
-  test_filter = test %>%
-    group_by(Lon, Lat, PID, year_disturbance) %>%
-    filter(age == max(age))
-  
   df_c1 = df_dominant %>%
     filter(age %in% seq(90, 100) & dominant_pft == "BNE") %>%
     group_by(Lon, Lat, PID) %>%

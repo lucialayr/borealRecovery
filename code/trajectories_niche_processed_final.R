@@ -19,7 +19,6 @@ library(ggnewscale)
 library(rnaturalearth)
 library(rnaturalearthdata)
 
-
 get_single_pfts_scenario = function(s) {
   
   data = list()
@@ -68,7 +67,7 @@ final_trajectories_niche_B = function() {
   for (s in c("picontrol", "ssp126", "ssp585")) {
     for (p in c("IBS")) {
       
-      df = read.table(paste0("data/", s, "_d150/cmass.out"), header = T) %>%
+      df = read.table(paste0("data/raw/multi_pft/", s, "_d150/cmass.out"), header = T) %>%
         filter(Year == 2100) %>%
         dplyr::select(all_of(c("Lon", "Lat", p, "Total"))) %>%
         mutate(relative = !!rlang::sym(p)/ Total) %>%
@@ -153,7 +152,7 @@ final_trajectories_niche_A = function(start_year, end_year) {
   df_trajectories = df %>%
     semi_join(sampled_ids, by = c("Lon", "Lat", "PID"))
   
-  df_class = read_csv(paste0("data/results/classes_100years_", start_year, "_", end_year, ".csv")) %>%
+  df_class = read_csv(paste0("data/raw/random_forest/classes_100years_", start_year, "_", end_year, ".csv")) %>%
     dplyr::select(Lon, Lat, PID, class)
   
   df_cmass = purrr::reduce(data_carbon, bind_rows) %>%

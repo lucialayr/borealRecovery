@@ -38,10 +38,9 @@ bin_data_for_plot = function(df, variable) {
   return(df_binned)
 }
 
-
 validation_final = function() {
   # we first get the LPJ-GUESS output grid as a raster
-  lpjguess_grid = read_table("data/picontrol_d150/cmass.out", show_col_types = F) %>%
+  lpjguess_grid = read_table("data/multi_pft/picontrol_d150/cmass.out", show_col_types = F) %>%
     filter(Year == 2000) %>%
     terra::rast(crs = "EPSG:4326") #produce a raster in lpjguess resolution
   
@@ -75,7 +74,7 @@ validation_final = function() {
     st_intersection(above_shp) %>%
     dplyr::select(NA_L2NAME)
   
-  lpjguess_grid = read_table("data/picontrol_d150/cmass.out", show_col_types = F) %>%
+  lpjguess_grid = read_table("data/raw/multi_pft/picontrol_d150/cmass.out", show_col_types = F) %>%
     filter(Year == 2000) %>%
     dplyr::select(Lon, Lat, Total) %>%
     terra::rast(crs = "EPSG:4326") %>% 
