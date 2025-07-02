@@ -10,29 +10,6 @@ library(rnaturalearthdata)
 library(scico)
 
 
-theme_set(
-  theme_classic() + 
-    theme(
-      axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      plot.title = element_text(color = "black", size = 15),
-      plot.subtitle = element_text(color = "black", size = 15),
-      plot.caption = element_text(color = "black", size = 15),
-      strip.text = element_text(color = "black", size = 15),
-      legend.text = element_text(color = "black", size = 15),
-      legend.title = element_text(color = "black", size = 15),
-      axis.line = element_line(color = "black"),
-      panel.grid.major.y = element_line(color = "grey80", linewidth = 0.25),
-      legend.background = element_rect(fill='transparent', color = NA),
-      legend.box.background = element_rect(fill='transparent', color = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),  
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_rect(fill = "transparent", color = NA)
-    )
-)
-
-
-
 validation_A_plot = function() {
   
   shp = st_read("data/final/shp/validation_A.shp")
@@ -79,7 +56,7 @@ validation_B_plot = function() {
   (p2 = ggplot() +
       coord_cartesian(clip = "off") +
       facet_wrap(~ecoregion, ncol = 2) +
-      geom_line(data = df, aes( x = age_bin, y = value, group = interaction(age_bin, ecoregion,PFT)), linewidth = .25, color = "black") + 
+      geom_line(data = df, aes( x = age_bin, y = value, group = interaction(age_bin, ecoregion, PFT)), linewidth = .25, color = "black") + 
       geom_point(data = df, aes(x = age_bin, y = value, fill = PFT, shape = dataset), size = 3, color = "black") +  # Adding color for outline
       scale_x_discrete(name = "Year since disturbance") +
       scale_y_continuous(name = "Relative share of vegetation cover", 

@@ -1,7 +1,7 @@
 setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
 source("code/utils.R")
 
-library(dplyr)
+library(tidyverse)
 library(terra)
 library(sf)
 
@@ -38,42 +38,26 @@ bin_data_for_plot = function(df, variable) {
   return(df_binned)
 }
 
-validation_final = function() {
-  # we first get the LPJ-GUESS output grid as a raster
-  lpjguess_grid = read_table("data/multi_pft/picontrol_d150/cmass.out", show_col_types = F) %>%
-    filter(Year == 2000) %>%
-    terra::rast(crs = "EPSG:4326") #produce a raster in lpjguess resolution
+validation_intersect_datasets = function() {
   
-  # we take the ABoVE extent raster and reproject and resample it to match the LPJ-GUESS output
-  above = terra::rast("data/external/ABoVE_Study_Domain.tif") %>% #get above domain, project, resample to lpjguess resolution and get coordinates
-    terra::project("EPSG:4326") %>%
-    terra::resample(lpjguess_grid, method = "near") %>%
-    terra::as.data.frame(xy = T) %>% #export grid as data fram
-    mutate(ABoVE_Study_Domain = if_else(ABoVE_Study_Domain > 1, 2, 1)) %>% #clean up some smearing of values
-    rename(Lon = x, Lat = y) %>%
-    filter(ABoVE_Study_Domain == 1) # filter for ABoVE core domain
-  
-  ###next we want to divide LPJ output into the different eocregions
+  #ecoregions we can to divide by
   ecoregion_ii = st_read("data/external/NA_CEC_Eco_Level2.shp") %>%
+    select(NA_L2NAME) %>%
+    filter(NA_L2NAME %in% c("ALASKA BOREAL INTERIOR", "TAIGA CORDILLERA",
+                            "TAIGA PLAIN", "TAIGA SHIELD", 
+                            "BOREAL CORDILLERA", "BOREAL PLAIN")) %>%
     sf::st_transform(crs = "EPSG:4326") %>%
-    sf::st_make_valid()
+    sf::st_make_valid() 
   
+  #Studyregion of observational data
   above_shp = terra::rast("data/external/ABoVE_Study_Domain.tif") %>% #get above domain, project, resample to lpjguess resolution and get coordinates
     terra::project("EPSG:4326") %>%
     terra::as.polygons() %>%
     sf::st_as_sf() %>%
-    filter(ABoVE_Study_Domain == 1)
+    filter(ABoVE_Study_Domain == 1) %>%
+    st_intersection(ecoregion_ii) 
   
-  lpj_shp = lpjguess_grid %>%
-    terra::as.polygons() %>%
-    st_as_sf() %>%
-    st_geometry() %>%
-    sf::st_transform(crs = "EPSG:4326") %>%
-    st_make_valid() %>%
-    st_intersection(ecoregion_ii, .) %>%
-    st_intersection(above_shp) %>%
-    dplyr::select(NA_L2NAME)
-  
+  #LPJ-GUESS Grid
   lpjguess_grid = read_table("data/raw/multi_pft/picontrol_d150/cmass.out", show_col_types = F) %>%
     filter(Year == 2000) %>%
     dplyr::select(Lon, Lat, Total) %>%
@@ -81,40 +65,41 @@ validation_final = function() {
     terra::as.polygons(aggregate = F) %>%
     st_as_sf() %>%
     st_make_valid() %>%
-    sf::st_join(lpj_shp) %>%
-    filter(!is.na(NA_L2NAME))
+    st_join(above_shp) %>%
+    filter(!is.na(NA_L2NAME)) %>%
+    select(NA_L2NAME) %>%
+    rename(ecoregion = NA_L2NAME) %>%
+    mutate(ecoregion = str_to_title(ecoregion))
   
   lpjguess_ecoregion = lpjguess_grid %>%
-    rename(ecoregion = NA_L2NAME) %>%
     mutate(Lon = round(st_coordinates(st_centroid(geometry))[, 1], 2),
            Lat = round(st_coordinates(st_centroid(geometry))[, 2], 2)) %>%
     as.data.frame() %>%
-    dplyr::select(-geometry, -Total) %>%
+    dplyr::select(-geometry) %>%
     distinct(Lon, Lat, .keep_all = TRUE) #keep only first ecoregion (not ideal but only thing that works for now)
   
   # save because we need those for Chapter 3
   st_write(lpjguess_grid, "data/processed/above_ecoregion_lpjguess_grid.shp", delete_dsn = T)
   write_csv(lpjguess_ecoregion, "data/processed/above_ecoregion_lpjguess_grid.csv")
   
+  return(lpjguess_grid)
   
-  ### Study region and ecoregions
+}
+validation_final_A = function() {
   
-  lpjguess_ecoregion_shp = lpjguess_grid %>%
-    dplyr::select(NA_L2NAME) %>%
-    rename(ecoregion = NA_L2NAME) %>%
-    filter(ecoregion %in% c("ALASKA BOREAL INTERIOR", "TAIGA CORDILLERA",
-                            "TAIGA PLAIN", "TAIGA SHIELD", 
-                            "BOREAL CORDILLERA", "BOREAL PLAIN")) %>%
-    mutate(ecoregion = str_to_title(ecoregion)) %>%
+  shp = validation_intersect_datasets() %>%
     group_by(ecoregion) %>%
-    summarize(geometry = st_union(geometry)) %>%
-    ungroup() %>%
-    sf::st_transform(crs = 3408)
+    summarize() 
+
+  st_write(shp, "data/final/shp/validation_A.shp", delete_dsn = T)
+}
+validation_final_A()
+
+validation_final_B = function() {
   
+  lpjguess_ecoregion = read_csv("data/processed/above_ecoregion_lpjguess_grid.csv")
   
-  st_write(lpjguess_ecoregion_shp, "data/final/shp/validation_A.shp", delete_dsn = T)
-  
-  ##this uses an old dataset for fpc -> leave for now, do not delete. was creates with script figure_3.
+  ##Function to create this file is now executed in `trajectories_database_processed.R`
   fpc_lpjguess = read_csv("data/processed/trajectories_picontrol_2015_2040_fpc_200.csv")  %>%
     inner_join(lpjguess_ecoregion) %>% #crop to ecoregions 
     filter(!is.na(age)) %>% #filter for locations that are in ABoVE but not in model ouput
@@ -129,14 +114,13 @@ validation_final = function() {
     summarize(fpc = mean(fpc)) %>%
     bin_data_for_plot("fpc") %>%
     filter(PFT != "Non-Vegetated",
-           ecoregion %in% c("ALASKA BOREAL INTERIOR", "TAIGA CORDILLERA",
+           ecoregion %in% str_to_title(c("ALASKA BOREAL INTERIOR", "TAIGA CORDILLERA",
                             "TAIGA PLAIN", "TAIGA SHIELD", 
-                            "BOREAL CORDILLERA", "BOREAL PLAIN")) %>%
+                            "BOREAL CORDILLERA", "BOREAL PLAIN"))) %>%
     group_by(ecoregion, age_bin) %>%
     mutate(value = variable/sum(variable),
            dataset = "LPJ-GUESS") %>%
     dplyr::select(PFT, age_bin, ecoregion, value, dataset)
-  
   
   fpc_observations = read_csv("data/external/ecoreg_lctraj2.csv") %>%
     mutate(Shrubs = Shrubs + Herb_Sparse,
@@ -163,11 +147,6 @@ validation_final = function() {
     mutate(ecoregion = str_to_title(ecoregion))
   
   write_csv(df, "data/final/validation_B.csv")
-  
-  
 }
-
-validation_final()
-
-
+validation_final_B()
 

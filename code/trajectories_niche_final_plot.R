@@ -13,29 +13,6 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 
 
-theme_set(
-  theme_classic() + 
-    theme(
-      axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      plot.title = element_text(color = "black", size = 15),
-      plot.subtitle = element_text(color = "black", size = 15),
-      plot.caption = element_text(color = "black", size = 15),
-      strip.text = element_text(color = "black", size = 15),
-      legend.text = element_text(color = "black", size = 15),
-      legend.title = element_text(color = "black", size = 15),
-      axis.line = element_line(color = "black"),
-      panel.grid.major.y = element_line(color = "grey80", linewidth = 0.25),
-      legend.background = element_rect(fill='transparent', color = NA),
-      legend.box.background = element_rect(fill='transparent', color = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),  
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_rect(fill = "transparent", color = NA)
-    )
-)
-
-
-
 plot_trajectories_niche_B = function() {
   
   shp = st_read("data/final/shp/trajectories_niche_B.shp")

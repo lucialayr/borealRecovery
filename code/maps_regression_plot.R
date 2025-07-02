@@ -11,26 +11,6 @@ library(ggnewscale)
 library(rnaturalearth)
 library(rnaturalearthdata)
 
-theme_set(
-  theme_classic() + 
-    theme(
-      axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      plot.title = element_text(color = "black", size = 15),
-      plot.subtitle = element_text(color = "black", size = 15),
-      plot.caption = element_text(color = "black", size = 15),
-      strip.text = element_text(color = "black", size = 15),
-      legend.text = element_text(color = "black", size = 15),
-      legend.title = element_text(color = "black", size = 15),
-      axis.line = element_line(color = "black"),
-      panel.grid.major.y = element_line(color = "grey80", linewidth = 0.25),
-      legend.background = element_rect(fill='transparent', color = NA),
-      legend.box.background = element_rect(fill='transparent', color = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),  
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_rect(fill = "transparent", color = NA)
-    )
-)
 
 
 maps_regression_A_plot = function(start_year, end_year) {
@@ -147,47 +127,3 @@ maps_regression_plot = function(start_year, end_year) {
 maps_regression_plot(2015, 2040)
 maps_regression_plot(2075, 2100)
 
-histograms_length_transient = function() {
-  
-  df1 = read_csv(paste0("data/final/maps_regression_B_patches_2015_2040.csv")) %>%
-    mutate(type = "Transient climate")
-  
-  df2 = read_csv(paste0("data/final/maps_regression_B_patches_2075_2100.csv")) %>%
-    mutate(type = "Equilibrium climate")
-  
-  df = bind_rows(df2, df1) 
-  
-  df$type = factor(df$type, levels = c("Transient climate", "Equilibrium climate"))
-  
-  ggplot() + 
-    geom_histogram(data = df[df$length_transient != 0,], aes(x = length_transient, fill = s), color = "black", linewidth = .25, binwidth = 1) +
-    scico::scale_fill_scico_d(palette = "lajolla", begin = .2, end = .8, name = "Scenario", direction = -1) +
-    facet_wrap(~type, ncol = 1, scales = "free_y") +
-    scale_x_continuous(expand = c(0,0), name = "Length of deciduous transient in years", breaks = c(10, 30, 60, 90)) +
-    scale_y_continuous(expand = c(0,0), name = "Frequency") +
-    theme(legend.position = c(0.15,0.88))
-  
-  ggsave("plots/histogram_transient_length.pdf", width = 10, height = 5.5, scale = 1)
-  ggsave("plots/histogram_transient_length.png", width = 10, height = 5.5, scale = 1)
-  
-  
-  
-}
-histograms_length_transient()
-
-create_plot_linear = function() {
-  
- p1 = maps_regression_B_plot_linear(2015, 2040) + 
-   scale_y_continuous(name = "Length of deciduous transient in years", expand = c(0,0), breaks = c(0, 10, 50, 100), labels = c(0, 10, 50, 100), limits = c(0, 100))
- 
- p2 = maps_regression_B_plot_linear(2075, 2100) + 
-   scale_y_continuous(name = "Length of deciduous transient in years", expand = c(0,0), breaks = c(0, 10, 50, 100), labels = c(0, 10, 50, 100), limits = c(0, 100))
- 
- plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"), hjust = 0.07)
- 
- ggsave("plots/regression_unscaled.pdf", width = 11)
- ggsave("plots/regression_unscaled.png", width = 11, height = 6.5)
-
-}
-
-create_plot_linear()

@@ -7,28 +7,6 @@ library(cowplot)
 library(scico)
 
 
-
-theme_set(
-  theme_classic() + 
-    theme(
-      axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      plot.title = element_text(color = "black", size = 15),
-      plot.subtitle = element_text(color = "black", size = 15),
-      plot.caption = element_text(color = "black", size = 15),
-      strip.text = element_text(color = "black", size = 15),
-      legend.text = element_text(color = "black", size = 15),
-      legend.title = element_text(color = "black", size = 15),
-      axis.line = element_line(color = "black"),
-      panel.grid.major.y = element_line(color = "grey80", linewidth = 0.25),
-      legend.background = element_rect(fill='transparent', color = NA),
-      legend.box.background = element_rect(fill='transparent', color = NA),
-      panel.background = element_rect(fill = "transparent", colour = NA),  
-      plot.background = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_rect(fill = "transparent", color = NA)
-    )
-)
-
 long_term_recovery_A_plot = function() {
   
   df = read_csv("data/final/long_term_recovery_A_final.csv")

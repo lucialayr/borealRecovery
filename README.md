@@ -1,50 +1,39 @@
 # Post-disturbance recovery drives 21st-century vegetation shifts in the boreal forest in a dynamic vegetation model
 
-This repository contains code and data needed to reproduce the data analysis and figures of the paper *Post-disturbance recovery drives 21st-century vegetation shifts in the boreal forest in a dynamic vegetation model* by Layritz et al., currently under review at *Global Change Biology*.
+This repository contains code and data needed to reproduce the data analysis and figures of the paper *Post-disturbance recovery drives 21st-century vegetation shifts in the boreal forest in a dynamic vegetation model* by Layritz et al., currently submitted to *Biogeosciences*
 
+Per default, this repository only contains the data that directly feeds into the plots. To reproduce upstream analyses and appendix plots, the original database needs to be downloaded from https://doi.org/10.5281/zenodo.13731857. 
 
-Per default, this repository only contains the data that directly feeds into the plots. To reproduce upstream analyses, the original database needs to be downloaded from  https://doi.org/10.5281/zenodo.13731857. 
+## The general workflow
 
+This will describe the workflow to reproduce all findings bottom up
 
-## Reproducing the analysis
+### Reproducing figures
 
-This analysis was performed on an RStudioCloud using R Version 4.4.1 (2024-06-14) running under Ubuntu 22.04.3. See below for packages and version. 
+The data underlying all figures of the main article can be found in `data/final`. The scripts to create the figures can be found in `code/*.plot.R`
 
-#### (Create the duckdb database)
+### Reproducing data analysis
 
-Not necessary per default, just download the database from zenodo. The script to do so are attached. If you want to reproduce, please contact me for the original data. (If you're me: Original data is on hard drive <3)
+To reproduce the data analysis, raw data files need to be downloaded from Zenodo (https://doi.org/10.5281/zenodo.13731857)
+- Patch level LPJ-GUESS output stored in a duckdb database (*lives in root directory*)
+- Other raw data (*lives in `data/raw`*)
+  - Grid cell level LPJ-GUESS output 
+  - Climate data used to force LPJ-GUESS and for statistical analyses (*lives in `data/raw`*)
+- Input and Output of random forest model (*lives in `data/random_forest`*)
 
-### Create data
+This involves running the script family `2*.R` in order and then the `*_final.R` script for the plot of interest. (I tried to optimize this but unfortunately can't promise it will run on your machine.) 
 
-First run all `*_processed.R* scripts to process data from the data base. There are three files:
+### Recreating the duckdb database
 
-#### 1. `composition_trajectories_processed.R`
+The script to do so is `01_create_database.R`. If you want to reproduce, please contact me for the original data. (If you're future me: Original data is on hard drive <3)
 
-Creates 100 year recovery trajectories for the three scenarios (*Control*, *SSP1-RCP2.6*, *SSP5-RCP8.5*) and two time periods (*2015 - 2040*, *2075 - 2100*). This will be the base data for most figures. For every combination, this script produces three datasets:
+### Reproducing the random forest model
 
-1. Timeseries data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_timeseries_rf.csv`
-
-2. Point data: `data/processed/trajectories_`, scenario, `_`, start_year, `_`, end_year, `_pointvalues_rf.csv`
-
-3. Input data for random forest: `data/random_forest/data_`, scenario, `_`, start_year, `_`, end_year, `.csv`
-
-Dataset 3. contains all data of 1. and 2. as well as environmental covariates used for random forest analysis. This dataset is large and difficult to handle and will not be used except for the random forest analysis.
-
-#### 2. `agc_trajectories_processed.R`
-
-Creates 100 year recovery trajectories of aboveground carbon
-
-#### 3. `classified_trajectories_processed.R`
-
-Takes trajectories created with `composition_trajectories_processed.R` and classifies them according to methodology of the paper.
-
-
-### Create random forest model
-
-### Create plots
-Run the `*_final.R` scripts to reproduce the final data underlying the plots Then run the `*_plot.R` scripts to recreate all figures. Plots have descriptive names, since the numbering is not the same in the paper and the thesis.
+The code lies in `code/python`. `01_Prepare_data.ipynb` creates zarr files. `02_Run_models_parallel.py` runs model. `template_start_rf.sbatch` starts all models on the cluster.
 
 ## Folder structure
+
+Note that some data is not contained in the repository. The tree indicates where they need to live after downloading to make the worklow run through. Working directory needs to be adjusted. 
 
 ├── **code** &#x1F4C1;
 
@@ -52,41 +41,44 @@ Run the `*_final.R` scripts to reproduce the final data underlying the plots The
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└──  `01_Create_database.R`&#x1F4C4; *creates duckdb database*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `02_Create_data.R`&#x1F4C4; *creates trajectory data*
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `02_*.R`&#x1F4C4; *creates processed data from database and raw data*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `util.R`&#x1F4C4; *various helper functions for plotting*
-
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_processed.R`&#x1F4C4; *creates processed data from database*
-
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_processed_final.R`&#x1F4C4; *creates final data from processed*
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_final.R`&#x1F4C4; *creates final data from processed*
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_plot.R`&#x1F4C4; *create figures from final data*
 
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `X*.R`&#x1F4C4; *create appendix figures*
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `util.R`&#x1F4C4; *various helper functions for plotting*
+
 ├── **data** &#x1F4C1;  *model output on various steps of processing*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└── processed &#x1F4C1;  *pre-processed data that feeds into several figures*
+│&nbsp; &nbsp; &nbsp; &nbsp;└── `raw` &#x1F4C1;  *raw data. This is not contained in the repository but needs to be obtained from zenodo*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└── random_forest &#x1F4C1;  *inout and output data of random forest model*
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── `*_pft` &#x1F4C1;  *raw LPJ-GUESS output*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── `climate_data` &#x1F4C1;  *Climate data*
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── `random_forest` &#x1F4C1;  *input and output data of random forest model*
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── `external` &#x1F4C1;  *External data not generated in this study*
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── `processed` &#x1F4C1;  *intermediate data. This is not contain the the repository but needs to be created with *`*_processed.R`&#x1F4C4;
   
-│&nbsp; &nbsp; &nbsp; &nbsp;└── final &#x1F4C1;  *The data directly underlying the figures, generated with  `*_processed_final.R`*
+│&nbsp; &nbsp; &nbsp; &nbsp;└── `final` &#x1F4C1;  *The data directly underlying the figures, generated with  `*_processed_final.R`*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; &nbsp;└── shp &#x1F4C1; *The shapefiles used for plotting maps.*
-  
-│&nbsp; &nbsp; &nbsp; &nbsp;└── covariates &#x1F4C1;  *Climate data*  &#x26C8;
-
-│&nbsp; &nbsp; &nbsp; &nbsp;└── single_pft &#x1F4C1;  *Single PFT runs to determine theoretical niches*  &#x1F332;  &#x1f333;
-
-│&nbsp; &nbsp; &nbsp; &nbsp;└── ext &#x1F4C1;  *External helper files*
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└── `shp` &#x1F4C1; *The shapefiles used for plotting maps.*
   
 ├── **plots** &#x1F4C1; *Contains all the plots of the paper. The plots are generated by the scripts `*_plot.R`.*
 
-├── `*.duckdb`: DuckDB database &#x1F986;
+├── `*.duckdb`: DuckDB database &#x1F986; *Patch data database. This is not contained in the repository and needs to be downloaded from zenodo*
  
 
-## R packages used
+## Software used used
+This analysis was performed on the Leibniz Center for Supercomputing RStudioCloud using R Version 4.4.1 (2024-06-14) running under Ubuntu 22.04.3. See below for packages and version. 
 
-
-`rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3)               `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)      `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)  `splines` 
+### R packages
+`rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3) `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)  `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)  `splines` 
 
 
 ## todo
@@ -94,15 +86,16 @@ Run the `*_final.R` scripts to reproduce the final data underlying the plots The
 - [ ] Make sure all plots are reproducible from github repo
   - [x] Validation (F3)
   - [x] Trajectories + Niche (F4) 
-  - [x] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
+  - [x] Maps Regression (F5) 
   - [x] Random Forest (F6)
+  - [ ] Appendix
 - [ ] Make sure all final data is reproducible from zenodo database
-  - [ ] Validation (F3): *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
-  - [ ] Trajectories + Niche (F4) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
-  - [ ] Maps Regression (F5) *needs `data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp`*
-  - [ ] Random Forest (F6) *needs `data/random_forest`*
+  - [x] Validation (F3): 
+  - [x] Trajectories + Niche (F4) 
+  - [x] Maps Regression (F5) 
+  - [x] Random Forest (F6) 
 - [ ] Random forest model
-  - [ ] Expand on documentation
-  - [ ] Link to Mohit's code
+  - [x] Expand on documentation
+  - [x] Link to Mohit's code
 - [ ] Document dependencies between scripts
 

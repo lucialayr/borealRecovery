@@ -113,22 +113,14 @@ final_trajectories_niche_B = function() {
 
 final_trajectories_niche_B()
 
-final_trajectories_niche_A = function(start_year, end_year) {
-  
+trajectories_species_composition = function(start_year, end_year) {
   data = list()
-  
-  data_carbon = list()
   
   for (s in c("picontrol", "ssp126", "ssp585")) {
     df_timeseries = read_csv(paste0("data/processed/trajectories_", s, "_", start_year, "_", end_year, "_timeseries_rf.csv" )) %>%
       mutate(s = s)
     
     data = append(data, list(df_timeseries))
-    
-    df_carbon = read_csv(paste0("data/processed/agc_recovery_", s, "_", start_year, "_", end_year, "_.csv" )) %>%
-      mutate(s = s)
-    
-    data_carbon = append(data_carbon, list(df_carbon))
   }
   
   df = purrr::reduce(data, bind_rows) %>%
@@ -152,9 +144,25 @@ final_trajectories_niche_A = function(start_year, end_year) {
   df_trajectories = df %>%
     semi_join(sampled_ids, by = c("Lon", "Lat", "PID"))
   
-  df_class = read_csv(paste0("data/raw/random_forest/classes_100years_", start_year, "_", end_year, ".csv")) %>%
-    dplyr::select(Lon, Lat, PID, class)
+  write_csv(df_mean, paste0("data/final/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
+  write_csv(df_trajectories, paste0("data/final/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
+}
+
+trajectories_agb = function(start_year, end_year) {
+
+  data_carbon = list()
   
+  for (s in c("picontrol", "ssp126", "ssp585")) {
+    
+    df_carbon = read_csv(paste0("data/processed/agc_recovery_", s, "_", start_year, "_", end_year, "_.csv" )) %>%
+      mutate(s = s)
+    
+    data_carbon = append(data_carbon, list(df_carbon))
+  }
+
+  df_class_script = read_csv(paste0("data/processed/classified_trajectories_processed__", start_year, "_", end_year, ".csv")) %>%
+    select(Lon, Lat, PID, class) 
+ 
   df_cmass = purrr::reduce(data_carbon, bind_rows) %>%
     filter(time_since_dist > 100) %>%
     left_join(df_class)
@@ -172,14 +180,18 @@ final_trajectories_niche_A = function(start_year, end_year) {
     mutate(s = long_names_scenarios(s),
            class = if_else(class == 0, "Direct conifer recovery", "Deciduous transient"),
            mean_diff = if_else(mean_diff > 1,  NA ,mean_diff))
-
   
-  write_csv(df_mean, paste0("data/final/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
-  write_csv(df_trajectories, paste0("data/final/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
   write_csv(df_cmass_mean, paste0("data/final/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
   write_csv(df_cmass_mean_class, paste0("data/final/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
   
- 
+}
+
+final_trajectories_niche_A = function(start_year, end_year) {
+  
+  trajectories_species_composition(start_year, end_year)
+  
+  trajectories_agb(start_year, end_year)
+
 }
 
 final_trajectories_niche_A(2015, 2040)
