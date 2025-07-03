@@ -8,6 +8,7 @@ data/processed/
 data/random_forest
 data/final/*sample*
 data/final/long*
+data/ext
 code_theresa
 data_theresa
 data_mohit
