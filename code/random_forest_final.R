@@ -1,5 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 library(tidyverse)
 
@@ -38,7 +38,7 @@ random_forest_A_final = function(timespan) {
             mode = "both"
           } 
           
-          df = read_csv(paste0("data/random_forest/results/", s, "_", timespan, "_seed_", i, "_mode_", mode, "_k_", nfeature, "_m", m, "_predictions.csv")) %>%
+          df = read_csv(paste0(here("data", "random_forest"), "/results", s, "_", timespan, "_seed_", i, "_mode_", mode, "_k_", nfeature, "_m", m, "_predictions.csv")) %>%
             group_by(true_labels, predictions) %>%
             count() %>%
             group_by(true_labels) %>%
@@ -66,7 +66,7 @@ random_forest_A_final = function(timespan) {
       mutate(class = case_when(true_labels == 0 ~ "Conifer recovery",
                                true_labels == 1 ~ "Deciduous transient"))
     
-    write_csv(df_predictive_power, paste0("data/final/random_forest_A_", timespan, ".csv"))
+    write_csv(df_predictive_power, paste0(here("data", "final"), "/random_forest_A_", timespan, ".csv"))
 }  
 
 random_forest_B_final  = function(timespan) {
@@ -94,7 +94,7 @@ random_forest_B_final  = function(timespan) {
                                                 rep("Initial Recruitment", 2))) %>%
           mutate(labels = row_number() - 1)
         
-        df = read_csv(paste0("data/random_forest/results/", s, "_", timespan, "_seed_", i, "_mode_", mode, "_k_", nfeature, "_m", m, "_sfs_results.csv")) %>%
+        df = read_csv(paste0(here("data", "random_forest"), "/results", s, "_", timespan, "_seed_", i, "_mode_", mode, "_k_", nfeature, "_m", m, "_sfs_results.csv")) %>%
           mutate(Codes = str_remove_all(Codes, "\\[|\\]")) %>%  
           separate_rows(Codes, sep = ", ") %>%  
           rename(labels = Codes) %>%  
@@ -134,7 +134,7 @@ random_forest_B_final  = function(timespan) {
       mutate(top_five = ifelse(n %in% sort(n, decreasing = TRUE)[1:5], 1, 0.25)) %>%
       ungroup()
     
-   write_csv(importance_ranking, paste0("data/final/random_forest_B_", timespan, ".csv"))
+   write_csv(importance_ranking, paste0(here("data", "final"), "/random_forest_B_", timespan, ".csv"))
 }
 
 random_forest_A_final("2015_2040")

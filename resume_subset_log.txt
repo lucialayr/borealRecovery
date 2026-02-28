@@ -1,0 +1,23 @@
+here() starts at /Users/lucialayr/Desktop/Publications/borealRecovery
+Loading required package: DBI
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.2.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+=== RESUMING SUBSET DATABASE CREATION ===
+
+Sampled grid cells: 150 
+
+Tables in source database: 12 
+Tables already in subset: 3 
+Tables remaining: 9 
+
+Will copy: picontrol_d150_npp_fpc, ssp126_d150_anpp, ssp126_d150_cmass, ssp126_d150_exp_est, ssp126_d150_fpc, ssp585_d150_anpp, ssp585_d150_cmass, ssp585_d150_exp_est, ssp585_d150_fpc 
+
+[1/9] Processing table: picontrol_d150_npp_fpc ... 

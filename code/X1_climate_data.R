@@ -12,9 +12,8 @@ library(cowplot)
 library(rnaturalearth)
 library(rnaturalearthdata)
 
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 unit_conversion = function(x, var) {
   if (var == "tas") {
@@ -36,9 +35,9 @@ load_climate_variables_eoc = function(var = "tas") {
   
   for (s in c("picontrol", "ssp126", "ssp585")) {
     
-    study_region = terra::vect("data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp") 
+    study_region = terra::vect(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) 
     
-    raster = terra::rast(paste0("data/raw/climate_data/mri-esm2-0_r1i1p1f1_", s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
+    raster = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
       terra::mask(study_region) 
     
     df = data.frame("time" = terra::time(raster),
@@ -72,11 +71,11 @@ load_climate_variables_maps = function(var = "tas") {
   
   
   
-  study_region = terra::vect("data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp") 
+  study_region = terra::vect(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) 
   
   for (s in c("picontrol", "ssp126", "ssp585")) {
   
-    raster = terra::rast(paste0("data/raw/climate_data/mri-esm2-0_r1i1p1f1_", s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
+    raster = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
       terra::mask(study_region) 
     
     raster = raster[[time(raster) > as.Date("2070-01-05") & time(raster) < as.Date("2100-12-31")]]
@@ -167,7 +166,7 @@ plot_temperature_eoc = function() {
 
 plot_grid(p2, p1, align = "hv", axis = "b", rel_widths = c(0.9, 1), labels = c("(a)", "(b)"))
 
-ggsave("plots/growing_season_temperature.pdf", height = 5, width = 10, scale = 1)
+ggsave(here("plots", "growing_season_temperature.pdf",  height = 5, width = 10, scale = 1)
 
 
 
@@ -182,9 +181,9 @@ load_climate_variables_chapter1 = function() {
   
   for (s in c("picontrol", "ssp126", "ssp370", "ssp585")) {
     
-    study_region = terra::vect("data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp") 
+    study_region = terra::vect(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) 
     
-    raster = terra::rast(paste0("data/raw/climate_data/mri-esm2-0_r1i1p1f1_", s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
+    raster = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
       terra::mask(study_region) 
     
     df = data.frame("time" = terra::time(raster),

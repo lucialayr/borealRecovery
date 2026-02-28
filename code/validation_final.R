@@ -1,5 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 library(tidyverse)
 library(terra)
@@ -41,7 +41,7 @@ bin_data_for_plot = function(df, variable) {
 validation_intersect_datasets = function() {
   
   #ecoregions we can to divide by
-  ecoregion_ii = st_read("data/external/NA_CEC_Eco_Level2.shp") %>%
+  ecoregion_ii = st_read(here("data", "external", "NA_CEC_Eco_Level2.shp")) %>%
     select(NA_L2NAME) %>%
     filter(NA_L2NAME %in% c("ALASKA BOREAL INTERIOR", "TAIGA CORDILLERA",
                             "TAIGA PLAIN", "TAIGA SHIELD", 
@@ -50,7 +50,7 @@ validation_intersect_datasets = function() {
     sf::st_make_valid() 
   
   #Studyregion of observational data
-  above_shp = terra::rast("data/external/ABoVE_Study_Domain.tif") %>% #get above domain, project, resample to lpjguess resolution and get coordinates
+  above_shp = terra::rast(here("data", "external", "ABoVE_Study_Domain.tif")) %>% #get above domain, project, resample to lpjguess resolution and get coordinates
     terra::project("EPSG:4326") %>%
     terra::as.polygons() %>%
     sf::st_as_sf() %>%
@@ -58,7 +58,7 @@ validation_intersect_datasets = function() {
     st_intersection(ecoregion_ii) 
   
   #LPJ-GUESS Grid
-  lpjguess_grid = read_table("data/raw/multi_pft/picontrol_d150/cmass.out", show_col_types = F) %>%
+  lpjguess_grid = read_table(here("data", "raw", "multi_pft", "picontrol_d150", "cmass.out",  show_col_types = F) %>%
     filter(Year == 2000) %>%
     dplyr::select(Lon, Lat, Total) %>%
     terra::rast(crs = "EPSG:4326") %>% 
@@ -79,8 +79,8 @@ validation_intersect_datasets = function() {
     distinct(Lon, Lat, .keep_all = TRUE) #keep only first ecoregion (not ideal but only thing that works for now)
   
   # save because we need those for Chapter 3
-  st_write(lpjguess_grid, "data/processed/above_ecoregion_lpjguess_grid.shp", delete_dsn = T)
-  write_csv(lpjguess_ecoregion, "data/processed/above_ecoregion_lpjguess_grid.csv")
+  st_write(lpjguess_grid, here("data", "processed", "above_ecoregion_lpjguess_grid.shp",  delete_dsn = T)
+  write_csv(lpjguess_ecoregion, here("data", "processed", "above_ecoregion_lpjguess_grid.csv"))
   
   return(lpjguess_grid)
   
@@ -91,16 +91,16 @@ validation_final_A = function() {
     group_by(ecoregion) %>%
     summarize() 
 
-  st_write(shp, "data/final/shp/validation_A.shp", delete_dsn = T)
+  st_write(shp, here("data", "final", "shp", "validation_A.shp",  delete_dsn = T)
 }
 validation_final_A()
 
 validation_final_B = function() {
   
-  lpjguess_ecoregion = read_csv("data/processed/above_ecoregion_lpjguess_grid.csv")
+  lpjguess_ecoregion = read_csv(here("data", "processed", "above_ecoregion_lpjguess_grid.csv"))
   
   ##Function to create this file is now executed in `trajectories_database_processed.R`
-  fpc_lpjguess = read_csv("data/processed/trajectories_picontrol_2015_2040_fpc_200.csv")  %>%
+  fpc_lpjguess = read_csv(here("data", "processed", "trajectories_picontrol_2015_2040_fpc_200.csv"))  %>%
     inner_join(lpjguess_ecoregion) %>% #crop to ecoregions 
     filter(!is.na(age)) %>% #filter for locations that are in ABoVE but not in model ouput
     filter(age != 0, age != 1) %>% #delete year of disturbance, no meaningful data
@@ -122,7 +122,7 @@ validation_final_B = function() {
            dataset = "LPJ-GUESS") %>%
     dplyr::select(PFT, age_bin, ecoregion, value, dataset)
   
-  fpc_observations = read_csv("data/external/ecoreg_lctraj2.csv") %>%
+  fpc_observations = read_csv(here("data", "external", "ecoreg_lctraj2.csv")) %>%
     mutate(Shrubs = Shrubs + Herb_Sparse,
            Wetlands = Wetlands + Barren) %>%
     dplyr::select(-Herb_Sparse, -Barren) %>%
@@ -146,7 +146,7 @@ validation_final_B = function() {
     filter(age_bin != "pre-\ndisturbance") %>%
     mutate(ecoregion = str_to_title(ecoregion))
   
-  write_csv(df, "data/final/validation_B.csv")
+  write_csv(df, here("data", "final", "validation_B.csv"))
 }
 validation_final_B()
 

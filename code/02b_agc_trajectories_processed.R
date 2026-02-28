@@ -1,29 +1,38 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
-install.packages("duckdb", version = "1.0.0")
+# Skip package installation (assume already installed)
+# install.packages("duckdb", version = "1.0.0")
 
 library(duckdb)
 library(tidyverse)
 library(terra)
 library(zoo)
 
+# Helper function to build correct table names
+get_table_name = function(scenario, variable) {
+  if (scenario == "picontrol") {
+    return(paste0(scenario, "_d150_npp_", variable))
+  } else {
+    return(paste0(scenario, "_d150_", variable))
+  }
+}
 
 agc_cabon_processed = function(scenario, start_year, end_year) {
   
-  con = dbConnect(duckdb(), dbdir = "patches2.duckdb", read_only = FALSE) 
+  con = dbConnect(duckdb(), dbdir = here("patches2.duckdb"), read_only = FALSE) 
   dbListTables(con)
   
   # get unique identifier of all patches disturbed between `start_year` and `end_year`
   # we filter for dhist = 1 to only get disturbed patches and for PFT = BNE, as it will make the table smaller and for now we only want the identifiers
-  locations_disturbed = dbGetQuery(con, paste0("SELECT PID, Lon, Lat, Year, ndist FROM '", scenario, "_d150_cmass' WHERE Year BETWEEN ", start_year, " AND ", 
+  locations_disturbed = dbGetQuery(con, paste0("SELECT PID, Lon, Lat, Year, ndist FROM '", get_table_name(scenario, "cmass"), "' WHERE Year BETWEEN ", start_year, " AND ", 
                                                end_year, " AND dhist = 1 AND PFT = 'BNE';")) %>% unique()
   
   
   #We want to select for trajectories that could recover for at least 100 years. d.ndist = l.ndist filters out years before first disturbance.dplyr code filters out disturbance after less than 100 years
   dbWriteTable(con, "locations_disturbed", locations_disturbed, overwrite = T)
   
-  locations_disturbed_once = dbGetQuery(con, paste0("SELECT d.Year, l.Year as year_disturbance, d.PID, d.Lon, d.Lat, d.age, d.ndist FROM '", scenario, "_d150_cmass' 
+  locations_disturbed_once = dbGetQuery(con, paste0("SELECT d.Year, l.Year as year_disturbance, d.PID, d.Lon, d.Lat, d.age, d.ndist FROM '", get_table_name(scenario, "cmass"), "' 
                                 AS d INNER JOIN locations_disturbed AS l ON d.PID = l.PID AND d.Lon = l.Lon AND d.Lat = l.Lat WHERE d.Year BETWEEN ", 
                                     start_year, " AND ", end_year + 100, " AND d.ndist = l.ndist")) %>%
     unique() %>%
@@ -38,7 +47,7 @@ agc_cabon_processed = function(scenario, start_year, end_year) {
   
   # and join. We filter out the part of timeseries before the disturbance and match by ndist, to exclude patches that regenerate for 100 years and then get disturbanced again
   # for example, if a patch is disturbed in year 2030, we otherwise will additionally get the years 2015 - 2029 that we are not interested in
-  df_cmass = dbGetQuery(con, paste0("SELECT d.Year, l.year_disturbance,  d.PFT, d.PID, d.Lon, d.Lat, d.cmass, d.age FROM '", scenario, "_d150_cmass' 
+  df_cmass = dbGetQuery(con, paste0("SELECT d.Year, l.year_disturbance,  d.PFT, d.PID, d.Lon, d.Lat, d.cmass, d.age FROM '", get_table_name(scenario, "cmass"), "' 
                                 AS d INNER JOIN locations_disturbed_once AS l ON d.PID = l.PID AND d.Lon = l.Lon AND d.Lat = l.Lat WHERE d.Year BETWEEN ", 
                                     start_year, " AND ", end_year + 100, " AND d.Year >= l.year_disturbance AND d.ndist = l.ndist")) %>%
     group_by(age, Lon, Lat, PID) %>%
@@ -48,7 +57,7 @@ agc_cabon_processed = function(scenario, start_year, end_year) {
     unique()
   
   # get state and age the year before a disturbance
-  df = dbGetQuery(con, paste0("SELECT l.year_disturbance, d.PFT, d.PID, d.Lon, d.Lat, d.cmass as previous_state, d.age as time_since_dist FROM '", scenario, "_d150_cmass' 
+  df = dbGetQuery(con, paste0("SELECT l.year_disturbance, d.PFT, d.PID, d.Lon, d.Lat, d.cmass as previous_state, d.age as time_since_dist FROM '", get_table_name(scenario, "cmass"), "' 
                                 AS d INNER JOIN locations_disturbed_once AS l ON d.PID = l.PID AND d.Lon = l.Lon AND d.Lat = l.Lat AND d.Year = l.year_disturbance - 1 AND d.Year BETWEEN ", 
                                              start_year-1, " AND ", end_year - 1)) %>%
     group_by(Lon, Lat, PID) %>%
@@ -66,7 +75,7 @@ agc_cabon_processed = function(scenario, start_year, end_year) {
   # we remove `locations_disturbed_once` again from database
   dbExecute(con, "DROP TABLE locations_disturbed_once")
   
-  write_csv(df, paste0("data/processed/agc_recovery_", scenario, "_", start_year, "_", end_year, "_.csv" ))
+  write_csv(df, paste0(here("data", "processed"), "/agc_recovery_", scenario, "_", start_year, "_", end_year, "_.csv" ))
   
   return(df)
 }
