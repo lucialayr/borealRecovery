@@ -1,10 +1,11 @@
 library(here)
-source(here("code", "utils.R"))
 
 library(tidyverse)
 library(scico)
 library(cowplot)
 library(ggnewscale)
+
+source(here("code", "utils.R"))
 
 random_forest_A_plot = function(timespan) {
   
@@ -89,8 +90,8 @@ random_forest_plot = function(timespan) {
   
   plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"))
   
-  ggsave(paste0(here("plots", "results_rf_",  timespan, ".pdf"),  width = 12, height = 6.75, scale = 0.95)
-  ggsave(paste0(here("plots", "results_rf_",  timespan, ".png"),  width = 12, height = 6.75, scale = 0.95)
+  ggsave(paste0(here("plots"), "/results_rf_",  timespan, ".pdf"),  width = 12, height = 6.75, scale = 0.95)
+  ggsave(paste0(here("plots"), "/results_rf_",  timespan, ".png"),  width = 12, height = 6.75, scale = 0.95)
   
 }
 

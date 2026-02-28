@@ -1,5 +1,4 @@
 library(here)
-source(here("code", "utils.R"))
 
 library(tidyverse)
 library(stats)
@@ -8,14 +7,17 @@ library(splines)
 library(cowplot)
 library(scico)
 library(ggnewscale)
+library(sf)
 library(rnaturalearth)
 library(rnaturalearthdata)
+
+source(here("code", "utils.R"))
 
 
 
 maps_regression_A_plot = function(start_year, end_year) {
   
-  shp = st_read(paste0(here("data", "final", "shp", "maps_regression_A_final_",  start_year, "_", end_year, ".shp"))
+  shp = st_read(paste0(here("data", "final", "shp"), "/maps_regression_A_final_",  start_year, "_", end_year, ".shp"))
   
   load_basemap()
   
@@ -119,8 +121,8 @@ maps_regression_plot = function(start_year, end_year) {
             rel_widths = c(0.5, 1), labels = c("(a)", "(b)"), 
             ncol = 2, hjust = 0)
   
-  ggsave(paste0(here("plots", "maps_regression_",  start_year, "_", end_year ,".pdf"), height = 6.25, width = 10, scale = 1)
-  ggsave(paste0(here("plots", "maps_regression_",  start_year, "_", end_year ,".png"), height = 6.25, width = 10, scale = 1, dpi = 300)
+  ggsave(paste0(here("plots"), "/maps_regression_",  start_year, "_", end_year ,".pdf"), height = 6.25, width = 10, scale = 1)
+  ggsave(paste0(here("plots"), "/maps_regression_",  start_year, "_", end_year ,".png"), height = 6.25, width = 10, scale = 1, dpi = 300)
   
 }
 

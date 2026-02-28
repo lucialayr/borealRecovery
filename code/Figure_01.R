@@ -1,5 +1,4 @@
 library(here)
-source(here("code", "utils.R"))
 
 library(duckdb)
 library(purrr)
@@ -9,6 +8,8 @@ library(sf)
 library(cowplot)
 library(tidyverse)
 library(MASS)
+
+source(here("code", "utils.R"))
 
 con = dbConnect(duckdb(), dbdir = here("patches2.duckdb"), read_only = FALSE) #create the database
 dbListTables(con)

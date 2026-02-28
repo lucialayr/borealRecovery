@@ -8,42 +8,42 @@ library(zoo)
 
 create_covariates_growingseason = function(scenario, start_year, end_year) {
   
-  yearlymax = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  scenario, "_tas_daily_inverted_1850_2300_boreal_yearlymax_growingseason.nc")) %>%
+  yearlymax = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  scenario, "_tas_daily_inverted_1850_2300_boreal_yearlymax_growingseason.nc")) %>%
     terra::as.data.frame(xy = TRUE, time = TRUE, wide = F) %>%
     mutate(Year = as.numeric(format(time, "%Y"))) %>%
     filter(Year %in% seq(start_year, end_year + 100)) %>%
     rename(Lon = x, Lat = y, tas_gs_dailymax = values)  %>%
     dplyr::select(-layer, -time) 
   
-  yearlymin = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  scenario, "_tas_daily_inverted_1850_2300_boreal_yearlymin_growingseason.nc")) %>%
+  yearlymin = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  scenario, "_tas_daily_inverted_1850_2300_boreal_yearlymin_growingseason.nc")) %>%
     terra::as.data.frame(xy = TRUE, time = TRUE, wide = F) %>%
     mutate(Year = as.numeric(format(time, "%Y"))) %>%
     filter(Year %in% seq(start_year, end_year + 100)) %>%
     rename(Lon = x, Lat = y, tas_gs_dailymin = values)  %>%
     dplyr::select(-layer, -time) 
   
-  yearlymean = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  scenario, "_tas_daily_inverted_1850_2300_boreal_yearlyavg_growingseason.nc")) %>%
+  yearlymean = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  scenario, "_tas_daily_inverted_1850_2300_boreal_yearlyavg_growingseason.nc")) %>%
     terra::as.data.frame(xy = TRUE, time = TRUE, wide = F) %>%
     mutate(Year = as.numeric(format(time, "%Y"))) %>%
     filter(Year %in% seq(start_year, end_year + 100)) %>%
     rename(Lon = x, Lat = y, tas_gs_dailyavg = values)  %>%
     dplyr::select(-layer, -time) 
   
-  yearlysum = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  scenario, "_pr_daily_inverted_1850_2300_boreal_yearlysum.nc")) %>%
+  yearlysum = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  scenario, "_pr_daily_inverted_1850_2300_boreal_yearlysum.nc")) %>%
     terra::as.data.frame(xy = TRUE, time = TRUE, wide = F) %>%
     mutate(Year = as.numeric(format(time, "%Y"))) %>%
     filter(Year %in% seq(start_year, end_year + 100)) %>%
     rename(Lon = x, Lat = y, pr_yearlysum = values)  %>%
     dplyr::select(-layer, -time) 
   
-  yearlyrad = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  scenario, "_rsds_daily_inverted_1850_2300_boreal_yearlyavg_growingseason.nc")) %>%
+  yearlyrad = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  scenario, "_rsds_daily_inverted_1850_2300_boreal_yearlyavg_growingseason.nc")) %>%
     terra::as.data.frame(xy = TRUE, time = TRUE, wide = F) %>%
     mutate(Year = as.numeric(format(time, "%Y"))) %>%
     filter(Year %in% seq(start_year, end_year + 100)) %>%
     rename(Lon = x, Lat = y, rsds_gs_dailyavg = values)  %>%
     dplyr::select(-layer, -time) 
   
-  soil_properties = read_table(here("data", "raw", "climate_data", "hwsd_lpj_0.5.dat",  show_col_types = F) %>%
+  soil_properties = read_table(paste0(here("data", "raw", "climate_data"), "/hwsd_lpj_0.5.dat"),  show_col_types = F) %>%
     dplyr::select(-cn) %>%
     rename(Lon = lon, Lat = lat, sand_fraction = sand, silt_fraction = silt, clay_fraction = clay,
            bulkdensity_soil = bulkdensity, ph_soil = ph, soilcarbon = soilc)

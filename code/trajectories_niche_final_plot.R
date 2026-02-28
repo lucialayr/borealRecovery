@@ -1,5 +1,4 @@
 library(here)
-source(here("code", "utils.R"))
 
 
 library(tidyverse)
@@ -12,10 +11,12 @@ library(ggnewscale)
 library(rnaturalearth)
 library(rnaturalearthdata)
 
+source(here("code", "utils.R"))
+
 
 plot_trajectories_niche_B = function() {
   
-  shp = st_read(here("data", "final", "shp", "trajectories_niche_B.shp"))
+  shp = st_read(paste0(here("data", "final", "shp"), "/trajectories_niche_B.shp"))
   
   load_basemap()
   #color are obtained from 

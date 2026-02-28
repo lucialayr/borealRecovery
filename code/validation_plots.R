@@ -1,5 +1,4 @@
 library(here)
-source(here("code", "utils.R"))
 
 library(tidyverse)
 library(terra)
@@ -8,6 +7,8 @@ library(cowplot)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(scico)
+
+source(here("code", "utils.R"))
 
 
 validation_A_plot = function() {

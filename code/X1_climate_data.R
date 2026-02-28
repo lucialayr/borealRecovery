@@ -2,10 +2,10 @@ library(tidyverse)
 library(terra)
 library(sf)
 
-install.packages("scico")
-install.packages("cowplot")
-install.packages("rnaturalearth")
-install.packages("rnaturalearthdata")
+# install.packages("scico")
+# install.packages("cowplot")
+# install.packages("rnaturalearth")
+# install.packages("rnaturalearthdata")
 
 library(scico)
 library(cowplot)
@@ -37,7 +37,7 @@ load_climate_variables_eoc = function(var = "tas") {
     
     study_region = terra::vect(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) 
     
-    raster = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
+    raster = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
       terra::mask(study_region) 
     
     df = data.frame("time" = terra::time(raster),
@@ -75,7 +75,7 @@ load_climate_variables_maps = function(var = "tas") {
   
   for (s in c("picontrol", "ssp126", "ssp585")) {
   
-    raster = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
+    raster = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
       terra::mask(study_region) 
     
     raster = raster[[time(raster) > as.Date("2070-01-05") & time(raster) < as.Date("2100-12-31")]]
@@ -183,7 +183,7 @@ load_climate_variables_chapter1 = function() {
     
     study_region = terra::vect(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) 
     
-    raster = terra::rast(paste0(here("data", "raw", "climate_data", "mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
+    raster = terra::rast(paste0(here("data", "raw", "climate_data"), "/mri-esm2-0_r1i1p1f1_",  s, "_", var, "_daily_inverted_1850_2300_boreal_monthly.nc")) %>%
       terra::mask(study_region) 
     
     df = data.frame("time" = terra::time(raster),

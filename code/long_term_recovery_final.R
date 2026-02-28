@@ -24,7 +24,7 @@ get_one_scenario = function(scenario, start_year, end_year) {
   locations_disturbed = dbGetQuery(con, paste0("SELECT PID, Lon, Lat, Year, ndist FROM '", get_table_name(scenario, "cmass"), "' WHERE Year BETWEEN ", start_year, " AND ", 
                                                end_year, " AND dhist = 1 AND PFT = 'BNE';")) %>% unique()
   
-  df_class1 = read_csv(paste0(here("data", "results"), "/all_binary_data_", start_year, "_", end_year,".csv")) %>%
+  df_class1 = read_csv(paste0(here("data", "processed"), "/all_binary_data_", start_year, "_", end_year,".csv")) %>%
     filter(class == 1, s == long_names_scenarios(scenario)) %>%
     dplyr::select(Lon, Lat, PID) %>%
     inner_join(locations_disturbed) %>%

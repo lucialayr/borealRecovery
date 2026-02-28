@@ -1,10 +1,12 @@
 library(here)
-source(here("code", "utils.R"))
 
 library(tidyverse)
 library(stats)
 library(zoo)
 library(splines)
+library(cowplot)
+
+source(here("code", "utils.R"))
 
 histograms_length_transient = function() {
   
