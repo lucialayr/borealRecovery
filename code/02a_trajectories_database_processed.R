@@ -51,11 +51,11 @@ get_data_scenario = function(scenario, start_year, end_year) {
   df_cmass = dbGetQuery(con, paste0("SELECT d.Year, l.year_disturbance,  d.PFT, d.PID, d.Lon, d.Lat, d.cmass, d.age FROM '", get_table_name(scenario, "cmass"), "' 
                                 AS d INNER JOIN locations_disturbed_once AS l ON d.PID = l.PID AND d.Lon = l.Lon AND d.Lat = l.Lat WHERE d.Year BETWEEN ", 
                                     start_year, " AND ", end_year + 100, " AND d.Year >= l.year_disturbance AND d.ndist = l.ndist")) %>%
+    unique() %>%  # FIX: Remove duplicates BEFORE calculating relative (database has duplicate rows)
     group_by(age, Lon, Lat, PID) %>%
     mutate(relative = cmass/sum(cmass))  %>% 
     ungroup() %>%
-    mutate(across(everything(), ~ifelse(is.na(.), 0, .))) %>% #if sum(cmass) = 0, this will be NA (can happen in the first years after a disturbance)
-    unique()
+    mutate(across(everything(), ~ifelse(is.na(.), 0, .))) #if sum(cmass) = 0, this will be NA (can happen in the first years after a disturbance)
   
   check3 = locations_disturbed %>%
     filter(Lon == -93.25 & Lat == 52.25 & PID == 20)

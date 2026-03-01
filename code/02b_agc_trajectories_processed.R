@@ -50,16 +50,17 @@ agc_cabon_processed = function(scenario, start_year, end_year) {
   df_cmass = dbGetQuery(con, paste0("SELECT d.Year, l.year_disturbance,  d.PFT, d.PID, d.Lon, d.Lat, d.cmass, d.age FROM '", get_table_name(scenario, "cmass"), "' 
                                 AS d INNER JOIN locations_disturbed_once AS l ON d.PID = l.PID AND d.Lon = l.Lon AND d.Lat = l.Lat WHERE d.Year BETWEEN ", 
                                     start_year, " AND ", end_year + 100, " AND d.Year >= l.year_disturbance AND d.ndist = l.ndist")) %>%
+    unique() %>%  # Remove duplicates before grouping
     group_by(age, Lon, Lat, PID) %>%
     summarize(Total = sum(cmass, na.rm = T))  %>% 
     ungroup() %>%
-    mutate(across(everything(), ~ifelse(is.na(.), 0, .))) %>% #if sum(cmass) = 0, this will be NA (can happen in the first years after a disturbance)
-    unique()
+    mutate(across(everything(), ~ifelse(is.na(.), 0, .))) #if sum(cmass) = 0, this will be NA (can happen in the first years after a disturbance)
   
   # get state and age the year before a disturbance
   df = dbGetQuery(con, paste0("SELECT l.year_disturbance, d.PFT, d.PID, d.Lon, d.Lat, d.cmass as previous_state, d.age as time_since_dist FROM '", get_table_name(scenario, "cmass"), "' 
                                 AS d INNER JOIN locations_disturbed_once AS l ON d.PID = l.PID AND d.Lon = l.Lon AND d.Lat = l.Lat AND d.Year = l.year_disturbance - 1 AND d.Year BETWEEN ", 
                                              start_year-1, " AND ", end_year - 1)) %>%
+    unique() %>%  # Remove duplicates before grouping
     group_by(Lon, Lat, PID) %>%
     summarize(previous_state = sum(previous_state, na.rm = T),
               time_since_dist = mean(time_since_dist)) %>%

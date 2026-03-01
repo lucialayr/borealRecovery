@@ -3,427 +3,427 @@ Control,0,Direct conifer recovery,0
 Control,0,Deciduous transient,0
 Control,1,Direct conifer recovery,0
 Control,1,Deciduous transient,0
-Control,2,Direct conifer recovery,0.06714395685979117
-Control,2,Deciduous transient,0.0596531075632929
-Control,3,Direct conifer recovery,0.08392164787355261
-Control,3,Deciduous transient,0.08067290621759192
-Control,4,Direct conifer recovery,0.10012500361357693
-Control,4,Deciduous transient,0.09932958398653147
-Control,5,Direct conifer recovery,0.12254549514929908
-Control,5,Deciduous transient,0.11267823808576638
-Control,6,Direct conifer recovery,0.13724390496529187
-Control,6,Deciduous transient,0.11932603498371652
-Control,7,Direct conifer recovery,0.15563034613323154
-Control,7,Deciduous transient,0.12768249342826093
-Control,8,Direct conifer recovery,0.16060014840102205
-Control,8,Deciduous transient,0.13292378875583116
-Control,9,Direct conifer recovery,0.16263718009064798
-Control,9,Deciduous transient,0.1362511749493377
-Control,10,Direct conifer recovery,0.16294233953712609
-Control,10,Deciduous transient,0.14114451106592532
-Control,11,Direct conifer recovery,0.16169451788811712
-Control,11,Deciduous transient,0.14470701377921938
-Control,12,Direct conifer recovery,0.1661111387386727
-Control,12,Deciduous transient,0.151715652009167
-Control,13,Direct conifer recovery,0.16599849943266837
-Control,13,Deciduous transient,0.15857048204365942
-Control,14,Direct conifer recovery,0.16593179203205743
-Control,14,Deciduous transient,0.16505691911601467
-Control,15,Direct conifer recovery,0.1664303592395579
-Control,15,Deciduous transient,0.17108160259269026
-Control,16,Direct conifer recovery,0.16845097184764038
-Control,16,Deciduous transient,0.17820608389735046
-Control,17,Direct conifer recovery,0.17320433213526465
-Control,17,Deciduous transient,0.18847932149805113
-Control,18,Direct conifer recovery,0.17436279804858093
-Control,18,Deciduous transient,0.19920587236813972
-Control,19,Direct conifer recovery,0.17752854577531696
-Control,19,Deciduous transient,0.21131738409446887
-Control,20,Direct conifer recovery,0.17988598475054243
-Control,20,Deciduous transient,0.2235669475945096
-Control,21,Direct conifer recovery,0.18320960998672625
-Control,21,Deciduous transient,0.23783355780621182
-Control,22,Direct conifer recovery,0.19100686296683017
-Control,22,Deciduous transient,0.25344556203713003
-Control,23,Direct conifer recovery,0.1943510954268776
-Control,23,Deciduous transient,0.26871723079526455
-Control,24,Direct conifer recovery,0.1967211089689134
-Control,24,Deciduous transient,0.2843744426035913
-Control,25,Direct conifer recovery,0.200133862494687
-Control,25,Deciduous transient,0.30052722255814046
-Control,26,Direct conifer recovery,0.20493686157015367
-Control,26,Deciduous transient,0.3162139545428979
-Control,27,Direct conifer recovery,0.2124428774748311
-Control,27,Deciduous transient,0.3327162844484301
-Control,28,Direct conifer recovery,0.21722358226260674
-Control,28,Deciduous transient,0.34741448502880595
-Control,29,Direct conifer recovery,0.22224702225372303
-Control,29,Deciduous transient,0.36300663691797846
-Control,30,Direct conifer recovery,0.22669092129098056
-Control,30,Deciduous transient,0.3779423848228679
-Control,31,Direct conifer recovery,0.23022076674023076
-Control,31,Deciduous transient,0.39330485194906833
-Control,32,Direct conifer recovery,0.23851586973261935
-Control,32,Deciduous transient,0.40699894510459506
-Control,33,Direct conifer recovery,0.2441318521964807
-Control,33,Deciduous transient,0.4214193336129295
-Control,34,Direct conifer recovery,0.24876897680677787
-Control,34,Deciduous transient,0.43902327592910795
-Control,35,Direct conifer recovery,0.2550704984142604
-Control,35,Deciduous transient,0.4523548901647784
-Control,36,Direct conifer recovery,0.2590969210715339
-Control,36,Deciduous transient,0.46509586228505023
-Control,37,Direct conifer recovery,0.26468493182876557
-Control,37,Deciduous transient,0.47917831246440096
-Control,38,Direct conifer recovery,0.26983566663231967
-Control,38,Deciduous transient,0.4921568433494222
-Control,39,Direct conifer recovery,0.27163960717113816
-Control,39,Deciduous transient,0.5064074624509133
-Control,40,Direct conifer recovery,0.2759870291656975
-Control,40,Deciduous transient,0.519492240331632
-Control,41,Direct conifer recovery,0.2807434090556684
-Control,41,Deciduous transient,0.5314723510677116
-Control,42,Direct conifer recovery,0.2864251230272938
-Control,42,Deciduous transient,0.5450059659647519
-Control,43,Direct conifer recovery,0.28961742754462927
-Control,43,Deciduous transient,0.5583041933837237
-Control,44,Direct conifer recovery,0.2942036341819369
-Control,44,Deciduous transient,0.5717385979692046
-Control,45,Direct conifer recovery,0.3003129634621009
-Control,45,Deciduous transient,0.5852146139256156
-Control,46,Direct conifer recovery,0.3047099977249887
-Control,46,Deciduous transient,0.6015840254792627
-Control,47,Direct conifer recovery,0.3110731917324815
-Control,47,Deciduous transient,0.6144793679946421
-Control,48,Direct conifer recovery,0.31526381167934
-Control,48,Deciduous transient,0.626436536853405
-Control,49,Direct conifer recovery,0.3186789535615143
-Control,49,Deciduous transient,0.6396926186514155
-Control,50,Direct conifer recovery,0.32318900842771026
-Control,50,Deciduous transient,0.6507195885981358
-Control,51,Direct conifer recovery,0.3292648820829977
-Control,51,Deciduous transient,0.6639428464535508
-Control,52,Direct conifer recovery,0.3363272365751109
-Control,52,Deciduous transient,0.6764088913012255
-Control,53,Direct conifer recovery,0.3407423264558701
-Control,53,Deciduous transient,0.6904142194149042
-Control,54,Direct conifer recovery,0.34414529966887253
-Control,54,Deciduous transient,0.7034688157417691
-Control,55,Direct conifer recovery,0.34982832745472
-Control,55,Deciduous transient,0.7141066080973667
-Control,56,Direct conifer recovery,0.3541447611597096
-Control,56,Deciduous transient,0.7280316136419126
-Control,57,Direct conifer recovery,0.35925270932295206
-Control,57,Deciduous transient,0.7427775106551044
-Control,58,Direct conifer recovery,0.365468630749261
-Control,58,Deciduous transient,0.7561291592421849
-Control,59,Direct conifer recovery,0.3679704302351013
-Control,59,Deciduous transient,0.7682522512991721
-Control,60,Direct conifer recovery,0.371976535712269
-Control,60,Deciduous transient,0.7818450113262576
-Control,61,Direct conifer recovery,0.3767770125844794
-Control,61,Deciduous transient,0.7948864320746913
-Control,62,Direct conifer recovery,0.38200575947354726
-Control,62,Deciduous transient,0.808364758647524
-Control,63,Direct conifer recovery,0.3872971868239372
-Control,63,Deciduous transient,0.8231690048467678
-Control,64,Direct conifer recovery,0.3918763169164558
-Control,64,Deciduous transient,0.8364111265053414
-Control,65,Direct conifer recovery,0.3957939933645964
-Control,65,Deciduous transient,0.8518926471891807
-Control,66,Direct conifer recovery,0.40031528039005143
-Control,66,Deciduous transient,0.8644318765742715
-Control,67,Direct conifer recovery,0.4081383714733415
-Control,67,Deciduous transient,0.8748928855829975
-Control,68,Direct conifer recovery,0.4133608980417595
-Control,68,Deciduous transient,0.8793145162317894
-Control,69,Direct conifer recovery,0.4196502985827932
-Control,69,Deciduous transient,0.8910001666243498
-Control,70,Direct conifer recovery,0.4240121343126859
-Control,70,Deciduous transient,0.9039740612349063
-Control,71,Direct conifer recovery,0.4310609737441284
-Control,71,Deciduous transient,0.9179377762103818
-Control,72,Direct conifer recovery,0.43760091789572997
-Control,72,Deciduous transient,0.929746058217346
-Control,73,Direct conifer recovery,0.44248105446621605
-Control,73,Deciduous transient,0.9407069235216959
-Control,74,Direct conifer recovery,0.4470422353960211
-Control,74,Deciduous transient,0.952442151502302
-Control,75,Direct conifer recovery,0.45353092674711254
-Control,75,Deciduous transient,0.9677860286673471
-Control,76,Direct conifer recovery,0.46058992103777274
-Control,76,Deciduous transient,0.9819219845377375
-Control,77,Direct conifer recovery,0.4684312145298187
-Control,77,Deciduous transient,0.9993324953021426
-Control,78,Direct conifer recovery,0.47239134066774274
-Control,78,Deciduous transient,NA
-Control,79,Direct conifer recovery,0.47946330154083877
-Control,79,Deciduous transient,NA
-Control,80,Direct conifer recovery,0.48468350753051376
-Control,80,Deciduous transient,NA
-Control,81,Direct conifer recovery,0.49155221682176004
+Control,2,Direct conifer recovery,0.06971800289136032
+Control,2,Deciduous transient,0.059618211521617406
+Control,3,Direct conifer recovery,0.08637573398234048
+Control,3,Deciduous transient,0.0797646224385252
+Control,4,Direct conifer recovery,0.1017132568854962
+Control,4,Deciduous transient,0.09803958867454204
+Control,5,Direct conifer recovery,0.1224921244031635
+Control,5,Deciduous transient,0.1117206224128238
+Control,6,Direct conifer recovery,0.13627455089838575
+Control,6,Deciduous transient,0.11987360898143468
+Control,7,Direct conifer recovery,0.15452899390408237
+Control,7,Deciduous transient,0.12916154432125393
+Control,8,Direct conifer recovery,0.1600597592859398
+Control,8,Deciduous transient,0.13368293841453957
+Control,9,Direct conifer recovery,0.16321010998598984
+Control,9,Deciduous transient,0.13796133233149627
+Control,10,Direct conifer recovery,0.1647541536903766
+Control,10,Deciduous transient,0.14284166829383982
+Control,11,Direct conifer recovery,0.16592596611885307
+Control,11,Deciduous transient,0.14710670753800115
+Control,12,Direct conifer recovery,0.1711819098916634
+Control,12,Deciduous transient,0.15397752064414386
+Control,13,Direct conifer recovery,0.17171966051458826
+Control,13,Deciduous transient,0.1595434585876552
+Control,14,Direct conifer recovery,0.17199295719070878
+Control,14,Deciduous transient,0.16600008506233843
+Control,15,Direct conifer recovery,0.17264268884489276
+Control,15,Deciduous transient,0.1722793545233007
+Control,16,Direct conifer recovery,0.17401622027247823
+Control,16,Deciduous transient,0.18015390654186855
+Control,17,Direct conifer recovery,0.1792817454522366
+Control,17,Deciduous transient,0.19027057615090662
+Control,18,Direct conifer recovery,0.18130253951890446
+Control,18,Deciduous transient,0.20055323140641573
+Control,19,Direct conifer recovery,0.18436458946050632
+Control,19,Deciduous transient,0.211140119553129
+Control,20,Direct conifer recovery,0.18694144156976614
+Control,20,Deciduous transient,0.22258969138592044
+Control,21,Direct conifer recovery,0.18998789911731045
+Control,21,Deciduous transient,0.23521216967426456
+Control,22,Direct conifer recovery,0.19764488538397074
+Control,22,Deciduous transient,0.24954376439032072
+Control,23,Direct conifer recovery,0.20169586447338889
+Control,23,Deciduous transient,0.2634227180544688
+Control,24,Direct conifer recovery,0.20569191584181534
+Control,24,Deciduous transient,0.2781091720453202
+Control,25,Direct conifer recovery,0.209769425299599
+Control,25,Deciduous transient,0.2928630595713504
+Control,26,Direct conifer recovery,0.2142040722899804
+Control,26,Deciduous transient,0.3074889655058985
+Control,27,Direct conifer recovery,0.22226348733534249
+Control,27,Deciduous transient,0.32225732699079707
+Control,28,Direct conifer recovery,0.2274740651087523
+Control,28,Deciduous transient,0.3369677675577875
+Control,29,Direct conifer recovery,0.2323126180502179
+Control,29,Deciduous transient,0.3510894172416288
+Control,30,Direct conifer recovery,0.23712157531895073
+Control,30,Deciduous transient,0.36532644394011393
+Control,31,Direct conifer recovery,0.24191091929659236
+Control,31,Deciduous transient,0.37947469763437097
+Control,32,Direct conifer recovery,0.2495887123681035
+Control,32,Deciduous transient,0.3932375608272947
+Control,33,Direct conifer recovery,0.2553054403656445
+Control,33,Deciduous transient,0.40710710646038356
+Control,34,Direct conifer recovery,0.2602728686802064
+Control,34,Deciduous transient,0.42177492603444167
+Control,35,Direct conifer recovery,0.2660524531681482
+Control,35,Deciduous transient,0.43616635942815696
+Control,36,Direct conifer recovery,0.2713109194081712
+Control,36,Deciduous transient,0.4497377789216597
+Control,37,Direct conifer recovery,0.27895969064949994
+Control,37,Deciduous transient,0.4634121784044806
+Control,38,Direct conifer recovery,0.2833151153703789
+Control,38,Deciduous transient,0.47665003725685445
+Control,39,Direct conifer recovery,0.2877479943827465
+Control,39,Deciduous transient,0.4895526496373354
+Control,40,Direct conifer recovery,0.29212134960557096
+Control,40,Deciduous transient,0.5025929176123446
+Control,41,Direct conifer recovery,0.29678219464270567
+Control,41,Deciduous transient,0.514192052123787
+Control,42,Direct conifer recovery,0.3029800358452296
+Control,42,Deciduous transient,0.5263978785549567
+Control,43,Direct conifer recovery,0.30755524872725604
+Control,43,Deciduous transient,0.5388072733626594
+Control,44,Direct conifer recovery,0.3115736698443543
+Control,44,Deciduous transient,0.5513075071469875
+Control,45,Direct conifer recovery,0.3164558907328937
+Control,45,Deciduous transient,0.5633930182861
+Control,46,Direct conifer recovery,0.32029552638953035
+Control,46,Deciduous transient,0.576476489669444
+Control,47,Direct conifer recovery,0.3270263415850045
+Control,47,Deciduous transient,0.5891562466550487
+Control,48,Direct conifer recovery,0.3310099326637812
+Control,48,Deciduous transient,0.6016396664629219
+Control,49,Direct conifer recovery,0.3351948383791539
+Control,49,Deciduous transient,0.6134470808397524
+Control,50,Direct conifer recovery,0.33943475335352935
+Control,50,Deciduous transient,0.6255601711865387
+Control,51,Direct conifer recovery,0.3432572673853582
+Control,51,Deciduous transient,0.6370716446709634
+Control,52,Direct conifer recovery,0.34926522306006647
+Control,52,Deciduous transient,0.6484799507060515
+Control,53,Direct conifer recovery,0.353631613719581
+Control,53,Deciduous transient,0.6607561632738037
+Control,54,Direct conifer recovery,0.3583295929551156
+Control,54,Deciduous transient,0.6723855464471541
+Control,55,Direct conifer recovery,0.36343609718964254
+Control,55,Deciduous transient,0.6846361831330602
+Control,56,Direct conifer recovery,0.36828471259883416
+Control,56,Deciduous transient,0.6973745753096543
+Control,57,Direct conifer recovery,0.3747044275254744
+Control,57,Deciduous transient,0.7097129089774372
+Control,58,Direct conifer recovery,0.3787408715053566
+Control,58,Deciduous transient,0.7221250028363251
+Control,59,Direct conifer recovery,0.3829221877794474
+Control,59,Deciduous transient,0.7342244047500669
+Control,60,Direct conifer recovery,0.3874671319558855
+Control,60,Deciduous transient,0.7465204448660588
+Control,61,Direct conifer recovery,0.3914997135557303
+Control,61,Deciduous transient,0.757513920629383
+Control,62,Direct conifer recovery,0.3971237401749317
+Control,62,Deciduous transient,0.7701545642186558
+Control,63,Direct conifer recovery,0.40154780528455575
+Control,63,Deciduous transient,0.7822524933729348
+Control,64,Direct conifer recovery,0.4064150890301503
+Control,64,Deciduous transient,0.7944220396917234
+Control,65,Direct conifer recovery,0.41128220075964583
+Control,65,Deciduous transient,0.8068753466180677
+Control,66,Direct conifer recovery,0.4166988715755711
+Control,66,Deciduous transient,0.8190447877166237
+Control,67,Direct conifer recovery,0.4241768387254805
+Control,67,Deciduous transient,0.8316868617512997
+Control,68,Direct conifer recovery,0.43030726743808256
+Control,68,Deciduous transient,0.8434164017502387
+Control,69,Direct conifer recovery,0.43639412680382383
+Control,69,Deciduous transient,0.8561445283186004
+Control,70,Direct conifer recovery,0.44188192815476013
+Control,70,Deciduous transient,0.8691088893775415
+Control,71,Direct conifer recovery,0.4486963632733844
+Control,71,Deciduous transient,0.8825952464294712
+Control,72,Direct conifer recovery,0.45551626685070945
+Control,72,Deciduous transient,0.8957813985534288
+Control,73,Direct conifer recovery,0.46145665794924373
+Control,73,Deciduous transient,0.9085856065368036
+Control,74,Direct conifer recovery,0.46769733310278877
+Control,74,Deciduous transient,0.921236270358912
+Control,75,Direct conifer recovery,0.4741673419367339
+Control,75,Deciduous transient,0.933853134388294
+Control,76,Direct conifer recovery,0.4804810250341524
+Control,76,Deciduous transient,0.9463390731489989
+Control,77,Direct conifer recovery,0.48807283885110414
+Control,77,Deciduous transient,0.9603340882576862
+Control,78,Direct conifer recovery,0.49427156494652047
+Control,78,Deciduous transient,0.9734662584761958
+Control,79,Direct conifer recovery,0.5012065624563219
+Control,79,Deciduous transient,0.9863353313890424
+Control,80,Direct conifer recovery,0.5083135540398761
+Control,80,Deciduous transient,0.9996969284625196
+Control,81,Direct conifer recovery,0.5151941998377497
 Control,81,Deciduous transient,NA
-Control,82,Direct conifer recovery,0.5005161840678455
+Control,82,Direct conifer recovery,0.523972467010171
 Control,82,Deciduous transient,NA
-Control,83,Direct conifer recovery,0.5073886066836015
+Control,83,Direct conifer recovery,0.5310232987507207
 Control,83,Deciduous transient,NA
-Control,84,Direct conifer recovery,0.5158138006415084
+Control,84,Direct conifer recovery,0.5383757781730134
 Control,84,Deciduous transient,NA
-Control,85,Direct conifer recovery,0.5214962512700936
+Control,85,Direct conifer recovery,0.5460259954177473
 Control,85,Deciduous transient,NA
-Control,86,Direct conifer recovery,0.5290236275401856
+Control,86,Direct conifer recovery,0.5543195110263799
 Control,86,Deciduous transient,NA
-Control,87,Direct conifer recovery,0.5383386433528445
+Control,87,Direct conifer recovery,0.5632750800392016
 Control,87,Deciduous transient,NA
-Control,88,Direct conifer recovery,0.5458809712049417
+Control,88,Direct conifer recovery,0.5705390011321587
 Control,88,Deciduous transient,NA
-Control,89,Direct conifer recovery,0.5542745561593131
+Control,89,Direct conifer recovery,0.5775033942276068
 Control,89,Deciduous transient,NA
-Control,90,Direct conifer recovery,0.5611561218987628
+Control,90,Direct conifer recovery,0.5852903512779827
 Control,90,Deciduous transient,NA
-Control,91,Direct conifer recovery,0.5688725552883163
+Control,91,Direct conifer recovery,0.5933028306672581
 Control,91,Deciduous transient,NA
-Control,92,Direct conifer recovery,0.5781581307369086
+Control,92,Direct conifer recovery,0.602095680663437
 Control,92,Deciduous transient,NA
-Control,93,Direct conifer recovery,0.5863731817295446
+Control,93,Direct conifer recovery,0.6095522472571498
 Control,93,Deciduous transient,NA
-Control,94,Direct conifer recovery,0.5927595534439696
+Control,94,Direct conifer recovery,0.6165075071325197
 Control,94,Deciduous transient,NA
-Control,95,Direct conifer recovery,0.6003411167732837
+Control,95,Direct conifer recovery,0.6237879996350274
 Control,95,Deciduous transient,NA
-Control,96,Direct conifer recovery,0.6084365592522768
+Control,96,Direct conifer recovery,0.6303334945832257
 Control,96,Deciduous transient,NA
-Control,97,Direct conifer recovery,0.616465088337356
+Control,97,Direct conifer recovery,0.6383415985684358
 Control,97,Deciduous transient,NA
-Control,98,Direct conifer recovery,0.623971579993564
+Control,98,Direct conifer recovery,0.6457620697022994
 Control,98,Deciduous transient,NA
-Control,99,Direct conifer recovery,0.631538816725706
+Control,99,Direct conifer recovery,0.6535798340101924
 Control,99,Deciduous transient,NA
-Control,100,Direct conifer recovery,0.6404840911398804
+Control,100,Direct conifer recovery,0.6611972376501741
 Control,100,Deciduous transient,NA
-Control,101,Direct conifer recovery,0.6477674285475508
+Control,101,Direct conifer recovery,0.6678477710833359
 Control,101,Deciduous transient,NA
-Control,102,Direct conifer recovery,0.6523020885319395
+Control,102,Direct conifer recovery,0.6774171352895015
 Control,102,Deciduous transient,NA
-Control,103,Direct conifer recovery,0.6553449112888806
+Control,103,Direct conifer recovery,0.6843891014317425
 Control,103,Deciduous transient,NA
-Control,104,Direct conifer recovery,0.6591954714262022
+Control,104,Direct conifer recovery,0.6931523407174207
 Control,104,Deciduous transient,NA
-Control,105,Direct conifer recovery,0.6665241806261946
+Control,105,Direct conifer recovery,0.6997975771850771
 Control,105,Deciduous transient,NA
-Control,106,Direct conifer recovery,0.6681621071212214
+Control,106,Direct conifer recovery,0.7093944107826164
 Control,106,Deciduous transient,NA
-Control,107,Direct conifer recovery,0.6725336343371348
+Control,107,Direct conifer recovery,0.7181190428729954
 Control,107,Deciduous transient,NA
-Control,108,Direct conifer recovery,0.67935801179288
+Control,108,Direct conifer recovery,0.7236600667839679
 Control,108,Deciduous transient,NA
-Control,109,Direct conifer recovery,0.6879477469286964
+Control,109,Direct conifer recovery,0.7326804801416144
 Control,109,Deciduous transient,NA
-Control,110,Direct conifer recovery,0.6919766786480542
+Control,110,Direct conifer recovery,0.7393638052358503
 Control,110,Deciduous transient,NA
-Control,111,Direct conifer recovery,0.7035546617290058
+Control,111,Direct conifer recovery,0.7470317869460168
 Control,111,Deciduous transient,NA
-Control,112,Direct conifer recovery,0.7094336829142749
+Control,112,Direct conifer recovery,0.7482279866231502
 Control,112,Deciduous transient,NA
-Control,113,Direct conifer recovery,0.7178379115830945
+Control,113,Direct conifer recovery,0.7527849915050853
 Control,113,Deciduous transient,NA
-Control,114,Direct conifer recovery,0.7314845487694368
+Control,114,Direct conifer recovery,0.7622576468944969
 Control,114,Deciduous transient,NA
-Control,115,Direct conifer recovery,0.7473051233789982
+Control,115,Direct conifer recovery,0.7663914602133852
 Control,115,Deciduous transient,NA
-Control,116,Direct conifer recovery,0.7571423986854777
+Control,116,Direct conifer recovery,0.76575432901221685
 Control,116,Deciduous transient,NA
-Control,117,Direct conifer recovery,0.7472082986453725
+Control,117,Direct conifer recovery,0.772110957749024
 Control,117,Deciduous transient,NA
-Control,118,Direct conifer recovery,0.7572433309750163
+Control,118,Direct conifer recovery,0.7741462146818716
 Control,118,Deciduous transient,NA
-Control,119,Direct conifer recovery,0.7739911969811865
+Control,119,Direct conifer recovery,0.7811493233511754
 Control,119,Deciduous transient,NA
-Control,120,Direct conifer recovery,0.796909286719727
+Control,120,Direct conifer recovery,0.7882592987718198
 Control,120,Deciduous transient,NA
-Control,121,Direct conifer recovery,0.8323566105649206
+Control,121,Direct conifer recovery,0.8045213975488037
 Control,121,Deciduous transient,NA
-Control,122,Direct conifer recovery,0.8434843398359909
+Control,122,Direct conifer recovery,0.8114814346480006
 Control,122,Deciduous transient,NA
-Control,123,Direct conifer recovery,0.8234705391415557
+Control,123,Direct conifer recovery,0.8162399026308027
 Control,123,Deciduous transient,NA
-Control,124,Direct conifer recovery,0.8614902880545102
+Control,124,Direct conifer recovery,0.8278178403475605
 Control,124,Deciduous transient,NA
-Control,125,Direct conifer recovery,0.8314435840620081
+Control,125,Direct conifer recovery,0.8310185935546581
 Control,125,Deciduous transient,NA
 SSP1-RCP2.6,0,Direct conifer recovery,0
 SSP1-RCP2.6,0,Deciduous transient,0
 SSP1-RCP2.6,1,Direct conifer recovery,0
 SSP1-RCP2.6,1,Deciduous transient,0
-SSP1-RCP2.6,2,Direct conifer recovery,0.06751654813321024
-SSP1-RCP2.6,2,Deciduous transient,0.053342725528635386
-SSP1-RCP2.6,3,Direct conifer recovery,0.09334761097293603
-SSP1-RCP2.6,3,Deciduous transient,0.07488841610942427
-SSP1-RCP2.6,4,Direct conifer recovery,0.12059665216778824
-SSP1-RCP2.6,4,Deciduous transient,0.0941208455620137
-SSP1-RCP2.6,5,Direct conifer recovery,0.1535245392995408
-SSP1-RCP2.6,5,Deciduous transient,0.10813924488228151
-SSP1-RCP2.6,6,Direct conifer recovery,0.17306945984312702
-SSP1-RCP2.6,6,Deciduous transient,0.11640739921580033
-SSP1-RCP2.6,7,Direct conifer recovery,0.19204928793359008
-SSP1-RCP2.6,7,Deciduous transient,0.1271486943031212
-SSP1-RCP2.6,8,Direct conifer recovery,0.19439210512899718
-SSP1-RCP2.6,8,Deciduous transient,0.13526031173864556
-SSP1-RCP2.6,9,Direct conifer recovery,0.19336075138606396
-SSP1-RCP2.6,9,Deciduous transient,0.14479982398019958
-SSP1-RCP2.6,10,Direct conifer recovery,0.19500270373804449
-SSP1-RCP2.6,10,Deciduous transient,0.1570054202029418
-SSP1-RCP2.6,11,Direct conifer recovery,0.1960726088662023
-SSP1-RCP2.6,11,Deciduous transient,0.17102765833239278
-SSP1-RCP2.6,12,Direct conifer recovery,0.20422411272229332
-SSP1-RCP2.6,12,Deciduous transient,0.186912767169551
-SSP1-RCP2.6,13,Direct conifer recovery,0.20983406611214697
-SSP1-RCP2.6,13,Deciduous transient,0.20312069803286106
-SSP1-RCP2.6,14,Direct conifer recovery,0.21454948639506383
-SSP1-RCP2.6,14,Deciduous transient,0.2210190374504867
-SSP1-RCP2.6,15,Direct conifer recovery,0.22188374182374127
-SSP1-RCP2.6,15,Deciduous transient,0.24126843108814097
-SSP1-RCP2.6,16,Direct conifer recovery,0.2322815069175972
-SSP1-RCP2.6,16,Deciduous transient,0.2611186739375507
-SSP1-RCP2.6,17,Direct conifer recovery,0.24323670906862913
-SSP1-RCP2.6,17,Deciduous transient,0.28229193482104464
-SSP1-RCP2.6,18,Direct conifer recovery,0.2518209396621368
-SSP1-RCP2.6,18,Deciduous transient,0.30414164681909245
-SSP1-RCP2.6,19,Direct conifer recovery,0.26176567221666497
-SSP1-RCP2.6,19,Deciduous transient,0.3259858289742726
-SSP1-RCP2.6,20,Direct conifer recovery,0.2735974980175686
-SSP1-RCP2.6,20,Deciduous transient,0.3495190942211302
-SSP1-RCP2.6,21,Direct conifer recovery,0.283895331240696
-SSP1-RCP2.6,21,Deciduous transient,0.37212405716149743
-SSP1-RCP2.6,22,Direct conifer recovery,0.2983088566847581
-SSP1-RCP2.6,22,Deciduous transient,0.39443989928473105
-SSP1-RCP2.6,23,Direct conifer recovery,0.3099647749283907
-SSP1-RCP2.6,23,Deciduous transient,0.4159021153793749
-SSP1-RCP2.6,24,Direct conifer recovery,0.32449779277715024
-SSP1-RCP2.6,24,Deciduous transient,0.43575934446000436
-SSP1-RCP2.6,25,Direct conifer recovery,0.3397955922705842
-SSP1-RCP2.6,25,Deciduous transient,0.4576520011515794
-SSP1-RCP2.6,26,Direct conifer recovery,0.3531201267371593
-SSP1-RCP2.6,26,Deciduous transient,0.479642155894043
-SSP1-RCP2.6,27,Direct conifer recovery,0.3689759534761727
-SSP1-RCP2.6,27,Deciduous transient,0.5004325286815479
-SSP1-RCP2.6,28,Direct conifer recovery,0.3807309395938034
-SSP1-RCP2.6,28,Deciduous transient,0.5217483742175131
-SSP1-RCP2.6,29,Direct conifer recovery,0.3932330239271735
-SSP1-RCP2.6,29,Deciduous transient,0.5401897535710574
-SSP1-RCP2.6,30,Direct conifer recovery,0.4088119395547348
-SSP1-RCP2.6,30,Deciduous transient,0.5614399133511374
-SSP1-RCP2.6,31,Direct conifer recovery,0.4249859563603677
-SSP1-RCP2.6,31,Deciduous transient,0.5838493093325304
-SSP1-RCP2.6,32,Direct conifer recovery,0.4411091454090114
-SSP1-RCP2.6,32,Deciduous transient,0.6070737954955561
-SSP1-RCP2.6,33,Direct conifer recovery,0.4526983263892077
-SSP1-RCP2.6,33,Deciduous transient,0.6298318114251078
-SSP1-RCP2.6,34,Direct conifer recovery,0.4693151565422641
-SSP1-RCP2.6,34,Deciduous transient,0.6524209749404373
-SSP1-RCP2.6,35,Direct conifer recovery,0.48256993077707677
-SSP1-RCP2.6,35,Deciduous transient,0.6733866402767889
-SSP1-RCP2.6,36,Direct conifer recovery,0.495539791961539
-SSP1-RCP2.6,36,Deciduous transient,0.6909777579351399
-SSP1-RCP2.6,37,Direct conifer recovery,0.5117224981468778
-SSP1-RCP2.6,37,Deciduous transient,0.7119497606020676
-SSP1-RCP2.6,38,Direct conifer recovery,0.5221317478651594
-SSP1-RCP2.6,38,Deciduous transient,0.7335964093268752
-SSP1-RCP2.6,39,Direct conifer recovery,0.5351877681508962
-SSP1-RCP2.6,39,Deciduous transient,0.7555589707275574
-SSP1-RCP2.6,40,Direct conifer recovery,0.5467479281230424
-SSP1-RCP2.6,40,Deciduous transient,0.7746558061359003
-SSP1-RCP2.6,41,Direct conifer recovery,0.5583104623802209
-SSP1-RCP2.6,41,Deciduous transient,0.7951271843679019
-SSP1-RCP2.6,42,Direct conifer recovery,0.5703588262824063
-SSP1-RCP2.6,42,Deciduous transient,0.8160197904235905
-SSP1-RCP2.6,43,Direct conifer recovery,0.5826380764597829
-SSP1-RCP2.6,43,Deciduous transient,0.8349764087996243
-SSP1-RCP2.6,44,Direct conifer recovery,0.5970902363598537
-SSP1-RCP2.6,44,Deciduous transient,0.8552035361912163
-SSP1-RCP2.6,45,Direct conifer recovery,0.6105246796225487
-SSP1-RCP2.6,45,Deciduous transient,0.8742625589633151
-SSP1-RCP2.6,46,Direct conifer recovery,0.622477238804825
-SSP1-RCP2.6,46,Deciduous transient,0.8950409184834452
-SSP1-RCP2.6,47,Direct conifer recovery,0.6350613972589522
-SSP1-RCP2.6,47,Deciduous transient,0.9113667446762905
-SSP1-RCP2.6,48,Direct conifer recovery,0.6464216148744514
-SSP1-RCP2.6,48,Deciduous transient,0.9297925658234925
-SSP1-RCP2.6,49,Direct conifer recovery,0.6596228778759694
-SSP1-RCP2.6,49,Deciduous transient,0.9477687702039653
-SSP1-RCP2.6,50,Direct conifer recovery,0.6697219639622147
-SSP1-RCP2.6,50,Deciduous transient,0.9650665293706798
-SSP1-RCP2.6,51,Direct conifer recovery,0.6808718965513932
-SSP1-RCP2.6,51,Deciduous transient,0.9832849457541868
-SSP1-RCP2.6,52,Direct conifer recovery,0.6937123751373578
+SSP1-RCP2.6,2,Direct conifer recovery,0.06529808568796518
+SSP1-RCP2.6,2,Deciduous transient,0.05716900034112673
+SSP1-RCP2.6,3,Direct conifer recovery,0.08929674788741553
+SSP1-RCP2.6,3,Deciduous transient,0.08130001131634357
+SSP1-RCP2.6,4,Direct conifer recovery,0.11444848221172642
+SSP1-RCP2.6,4,Deciduous transient,0.10263868818619136
+SSP1-RCP2.6,5,Direct conifer recovery,0.14756478756156713
+SSP1-RCP2.6,5,Deciduous transient,0.11742138774585362
+SSP1-RCP2.6,6,Direct conifer recovery,0.16961364948404425
+SSP1-RCP2.6,6,Deciduous transient,0.12734254492841598
+SSP1-RCP2.6,7,Direct conifer recovery,0.18836080654967224
+SSP1-RCP2.6,7,Deciduous transient,0.13891061491001563
+SSP1-RCP2.6,8,Direct conifer recovery,0.19293397266347875
+SSP1-RCP2.6,8,Deciduous transient,0.14805505660033924
+SSP1-RCP2.6,9,Direct conifer recovery,0.19373253511900831
+SSP1-RCP2.6,9,Deciduous transient,0.15881795725688644
+SSP1-RCP2.6,10,Direct conifer recovery,0.19486407359010408
+SSP1-RCP2.6,10,Deciduous transient,0.17123570343455094
+SSP1-RCP2.6,11,Direct conifer recovery,0.19795928310424404
+SSP1-RCP2.6,11,Deciduous transient,0.1851670956098192
+SSP1-RCP2.6,12,Direct conifer recovery,0.20692051236023115
+SSP1-RCP2.6,12,Deciduous transient,0.20230098197273097
+SSP1-RCP2.6,13,Direct conifer recovery,0.212429916546878
+SSP1-RCP2.6,13,Deciduous transient,0.21989736979537142
+SSP1-RCP2.6,14,Direct conifer recovery,0.2185645358155026
+SSP1-RCP2.6,14,Deciduous transient,0.2395155534449062
+SSP1-RCP2.6,15,Direct conifer recovery,0.22617447248601133
+SSP1-RCP2.6,15,Deciduous transient,0.260027953247645
+SSP1-RCP2.6,16,Direct conifer recovery,0.23420600027912059
+SSP1-RCP2.6,16,Deciduous transient,0.28190359782745916
+SSP1-RCP2.6,17,Direct conifer recovery,0.24713128980412394
+SSP1-RCP2.6,17,Deciduous transient,0.3049857077713581
+SSP1-RCP2.6,18,Direct conifer recovery,0.25617125590857076
+SSP1-RCP2.6,18,Deciduous transient,0.32797762270727027
+SSP1-RCP2.6,19,Direct conifer recovery,0.26649902485897864
+SSP1-RCP2.6,19,Deciduous transient,0.3512935719392319
+SSP1-RCP2.6,20,Direct conifer recovery,0.27805147508288885
+SSP1-RCP2.6,20,Deciduous transient,0.3752621153448165
+SSP1-RCP2.6,21,Direct conifer recovery,0.2893641688147396
+SSP1-RCP2.6,21,Deciduous transient,0.3996073002251715
+SSP1-RCP2.6,22,Direct conifer recovery,0.3043820848279727
+SSP1-RCP2.6,22,Deciduous transient,0.4243027675065877
+SSP1-RCP2.6,23,Direct conifer recovery,0.31699233900135226
+SSP1-RCP2.6,23,Deciduous transient,0.4479930261048622
+SSP1-RCP2.6,24,Direct conifer recovery,0.32986735753760776
+SSP1-RCP2.6,24,Deciduous transient,0.4719083513373862
+SSP1-RCP2.6,25,Direct conifer recovery,0.3444070123701228
+SSP1-RCP2.6,25,Deciduous transient,0.49606135920001876
+SSP1-RCP2.6,26,Direct conifer recovery,0.35768779627455316
+SSP1-RCP2.6,26,Deciduous transient,0.5196595211737853
+SSP1-RCP2.6,27,Direct conifer recovery,0.373469697009056
+SSP1-RCP2.6,27,Deciduous transient,0.5428739639908401
+SSP1-RCP2.6,28,Direct conifer recovery,0.3861491315586544
+SSP1-RCP2.6,28,Deciduous transient,0.565448098415478
+SSP1-RCP2.6,29,Direct conifer recovery,0.3991347555935838
+SSP1-RCP2.6,29,Deciduous transient,0.5871655341748477
+SSP1-RCP2.6,30,Direct conifer recovery,0.4117106273771799
+SSP1-RCP2.6,30,Deciduous transient,0.610063223260706
+SSP1-RCP2.6,31,Direct conifer recovery,0.4250054252500497
+SSP1-RCP2.6,31,Deciduous transient,0.6334593082318536
+SSP1-RCP2.6,32,Direct conifer recovery,0.4402457680659462
+SSP1-RCP2.6,32,Deciduous transient,0.6571245320434388
+SSP1-RCP2.6,33,Direct conifer recovery,0.45219233158778077
+SSP1-RCP2.6,33,Deciduous transient,0.6807859953374941
+SSP1-RCP2.6,34,Direct conifer recovery,0.4653464396664583
+SSP1-RCP2.6,34,Deciduous transient,0.7045456426986945
+SSP1-RCP2.6,35,Direct conifer recovery,0.4777338756728177
+SSP1-RCP2.6,35,Deciduous transient,0.7280769838141197
+SSP1-RCP2.6,36,Direct conifer recovery,0.490565226989092
+SSP1-RCP2.6,36,Deciduous transient,0.7502760406842067
+SSP1-RCP2.6,37,Direct conifer recovery,0.5042937931860596
+SSP1-RCP2.6,37,Deciduous transient,0.7741051651713357
+SSP1-RCP2.6,38,Direct conifer recovery,0.5155425029050237
+SSP1-RCP2.6,38,Deciduous transient,0.7978338443692312
+SSP1-RCP2.6,39,Direct conifer recovery,0.5278397314303115
+SSP1-RCP2.6,39,Deciduous transient,0.821525434818669
+SSP1-RCP2.6,40,Direct conifer recovery,0.5395707587535032
+SSP1-RCP2.6,40,Deciduous transient,0.8448114775432563
+SSP1-RCP2.6,41,Direct conifer recovery,0.5515399069365324
+SSP1-RCP2.6,41,Deciduous transient,0.8670943149065818
+SSP1-RCP2.6,42,Direct conifer recovery,0.5642854803150863
+SSP1-RCP2.6,42,Deciduous transient,0.8898769644468928
+SSP1-RCP2.6,43,Direct conifer recovery,0.5763243221629599
+SSP1-RCP2.6,43,Deciduous transient,0.9117707518505535
+SSP1-RCP2.6,44,Direct conifer recovery,0.5877984148179624
+SSP1-RCP2.6,44,Deciduous transient,0.9339602971154586
+SSP1-RCP2.6,45,Direct conifer recovery,0.5982946408773053
+SSP1-RCP2.6,45,Deciduous transient,0.9557515083376956
+SSP1-RCP2.6,46,Direct conifer recovery,0.6080592606329736
+SSP1-RCP2.6,46,Deciduous transient,0.976601765207333
+SSP1-RCP2.6,47,Direct conifer recovery,0.6180808971476818
+SSP1-RCP2.6,47,Deciduous transient,0.997412999571419
+SSP1-RCP2.6,48,Direct conifer recovery,0.6277282690389473
+SSP1-RCP2.6,48,Deciduous transient,NA
+SSP1-RCP2.6,49,Direct conifer recovery,0.638454838632056
+SSP1-RCP2.6,49,Deciduous transient,NA
+SSP1-RCP2.6,50,Direct conifer recovery,0.647974772112913
+SSP1-RCP2.6,50,Deciduous transient,NA
+SSP1-RCP2.6,51,Direct conifer recovery,0.6575646628507105
+SSP1-RCP2.6,51,Deciduous transient,NA
+SSP1-RCP2.6,52,Direct conifer recovery,0.6681959190540231
 SSP1-RCP2.6,52,Deciduous transient,NA
-SSP1-RCP2.6,53,Direct conifer recovery,0.7017845959904996
+SSP1-RCP2.6,53,Direct conifer recovery,0.6769776837605329
 SSP1-RCP2.6,53,Deciduous transient,NA
-SSP1-RCP2.6,54,Direct conifer recovery,0.7147570648418857
+SSP1-RCP2.6,54,Direct conifer recovery,0.6861749072627265
 SSP1-RCP2.6,54,Deciduous transient,NA
-SSP1-RCP2.6,55,Direct conifer recovery,0.7239152558728192
+SSP1-RCP2.6,55,Direct conifer recovery,0.6948240706653644
 SSP1-RCP2.6,55,Deciduous transient,NA
-SSP1-RCP2.6,56,Direct conifer recovery,0.7341276562457054
+SSP1-RCP2.6,56,Direct conifer recovery,0.7045003397100443
 SSP1-RCP2.6,56,Deciduous transient,NA
-SSP1-RCP2.6,57,Direct conifer recovery,0.7435862355908307
+SSP1-RCP2.6,57,Direct conifer recovery,0.7138790451043723
 SSP1-RCP2.6,57,Deciduous transient,NA
-SSP1-RCP2.6,58,Direct conifer recovery,0.7503484707129179
+SSP1-RCP2.6,58,Direct conifer recovery,0.7230894040317977
 SSP1-RCP2.6,58,Deciduous transient,NA
-SSP1-RCP2.6,59,Direct conifer recovery,0.7552074568569384
+SSP1-RCP2.6,59,Direct conifer recovery,0.7327414280138831
 SSP1-RCP2.6,59,Deciduous transient,NA
-SSP1-RCP2.6,60,Direct conifer recovery,0.7654789752733485
+SSP1-RCP2.6,60,Direct conifer recovery,0.7422282359912036
 SSP1-RCP2.6,60,Deciduous transient,NA
-SSP1-RCP2.6,61,Direct conifer recovery,0.772291131477617
+SSP1-RCP2.6,61,Direct conifer recovery,0.7521107474893749
 SSP1-RCP2.6,61,Deciduous transient,NA
-SSP1-RCP2.6,62,Direct conifer recovery,0.7793487986474137
+SSP1-RCP2.6,62,Direct conifer recovery,0.7621923664770156
 SSP1-RCP2.6,62,Deciduous transient,NA
-SSP1-RCP2.6,63,Direct conifer recovery,0.7880137715087739
+SSP1-RCP2.6,63,Direct conifer recovery,0.7717040793917016
 SSP1-RCP2.6,63,Deciduous transient,NA
-SSP1-RCP2.6,64,Direct conifer recovery,0.7971163070217815
+SSP1-RCP2.6,64,Direct conifer recovery,0.7815042534937973
 SSP1-RCP2.6,64,Deciduous transient,NA
-SSP1-RCP2.6,65,Direct conifer recovery,0.8036157952804747
+SSP1-RCP2.6,65,Direct conifer recovery,0.7908154753561317
 SSP1-RCP2.6,65,Deciduous transient,NA
-SSP1-RCP2.6,66,Direct conifer recovery,0.810395753451119
+SSP1-RCP2.6,66,Direct conifer recovery,0.7989964428765027
 SSP1-RCP2.6,66,Deciduous transient,NA
-SSP1-RCP2.6,67,Direct conifer recovery,0.8199603095701468
+SSP1-RCP2.6,67,Direct conifer recovery,0.8081849224542724
 SSP1-RCP2.6,67,Deciduous transient,NA
-SSP1-RCP2.6,68,Direct conifer recovery,0.8290960325073674
+SSP1-RCP2.6,68,Direct conifer recovery,0.8171224529396522
 SSP1-RCP2.6,68,Deciduous transient,NA
-SSP1-RCP2.6,69,Direct conifer recovery,0.835808721432548
+SSP1-RCP2.6,69,Direct conifer recovery,0.8251890539600426
 SSP1-RCP2.6,69,Deciduous transient,NA
-SSP1-RCP2.6,70,Direct conifer recovery,0.8464810590301751
+SSP1-RCP2.6,70,Direct conifer recovery,0.8344805723004882
 SSP1-RCP2.6,70,Deciduous transient,NA
-SSP1-RCP2.6,71,Direct conifer recovery,0.8553964971808208
+SSP1-RCP2.6,71,Direct conifer recovery,0.8446777407937738
 SSP1-RCP2.6,71,Deciduous transient,NA
-SSP1-RCP2.6,72,Direct conifer recovery,0.8636616450717888
+SSP1-RCP2.6,72,Direct conifer recovery,0.8548635687191045
 SSP1-RCP2.6,72,Deciduous transient,NA
-SSP1-RCP2.6,73,Direct conifer recovery,0.8708289128245272
+SSP1-RCP2.6,73,Direct conifer recovery,0.8645391637793395
 SSP1-RCP2.6,73,Deciduous transient,NA
-SSP1-RCP2.6,74,Direct conifer recovery,0.8810047404028463
+SSP1-RCP2.6,74,Direct conifer recovery,0.873885919292806
 SSP1-RCP2.6,74,Deciduous transient,NA
-SSP1-RCP2.6,75,Direct conifer recovery,0.8914105807383105
+SSP1-RCP2.6,75,Direct conifer recovery,0.8836178360242021
 SSP1-RCP2.6,75,Deciduous transient,NA
-SSP1-RCP2.6,76,Direct conifer recovery,0.8985971818060159
+SSP1-RCP2.6,76,Direct conifer recovery,0.8930706953099643
 SSP1-RCP2.6,76,Deciduous transient,NA
-SSP1-RCP2.6,77,Direct conifer recovery,0.906833070396721
+SSP1-RCP2.6,77,Direct conifer recovery,0.9030354232101164
 SSP1-RCP2.6,77,Deciduous transient,NA
-SSP1-RCP2.6,78,Direct conifer recovery,0.914027195199759
+SSP1-RCP2.6,78,Direct conifer recovery,0.9123310049007036
 SSP1-RCP2.6,78,Deciduous transient,NA
-SSP1-RCP2.6,79,Direct conifer recovery,0.9226446033807574
+SSP1-RCP2.6,79,Direct conifer recovery,0.9223243175584457
 SSP1-RCP2.6,79,Deciduous transient,NA
-SSP1-RCP2.6,80,Direct conifer recovery,0.933770339770669
+SSP1-RCP2.6,80,Direct conifer recovery,0.9316251472791257
 SSP1-RCP2.6,80,Deciduous transient,NA
-SSP1-RCP2.6,81,Direct conifer recovery,0.9448772737528714
+SSP1-RCP2.6,81,Direct conifer recovery,0.9429509011711716
 SSP1-RCP2.6,81,Deciduous transient,NA
-SSP1-RCP2.6,82,Direct conifer recovery,0.9552867471284365
+SSP1-RCP2.6,82,Direct conifer recovery,0.9553220829146926
 SSP1-RCP2.6,82,Deciduous transient,NA
-SSP1-RCP2.6,83,Direct conifer recovery,0.9648511767498588
+SSP1-RCP2.6,83,Direct conifer recovery,0.9670708491300525
 SSP1-RCP2.6,83,Deciduous transient,NA
-SSP1-RCP2.6,84,Direct conifer recovery,0.9776943664443679
+SSP1-RCP2.6,84,Direct conifer recovery,0.9787367693198875
 SSP1-RCP2.6,84,Deciduous transient,NA
-SSP1-RCP2.6,85,Direct conifer recovery,0.9888179295463946
+SSP1-RCP2.6,85,Direct conifer recovery,0.9903410090521542
 SSP1-RCP2.6,85,Deciduous transient,NA
-SSP1-RCP2.6,86,Direct conifer recovery,0.9992902210202601
+SSP1-RCP2.6,86,Direct conifer recovery,NA
 SSP1-RCP2.6,86,Deciduous transient,NA
 SSP1-RCP2.6,87,Direct conifer recovery,NA
 SSP1-RCP2.6,87,Deciduous transient,NA
@@ -507,109 +507,109 @@ SSP5-RCP8.5,0,Direct conifer recovery,0
 SSP5-RCP8.5,0,Deciduous transient,0
 SSP5-RCP8.5,1,Direct conifer recovery,0
 SSP5-RCP8.5,1,Deciduous transient,0
-SSP5-RCP8.5,2,Direct conifer recovery,0.06548512935331288
-SSP5-RCP8.5,2,Deciduous transient,0.057512729969456534
-SSP5-RCP8.5,3,Direct conifer recovery,0.09158608373841798
-SSP5-RCP8.5,3,Deciduous transient,0.08236418267748377
-SSP5-RCP8.5,4,Direct conifer recovery,0.12240347606354826
-SSP5-RCP8.5,4,Deciduous transient,0.10448770547076523
-SSP5-RCP8.5,5,Direct conifer recovery,0.15706772916322906
-SSP5-RCP8.5,5,Deciduous transient,0.12042087804713929
-SSP5-RCP8.5,6,Direct conifer recovery,0.17739224087370728
-SSP5-RCP8.5,6,Deciduous transient,0.13139299006557686
-SSP5-RCP8.5,7,Direct conifer recovery,0.1934796910821275
-SSP5-RCP8.5,7,Deciduous transient,0.14482998015437748
-SSP5-RCP8.5,8,Direct conifer recovery,0.1953743669668082
-SSP5-RCP8.5,8,Deciduous transient,0.1553496426369087
-SSP5-RCP8.5,9,Direct conifer recovery,0.19597962226815738
-SSP5-RCP8.5,9,Deciduous transient,0.16959123222667102
-SSP5-RCP8.5,10,Direct conifer recovery,0.19770168085044948
-SSP5-RCP8.5,10,Deciduous transient,0.18657435774520842
-SSP5-RCP8.5,11,Direct conifer recovery,0.20210452723247627
-SSP5-RCP8.5,11,Deciduous transient,0.20544144917987073
-SSP5-RCP8.5,12,Direct conifer recovery,0.21274375835312662
-SSP5-RCP8.5,12,Deciduous transient,0.2268270803776982
-SSP5-RCP8.5,13,Direct conifer recovery,0.22013770662856585
-SSP5-RCP8.5,13,Deciduous transient,0.24842337218776375
-SSP5-RCP8.5,14,Direct conifer recovery,0.2309345135290966
-SSP5-RCP8.5,14,Deciduous transient,0.2715971080066077
-SSP5-RCP8.5,15,Direct conifer recovery,0.24094879224840896
-SSP5-RCP8.5,15,Deciduous transient,0.2961466344984874
-SSP5-RCP8.5,16,Direct conifer recovery,0.2501614278834079
-SSP5-RCP8.5,16,Deciduous transient,0.3208818802784437
-SSP5-RCP8.5,17,Direct conifer recovery,0.26626680564441385
-SSP5-RCP8.5,17,Deciduous transient,0.34792106956835656
-SSP5-RCP8.5,18,Direct conifer recovery,0.2769424874864877
-SSP5-RCP8.5,18,Deciduous transient,0.37453735760579193
-SSP5-RCP8.5,19,Direct conifer recovery,0.291160169966049
-SSP5-RCP8.5,19,Deciduous transient,0.40229962671578956
-SSP5-RCP8.5,20,Direct conifer recovery,0.3041254339413022
-SSP5-RCP8.5,20,Deciduous transient,0.42965419319286113
-SSP5-RCP8.5,21,Direct conifer recovery,0.3203875113519473
-SSP5-RCP8.5,21,Deciduous transient,0.45520152735280767
-SSP5-RCP8.5,22,Direct conifer recovery,0.3387759108723868
-SSP5-RCP8.5,22,Deciduous transient,0.4813672001616967
-SSP5-RCP8.5,23,Direct conifer recovery,0.35436221048414307
-SSP5-RCP8.5,23,Deciduous transient,0.5097958836233166
-SSP5-RCP8.5,24,Direct conifer recovery,0.3702491670983003
-SSP5-RCP8.5,24,Deciduous transient,0.532912876259663
-SSP5-RCP8.5,25,Direct conifer recovery,0.3866049768522258
-SSP5-RCP8.5,25,Deciduous transient,0.5606075841119713
-SSP5-RCP8.5,26,Direct conifer recovery,0.40558508706158297
-SSP5-RCP8.5,26,Deciduous transient,0.5856141704990443
-SSP5-RCP8.5,27,Direct conifer recovery,0.4273898710674625
-SSP5-RCP8.5,27,Deciduous transient,0.6122692325495249
-SSP5-RCP8.5,28,Direct conifer recovery,0.44528349103146936
-SSP5-RCP8.5,28,Deciduous transient,0.6403662929999296
-SSP5-RCP8.5,29,Direct conifer recovery,0.46621503770139816
-SSP5-RCP8.5,29,Deciduous transient,0.6668478345753339
-SSP5-RCP8.5,30,Direct conifer recovery,0.48322549045541546
-SSP5-RCP8.5,30,Deciduous transient,0.6951926589005837
-SSP5-RCP8.5,31,Direct conifer recovery,0.5050136241796722
-SSP5-RCP8.5,31,Deciduous transient,0.7250177545101775
-SSP5-RCP8.5,32,Direct conifer recovery,0.5282513643530771
-SSP5-RCP8.5,32,Deciduous transient,0.7542420399354588
-SSP5-RCP8.5,33,Direct conifer recovery,0.5463435020606865
-SSP5-RCP8.5,33,Deciduous transient,0.7800813399231276
-SSP5-RCP8.5,34,Direct conifer recovery,0.563286654794251
-SSP5-RCP8.5,34,Deciduous transient,0.8086068113263779
-SSP5-RCP8.5,35,Direct conifer recovery,0.582486321087376
-SSP5-RCP8.5,35,Deciduous transient,0.8351776193291073
-SSP5-RCP8.5,36,Direct conifer recovery,0.6041026774524489
-SSP5-RCP8.5,36,Deciduous transient,0.8640463519429478
-SSP5-RCP8.5,37,Direct conifer recovery,0.625300461138534
-SSP5-RCP8.5,37,Deciduous transient,0.8919582768625103
-SSP5-RCP8.5,38,Direct conifer recovery,0.6512611588516967
-SSP5-RCP8.5,38,Deciduous transient,0.9208892561252591
-SSP5-RCP8.5,39,Direct conifer recovery,0.6770880268450173
-SSP5-RCP8.5,39,Deciduous transient,0.9460651764338939
-SSP5-RCP8.5,40,Direct conifer recovery,0.7005843657430818
-SSP5-RCP8.5,40,Deciduous transient,0.973145035099664
-SSP5-RCP8.5,41,Direct conifer recovery,0.7219869740744594
-SSP5-RCP8.5,41,Deciduous transient,0.9988917110591878
-SSP5-RCP8.5,42,Direct conifer recovery,0.747504658448843
+SSP5-RCP8.5,2,Direct conifer recovery,0.0686168066863188
+SSP5-RCP8.5,2,Deciduous transient,0.05980078836615286
+SSP5-RCP8.5,3,Direct conifer recovery,0.09580776277206136
+SSP5-RCP8.5,3,Deciduous transient,0.08563329110217258
+SSP5-RCP8.5,4,Direct conifer recovery,0.12653139039074152
+SSP5-RCP8.5,4,Deciduous transient,0.10913260636547326
+SSP5-RCP8.5,5,Direct conifer recovery,0.1628502277857293
+SSP5-RCP8.5,5,Deciduous transient,0.12551446691883605
+SSP5-RCP8.5,6,Direct conifer recovery,0.1856477855037086
+SSP5-RCP8.5,6,Deciduous transient,0.13659033040123683
+SSP5-RCP8.5,7,Direct conifer recovery,0.2027608623161342
+SSP5-RCP8.5,7,Deciduous transient,0.1502007474732444
+SSP5-RCP8.5,8,Direct conifer recovery,0.20695405793791083
+SSP5-RCP8.5,8,Deciduous transient,0.16164454239280726
+SSP5-RCP8.5,9,Direct conifer recovery,0.20752743123984144
+SSP5-RCP8.5,9,Deciduous transient,0.17540309041390312
+SSP5-RCP8.5,10,Direct conifer recovery,0.21068493632294086
+SSP5-RCP8.5,10,Deciduous transient,0.19142797721644159
+SSP5-RCP8.5,11,Direct conifer recovery,0.21427744992775394
+SSP5-RCP8.5,11,Deciduous transient,0.20976594053444997
+SSP5-RCP8.5,12,Direct conifer recovery,0.22683091841713243
+SSP5-RCP8.5,12,Deciduous transient,0.23169389301196266
+SSP5-RCP8.5,13,Direct conifer recovery,0.2352075000409267
+SSP5-RCP8.5,13,Deciduous transient,0.254218720308768
+SSP5-RCP8.5,14,Direct conifer recovery,0.24553488345085145
+SSP5-RCP8.5,14,Deciduous transient,0.2786414694166505
+SSP5-RCP8.5,15,Direct conifer recovery,0.25639553474648497
+SSP5-RCP8.5,15,Deciduous transient,0.3042332225877095
+SSP5-RCP8.5,16,Direct conifer recovery,0.26698290190801405
+SSP5-RCP8.5,16,Deciduous transient,0.3309428103947066
+SSP5-RCP8.5,17,Direct conifer recovery,0.28302793531596787
+SSP5-RCP8.5,17,Deciduous transient,0.35870975928815696
+SSP5-RCP8.5,18,Direct conifer recovery,0.29580961186215354
+SSP5-RCP8.5,18,Deciduous transient,0.3867351505616928
+SSP5-RCP8.5,19,Direct conifer recovery,0.31015942018064707
+SSP5-RCP8.5,19,Deciduous transient,0.4153074775869765
+SSP5-RCP8.5,20,Direct conifer recovery,0.3257691699213854
+SSP5-RCP8.5,20,Deciduous transient,0.4434691375380195
+SSP5-RCP8.5,21,Direct conifer recovery,0.3425399046715457
+SSP5-RCP8.5,21,Deciduous transient,0.4718414974740939
+SSP5-RCP8.5,22,Direct conifer recovery,0.361737701362093
+SSP5-RCP8.5,22,Deciduous transient,0.5003351040698331
+SSP5-RCP8.5,23,Direct conifer recovery,0.378416627725743
+SSP5-RCP8.5,23,Deciduous transient,0.5285824998490861
+SSP5-RCP8.5,24,Direct conifer recovery,0.39669254272102084
+SSP5-RCP8.5,24,Deciduous transient,0.5555510766390331
+SSP5-RCP8.5,25,Direct conifer recovery,0.41613602250964876
+SSP5-RCP8.5,25,Deciduous transient,0.5826126753901727
+SSP5-RCP8.5,26,Direct conifer recovery,0.43493853821092365
+SSP5-RCP8.5,26,Deciduous transient,0.6104291126377994
+SSP5-RCP8.5,27,Direct conifer recovery,0.4559780090423625
+SSP5-RCP8.5,27,Deciduous transient,0.6383670217574414
+SSP5-RCP8.5,28,Direct conifer recovery,0.4748724829940305
+SSP5-RCP8.5,28,Deciduous transient,0.6666802774830958
+SSP5-RCP8.5,29,Direct conifer recovery,0.4948604430944527
+SSP5-RCP8.5,29,Deciduous transient,0.6951854787984344
+SSP5-RCP8.5,30,Direct conifer recovery,0.5154995390152106
+SSP5-RCP8.5,30,Deciduous transient,0.7241324599843649
+SSP5-RCP8.5,31,Direct conifer recovery,0.5355363350238097
+SSP5-RCP8.5,31,Deciduous transient,0.7527907078969043
+SSP5-RCP8.5,32,Direct conifer recovery,0.5568193306751373
+SSP5-RCP8.5,32,Deciduous transient,0.7822442215742833
+SSP5-RCP8.5,33,Direct conifer recovery,0.5773340292667576
+SSP5-RCP8.5,33,Deciduous transient,0.8111847749869853
+SSP5-RCP8.5,34,Direct conifer recovery,0.5980186542777196
+SSP5-RCP8.5,34,Deciduous transient,0.8407503183676011
+SSP5-RCP8.5,35,Direct conifer recovery,0.619142137649874
+SSP5-RCP8.5,35,Deciduous transient,0.8703808443089639
+SSP5-RCP8.5,36,Direct conifer recovery,0.6406238225091496
+SSP5-RCP8.5,36,Deciduous transient,0.9002563172174894
+SSP5-RCP8.5,37,Direct conifer recovery,0.6623358391259563
+SSP5-RCP8.5,37,Deciduous transient,0.9302856958772565
+SSP5-RCP8.5,38,Direct conifer recovery,0.6854095382467543
+SSP5-RCP8.5,38,Deciduous transient,0.9604675984935271
+SSP5-RCP8.5,39,Direct conifer recovery,0.706946063555348
+SSP5-RCP8.5,39,Deciduous transient,0.9894446301852723
+SSP5-RCP8.5,40,Direct conifer recovery,0.728082955364382
+SSP5-RCP8.5,40,Deciduous transient,NA
+SSP5-RCP8.5,41,Direct conifer recovery,0.7501558563055626
+SSP5-RCP8.5,41,Deciduous transient,NA
+SSP5-RCP8.5,42,Direct conifer recovery,0.7723466529617947
 SSP5-RCP8.5,42,Deciduous transient,NA
-SSP5-RCP8.5,43,Direct conifer recovery,0.7684316356025861
+SSP5-RCP8.5,43,Direct conifer recovery,0.7952309871787913
 SSP5-RCP8.5,43,Deciduous transient,NA
-SSP5-RCP8.5,44,Direct conifer recovery,0.7913511298871514
+SSP5-RCP8.5,44,Direct conifer recovery,0.8181582798722872
 SSP5-RCP8.5,44,Deciduous transient,NA
-SSP5-RCP8.5,45,Direct conifer recovery,0.8135648925472082
+SSP5-RCP8.5,45,Direct conifer recovery,0.8425428423138036
 SSP5-RCP8.5,45,Deciduous transient,NA
-SSP5-RCP8.5,46,Direct conifer recovery,0.8365030186110788
+SSP5-RCP8.5,46,Direct conifer recovery,0.8678125986537245
 SSP5-RCP8.5,46,Deciduous transient,NA
-SSP5-RCP8.5,47,Direct conifer recovery,0.854327902286954
+SSP5-RCP8.5,47,Direct conifer recovery,0.8916877991070196
 SSP5-RCP8.5,47,Deciduous transient,NA
-SSP5-RCP8.5,48,Direct conifer recovery,0.874335294116007
+SSP5-RCP8.5,48,Direct conifer recovery,0.9150159742366004
 SSP5-RCP8.5,48,Deciduous transient,NA
-SSP5-RCP8.5,49,Direct conifer recovery,0.89770285378758
+SSP5-RCP8.5,49,Direct conifer recovery,0.9375597567614163
 SSP5-RCP8.5,49,Deciduous transient,NA
-SSP5-RCP8.5,50,Direct conifer recovery,0.9177922034404611
+SSP5-RCP8.5,50,Direct conifer recovery,0.9607626911559096
 SSP5-RCP8.5,50,Deciduous transient,NA
-SSP5-RCP8.5,51,Direct conifer recovery,0.9419862674951618
+SSP5-RCP8.5,51,Direct conifer recovery,0.9820860336460224
 SSP5-RCP8.5,51,Deciduous transient,NA
-SSP5-RCP8.5,52,Direct conifer recovery,0.9642160578784165
+SSP5-RCP8.5,52,Direct conifer recovery,NA
 SSP5-RCP8.5,52,Deciduous transient,NA
-SSP5-RCP8.5,53,Direct conifer recovery,0.982994081850291
+SSP5-RCP8.5,53,Direct conifer recovery,NA
 SSP5-RCP8.5,53,Deciduous transient,NA
 SSP5-RCP8.5,54,Direct conifer recovery,NA
 SSP5-RCP8.5,54,Deciduous transient,NA

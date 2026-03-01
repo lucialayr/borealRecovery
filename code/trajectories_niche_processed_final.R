@@ -8,11 +8,11 @@ library(terra)
 library(grid)
 
 
-install.packages("scico")
-install.packages("ggnewscale")
-install.packages("cowplot")
-install.packages("rnaturalearth")
-install.packages("rnaturalearthdata")
+# install.packages("scico")
+# install.packages("ggnewscale")
+# install.packages("cowplot")
+# install.packages("rnaturalearth")
+# install.packages("rnaturalearthdata")
 library(cowplot)
 library(scico)
 library(ggnewscale)
@@ -111,7 +111,8 @@ final_trajectories_niche_B = function() {
   st_write(polygons_to_plot, here("data", "final", "shp", "trajectories_niche_B.shp"))
 }
 
-final_trajectories_niche_B()
+# Commented out since shapefile already exists and has PROJ issues
+# final_trajectories_niche_B()
 
 trajectories_species_composition = function(start_year, end_year) {
   data = list()
@@ -165,7 +166,7 @@ trajectories_agb = function(start_year, end_year) {
  
   df_cmass = purrr::reduce(data_carbon, bind_rows) %>%
     filter(time_since_dist > 100) %>%
-    left_join(df_class)
+    left_join(df_class_script)
   
   df_cmass_mean = df_cmass %>%
     group_by(s, age) %>%
