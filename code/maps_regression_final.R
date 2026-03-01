@@ -2,6 +2,7 @@ library(here)
 source(here("code", "utils.R"))
 
 library(tidyverse)
+library(sf)
 library(stats)
 library(zoo)
 library(splines)
@@ -15,7 +16,7 @@ maps_regression_A_final = function(start_year, end_year) {
     st_as_sf(coords = c("Lon", "Lat"), crs = 4326) %>%
     mutate(s = long_names_scenarios(s))
   
-  st_write(df_sf, paste0(here("data", "final", "shp", "maps_regression_A_final_",  start_year, "_", end_year, ".shp"))
+  st_write(df_sf, paste0(here("data", "final", "shp"), "/maps_regression_A_final_",  start_year, "_", end_year, ".shp"), delete_dsn = TRUE)
 }
 maps_regression_A_final(2015, 2040)
 maps_regression_A_final(2075, 2100)

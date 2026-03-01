@@ -26,7 +26,7 @@ Control,11,Deciduous transient,0.15733669464469807
 Control,12,Direct conifer recovery,0.17715255668636712
 Control,12,Deciduous transient,0.165092947374384
 Control,13,Direct conifer recovery,0.17830843064076557
-Control,13,Deciduous transient,0.17140123185823306
+Control,13,Deciduous transient,0.17140123185823308
 Control,14,Direct conifer recovery,0.17903442271732278
 Control,14,Deciduous transient,0.1772588163402536
 Control,15,Direct conifer recovery,0.18087507996065968
@@ -45,7 +45,7 @@ Control,21,Direct conifer recovery,0.2010917926687295
 Control,21,Deciduous transient,0.26020806576093425
 Control,22,Direct conifer recovery,0.20996458890730008
 Control,22,Deciduous transient,0.27694523935340626
-Control,23,Direct conifer recovery,0.2142563826355571
+Control,23,Direct conifer recovery,0.21425638263555713
 Control,23,Deciduous transient,0.29401916469323
 Control,24,Direct conifer recovery,0.21814739973080252
 Control,24,Deciduous transient,0.3106044921536536
@@ -56,7 +56,7 @@ Control,26,Deciduous transient,0.34360786631142826
 Control,27,Direct conifer recovery,0.2375218350881228
 Control,27,Deciduous transient,0.3610327208538371
 Control,28,Direct conifer recovery,0.24244325243196935
-Control,28,Deciduous transient,0.37894631157230135
+Control,28,Deciduous transient,0.3789463115723014
 Control,29,Direct conifer recovery,0.2481411342119552
 Control,29,Deciduous transient,0.39642465462638354
 Control,30,Direct conifer recovery,0.2534918953075063
@@ -125,7 +125,7 @@ Control,61,Direct conifer recovery,0.42997877702646503
 Control,61,Deciduous transient,0.866078576197924
 Control,62,Direct conifer recovery,0.437725219930071
 Control,62,Deciduous transient,0.8822289433447599
-Control,63,Direct conifer recovery,0.4434557849084205
+Control,63,Direct conifer recovery,0.4434557849084206
 Control,63,Deciduous transient,0.8979800717496599
 Control,64,Direct conifer recovery,0.449427205321064
 Control,64,Deciduous transient,0.9130051791344952
@@ -191,7 +191,7 @@ Control,94,Direct conifer recovery,0.671054470039461
 Control,94,Deciduous transient,NA
 Control,95,Direct conifer recovery,0.6785473043179827
 Control,95,Deciduous transient,NA
-Control,96,Direct conifer recovery,0.6847680574992676
+Control,96,Direct conifer recovery,0.6847680574992675
 Control,96,Deciduous transient,NA
 Control,97,Direct conifer recovery,0.6944031044625624
 Control,97,Deciduous transient,NA
@@ -239,7 +239,7 @@ Control,118,Direct conifer recovery,0.8305984824588764
 Control,118,Deciduous transient,NA
 Control,119,Direct conifer recovery,0.8295397393762239
 Control,119,Deciduous transient,NA
-Control,120,Direct conifer recovery,0.8299165503339911
+Control,120,Direct conifer recovery,0.829916550333991
 Control,120,Deciduous transient,NA
 Control,121,Direct conifer recovery,0.8368993100419592
 Control,121,Deciduous transient,NA
