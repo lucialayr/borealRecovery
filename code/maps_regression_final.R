@@ -83,25 +83,14 @@ fit_binary_data = function(df, start_year, end_year) {
   
   null_model = glm(class ~ 1, data = df, family = binomial)
   linear_model = glm(class ~ tas_smoothed, data = df, family = binomial)
-  
-  df = df %>%
-    mutate(T_273 = ifelse(tas_smoothed > 273, tas_smoothed - 273 , 0),
-           T_275 = ifelse(tas_smoothed > 275 , tas_smoothed - 275 , 0),
-           T_277 = ifelse(tas_smoothed > 277 , tas_smoothed - 277 , 0))
-  
-  piecewise_model_273 = glm(class ~ tas_smoothed + T_273, data = df, family = binomial)
-  piecewise_model_275 = glm(class ~ tas_smoothed + T_275, data = df, family = binomial)
-  piecewise_model_277 = glm(class ~ tas_smoothed + T_277, data = df, family = binomial)
+
   spline_model = glm(class ~ ns(tas_smoothed, df = 4), data = df, family = binomial)
   
   df_null = add_model_to_data(df, null_model, "null_model")
   df_linear = add_model_to_data(df, linear_model, "linear_model")
-  df_piecewise_273 = add_model_to_data(df, piecewise_model_273, "piecewise_model_273")
-  df_piecewise_275 = add_model_to_data(df, piecewise_model_275, "piecewise_model_275")
-  df_piecewise_277 = add_model_to_data(df, piecewise_model_277, "piecewise_model_277")
   df_spline = add_model_to_data(df, spline_model, "spline_model")
   
-  df_models = purrr::reduce(list(df_null, df_linear, df_piecewise_273, df_piecewise_275, df_piecewise_277, df_spline),
+  df_models = purrr::reduce(list(df_null, df_linear, df_spline),
                             bind_rows)
   
   df_aic = df_models %>%
