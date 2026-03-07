@@ -216,7 +216,7 @@ get_data_validation = function(scenario = 'picontrol', start_year = 2015, end_ye
   
   return(df)
 }
-get_data_validation()
+get_data_validation(variable = 'fpc')
 
 
 

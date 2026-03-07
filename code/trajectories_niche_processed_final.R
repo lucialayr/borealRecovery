@@ -25,7 +25,7 @@ get_single_pfts_scenario = function(s) {
   
   for (p in c("ibs", "bne", "tebs", "tundra", "otherc")) {
     
-    df = read.table(paste0(here("data", "single_pft"), "/cmass_", s, "_", p, ".out"), header = T) %>%
+    df = read.table(paste0(here("data", "raw", "single_pft"), "/cmass_", s, "_", p, ".out"), header = T) %>%
       filter(Year == 2100,
              Total > 0.05) %>%
       terra::rast(crs = "EPSG:4326") %>% # convert to  raster
@@ -67,7 +67,7 @@ final_trajectories_niche_B = function() {
   for (s in c("picontrol", "ssp126", "ssp585")) {
     for (p in c("IBS")) {
       
-      df = read.table(paste0(here("data", "raw"), "/multi_pft", s, "_d150/cmass.out"), header = T) %>%
+      df = read.table(paste0(here("data", "raw"), "/multi_pft/", s, "_d150/cmass.out"), header = T) %>%
         filter(Year == 2100) %>%
         dplyr::select(all_of(c("Lon", "Lat", p, "Total"))) %>%
         mutate(relative = !!rlang::sym(p)/ Total) %>%
@@ -108,11 +108,10 @@ final_trajectories_niche_B = function() {
   polygons_to_plot = bind_rows(list(polygon_A, B_minus_A, C_minus_B, Theory_minus_C))
   
   
-  st_write(polygons_to_plot, here("data", "final", "shp", "trajectories_niche_B.shp"))
+  st_write(polygons_to_plot, here("data", "final", "shp", "trajectories_niche_B.shp"), delete_dsn = TRUE)
 }
 
-# Commented out since shapefile already exists and has PROJ issues
-# final_trajectories_niche_B()
+final_trajectories_niche_B()
 
 trajectories_species_composition = function(start_year, end_year) {
   data = list()

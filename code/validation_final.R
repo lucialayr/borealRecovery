@@ -58,7 +58,7 @@ validation_intersect_datasets = function() {
     st_intersection(ecoregion_ii) 
   
   #LPJ-GUESS Grid
-  lpjguess_grid = read_table(here("data", "raw", "multi_pft", "picontrol_d150", "cmass.out",  show_col_types = F) %>%
+  lpjguess_grid = read_table(here("data", "raw", "multi_pft", "picontrol_d150", "cmass.out"), show_col_types = F) %>%
     filter(Year == 2000) %>%
     dplyr::select(Lon, Lat, Total) %>%
     terra::rast(crs = "EPSG:4326") %>% 
@@ -79,7 +79,7 @@ validation_intersect_datasets = function() {
     distinct(Lon, Lat, .keep_all = TRUE) #keep only first ecoregion (not ideal but only thing that works for now)
   
   # save because we need those for Chapter 3
-  st_write(lpjguess_grid, here("data", "processed", "above_ecoregion_lpjguess_grid.shp",  delete_dsn = T)
+  st_write(lpjguess_grid, here("data", "processed", "above_ecoregion_lpjguess_grid.shp"), delete_dsn = T)
   write_csv(lpjguess_ecoregion, here("data", "processed", "above_ecoregion_lpjguess_grid.csv"))
   
   return(lpjguess_grid)
@@ -91,7 +91,7 @@ validation_final_A = function() {
     group_by(ecoregion) %>%
     summarize() 
 
-  st_write(shp, here("data", "final", "shp", "validation_A.shp",  delete_dsn = T)
+  st_write(shp, here("data", "final", "shp", "validation_A.shp"), delete_dsn = T)
 }
 validation_final_A()
 
