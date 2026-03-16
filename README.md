@@ -1,8 +1,8 @@
-# Post-disturbance recovery drives 21st-century vegetation shifts in the boreal forest in a dynamic vegetation model
+# Warming drives large-scale shifts in post-disturbance vegetation dynamics and expansion of deciduous trees in the boreal forest in a dynamic vegetation model.
 
-This repository contains code and data needed to reproduce the data analysis and figures of the paper *Post-disturbance recovery drives 21st-century vegetation shifts in the boreal forest in a dynamic vegetation model* by Layritz et al., currently submitted to *Biogeosciences*
+This repository contains code and data needed to reproduce the data analysis and figures of the paper *Warming drives large-scale shifts in post-disturbance vegetation dynamics and expansion of deciduous trees in the boreal forest in a dynamic vegetation model.* by Layritz et al., currently under review in * JGR Biogeosciences*
 
-Per default, this repository only contains the data that directly feeds into the plots. To reproduce upstream analyses and appendix plots, the original database needs to be downloaded from https://doi.org/10.5281/zenodo.13731857. 
+Per default, this repository only contains the data that directly feeds into the plots. To reproduce upstream analyses and appendix plots, the original database and auxillary data needs to be downloaded from https://doi.org/10.5281/zenodo.13731857. 
 
 ## The general workflow
 
@@ -21,7 +21,9 @@ To reproduce the data analysis, raw data files need to be downloaded from Zenodo
   - Climate data used to force LPJ-GUESS and for statistical analyses (*lives in `data/raw`*)
 - Input and Output of random forest model (*lives in `data/random_forest`*)
 
-This involves running the script family `2*.R` in order and then the `*_final.R` script for the plot of interest. (I tried to optimize this but unfortunately can't promise it will run on your machine.) 
+- [ ] add data to zenodo
+
+This involves running the script family `2*.R` in order and then the `*_final.R` script for the plot of interest. (This runs locally on my machine but does need some RAM, so I can't guarantee it will run on yours.) 
 
 ### Recreating the duckdb database
 
@@ -33,7 +35,7 @@ The code lies in `code/python`. `01_Prepare_data.ipynb` creates zarr files. `02_
 
 ## Folder structure
 
-Note that some data is not contained in the repository. The tree indicates where they need to live after downloading to make the worklow run through. Working directory needs to be adjusted. 
+Note that some data is not contained in the repository. The tree indicates where they need to live after downloading to make the worklow runs through. Working directory should be handled by the `here()` package but might need adaption. 
 
 ├── **code** &#x1F4C1;
 
@@ -75,7 +77,7 @@ Note that some data is not contained in the repository. The tree indicates where
  
 
 ## Software used used
-This analysis was performed on the Leibniz Center for Supercomputing RStudioCloud using R Version 4.4.1 (2024-06-14) running under Ubuntu 22.04.3. See below for packages and version. 
+This analysis was originally performed on the Leibniz Center for Supercomputing RStudioCloud using R Version 4.4.1 (2024-06-14) running under Ubuntu 22.04.3. See below for packages and version. 
 
 ### R packages
 `rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3) `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)  `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)  `splines` 
