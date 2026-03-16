@@ -1,3 +1,12 @@
+# Helper function to build correct table names
+get_table_name = function(scenario, variable) {
+  if (scenario == "picontrol") {
+    return(paste0(scenario, "_d150_npp_", variable))
+  } else {
+    return(paste0(scenario, "_d150_", variable))
+  }
+}
+
 summarize_pfts = function(df) {
   df = df %>%
     mutate(bne = bne + bine,

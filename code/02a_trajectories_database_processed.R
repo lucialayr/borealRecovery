@@ -6,15 +6,6 @@ library(tidyverse)
 library(terra)
 library(zoo)
 
-# Helper function to build correct table names
-get_table_name = function(scenario, variable) {
-  if (scenario == "picontrol") {
-    return(paste0(scenario, "_d150_npp_", variable))
-  } else {
-    return(paste0(scenario, "_d150_", variable))
-  }
-}
-
 get_data_scenario = function(scenario, start_year, end_year) {
   
   con = dbConnect(duckdb(), dbdir = here("patches2.duckdb"), read_only = FALSE) #create the database
