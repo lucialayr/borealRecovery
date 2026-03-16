@@ -8,17 +8,17 @@ library(tidyverse)
 install.packages("scico")
 library(scico)
 
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
+library(here)
 
-df_lpj1 = readr::read_table("data/ssp370_d150/cmass.out") %>%
+df_lpj1 = readr::read_table(here("data", "ssp370_d150", "cmass.out")) %>%
   filter(Year == 2005)
 
 
-df = readr::read_table("data/ABOVE_agb_lpjformat.txt") 
+df = readr::read_table(here("data", "ABOVE_agb_lpjformat.txt")) 
 
 names(df) = c("Lon", "Lat", "data")
 
-df_old = readr::read_table("data/spinup_cmass_2005.out")
+df_old = readr::read_table(here("data", "spinup_cmass_2005.out"))
 
 df_comp = df %>%
   mutate(data = data*0.064) %>%

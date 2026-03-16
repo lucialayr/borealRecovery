@@ -135,14 +135,15 @@ add_basemap = function() {
        geom_sf(data=shp_coastline, colour = "grey40", linewidth = .15))
 }
 
-
-theme_set(
-  theme_classic() + 
-    theme(
-      axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      plot.title = element_text(color = "black", size = 15),
-      plot.subtitle = element_text(color = "black", size = 15),
+# Only set theme if ggplot2 is loaded
+if ("ggplot2" %in% loadedNamespaces()) {
+  theme_set(
+    theme_classic() + 
+      theme(
+        axis.text = element_text(color = "black", size = 15),
+        axis.title = element_text(color = "black", size = 15),
+        plot.title = element_text(color = "black", size = 15),
+        plot.subtitle = element_text(color = "black", size = 15),
       plot.caption = element_text(color = "black", size = 15),
       strip.text = element_text(color = "black", size = 15),
       legend.text = element_text(color = "black", size = 15),
@@ -155,4 +156,5 @@ theme_set(
       plot.background = element_rect(fill = "transparent", colour = NA),
       strip.background = element_rect(fill = "transparent", color = NA)
     )
-)
+  )
+}

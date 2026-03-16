@@ -4,7 +4,7 @@ data/picontrol*
 data/results
 data/single_pft
 data/raw
-data/processed/
+data/processed*/
 data/random_forest
 data/final/*sample*
 data/final/long*
@@ -15,7 +15,6 @@ data_mohit
 data_theresa.sh
 code/old_code
 old_code
-plots
 *duckdb*
 *.png
 *.tex
@@ -23,3 +22,4 @@ plots
 *.qmd
 *.scss
 figures
+data/final_reference

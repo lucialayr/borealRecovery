@@ -1,19 +1,20 @@
-setwd("~/Desktop/PhD/borealRecovery")
-source("code/utils.R")
+library(here)
 
 library(duckdb)
 library(tidyverse)
 library(cowplot)
 library(scico)
 
+source(here("code", "utils.R"))
+
 
 long_term_recovery_A_plot = function() {
   
-  df = read_csv("data/final/long_term_recovery_A_final.csv")
+  df = read_csv(here("data", "final", "long_term_recovery_A_final.csv"))
   
   df_mean = df %>%
     group_by(PFT, age, s) %>%
-    summarize(relative_mean = mean(relative))
+    summarize(relative_mean = mean(relative), .groups = "drop")
   
   (p2 = ggplot() + 
       geom_line(data = df[df$PID %in% c(1, 2), ], linewidth = .05, alpha = .05,
@@ -43,11 +44,11 @@ long_term_recovery_A_plot = function() {
 
 long_term_recovery_A_plot_png = function() {
   
-  df = read_csv("data/final/long_term_recovery_A_final.csv")
+  df = read_csv(here("data", "final", "long_term_recovery_A_final.csv"))
   
   df_mean = df %>%
     group_by(PFT, age, s) %>%
-    summarize(relative_mean = mean(relative))
+    summarize(relative_mean = mean(relative), .groups = "drop")
   
   (p2 = ggplot() + 
       geom_line(data = df[df$PID %in% c(1, 2), ], linewidth = .02, alpha = 1,
@@ -77,7 +78,7 @@ long_term_recovery_A_plot_png = function() {
   
 long_term_recovery_B_plot = function() {
   
-  npatches = read_csv("data/final/long_term_recovery_B_final.csv")
+  npatches = read_csv(here("data", "final", "long_term_recovery_B_final.csv"))
  
   (p1 = ggplot() + 
      geom_line(data = npatches, aes(x = age, y = n, group = s), color = "black") +
@@ -95,6 +96,8 @@ long_term_recovery_B_plot = function() {
            plot.margin = unit(c(1,0.5,0,0), "cm")) +
      guides(shape = guide_legend(nrow = 2, byrow = T)))
   
+  return(p1)
+  
 }
 
 
@@ -106,14 +109,14 @@ long_term_recovery_plot = function() {
   plot_grid(p1, p2, ncol = 2, rel_widths = c(1, 0.6), align = "hv", labels = c("(a)", "(b)"), axis = "bt")
   
   
-  ggsave("plots/long_term_recovery.pdf", width = 10, height = 7, scale = 1)
+  ggsave(paste0(here("plots"), "/long_term_recovery.pdf"),  width = 10, height = 7, scale = 1)
   
   p1 = long_term_recovery_A_plot_png()
   
   plot_grid(p1, p2, ncol = 2, rel_widths = c(1, 0.6), align = "hv", labels = c("(a)", "(b)"), axis = "bt")
   
   
-  ggsave("plots/long_term_recovery.png", width = 10, height = 7, scale = 1, dpi = 600)
+  ggsave(paste0(here("plots"), "/long_term_recovery.png"),  width = 10, height = 7, scale = 1, dpi = 600)
   
   
 }

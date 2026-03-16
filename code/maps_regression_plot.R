@@ -1,5 +1,4 @@
-setwd("~/Desktop/PhD/borealRecovery")
-source("code/utils.R")
+library(here)
 
 library(tidyverse)
 library(stats)
@@ -8,18 +7,21 @@ library(splines)
 library(cowplot)
 library(scico)
 library(ggnewscale)
+library(sf)
 library(rnaturalearth)
 library(rnaturalearthdata)
+
+source(here("code", "utils.R"))
 
 
 
 maps_regression_A_plot = function(start_year, end_year) {
   
-  shp = st_read(paste0("data/final/shp/maps_regression_A_final_", start_year, "_", end_year, ".shp"))
+  shp = st_read(paste0(here("data", "final", "shp"), "/maps_regression_A_final_",  start_year, "_", end_year, ".shp"))
   
   load_basemap()
   
-  study_region = st_read("data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp") %>%
+  study_region = st_read(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) %>%
     st_make_valid() %>%
     st_union() %>%
     st_geometry() %>%
@@ -50,8 +52,8 @@ maps_regression_A_plot = function(start_year, end_year) {
 
 maps_regression_B_plot = function(start_year, end_year) {
   
-  df_log = read_csv(paste0("data/final/maps_regression_B_patches_", start_year, "_", end_year,".csv"))
-  df_logistic = read_csv(paste0("data/final/maps_regression_B_model_", start_year, "_", end_year,".csv"))
+  df_log = read_csv(paste0(here("data", "final"), "/maps_regression_B_patches_", start_year, "_", end_year,".csv"))
+  df_logistic = read_csv(paste0(here("data", "final"), "/maps_regression_B_model_", start_year, "_", end_year,".csv"))
   
   
   (p1 = ggplot() +
@@ -80,8 +82,8 @@ maps_regression_B_plot = function(start_year, end_year) {
 
 maps_regression_B_plot_linear = function(start_year, end_year) {
   
-  df_log = read_csv(paste0("data/final/maps_regression_B_patches_", start_year, "_", end_year,".csv"))
-  df_logistic = read_csv(paste0("data/final/maps_regression_B_model_", start_year, "_", end_year,".csv"))
+  df_log = read_csv(paste0(here("data", "final"), "/maps_regression_B_patches_", start_year, "_", end_year,".csv"))
+  df_logistic = read_csv(paste0(here("data", "final"), "/maps_regression_B_model_", start_year, "_", end_year,".csv"))
   
   
   (p1 = ggplot() +
@@ -119,8 +121,8 @@ maps_regression_plot = function(start_year, end_year) {
             rel_widths = c(0.5, 1), labels = c("(a)", "(b)"), 
             ncol = 2, hjust = 0)
   
-  ggsave(paste0("plots/maps_regression_", start_year, "_", end_year ,".pdf"), height = 6.25, width = 10, scale = 1)
-  ggsave(paste0("plots/maps_regression_", start_year, "_", end_year ,".png"), height = 6.25, width = 10, scale = 1, dpi = 300)
+  ggsave(paste0(here("plots"), "/maps_regression_",  start_year, "_", end_year ,".pdf"), height = 6.25, width = 10, scale = 1)
+  ggsave(paste0(here("plots"), "/maps_regression_",  start_year, "_", end_year ,".png"), height = 6.25, width = 10, scale = 1, dpi = 300)
   
 }
 

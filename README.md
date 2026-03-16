@@ -41,7 +41,7 @@ Note that some data is not contained in the repository. The tree indicates where
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└──  `01_Create_database.R`&#x1F4C4; *creates duckdb database*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `02_*.R`&#x1F4C4; *creates processed data from database and raw data*
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `02*.R`&#x1F4C4; *creates processed data from database and raw data*
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└──  `*_final.R`&#x1F4C4; *creates final data from processed*
 
@@ -81,21 +81,4 @@ This analysis was performed on the Leibniz Center for Supercomputing RStudioClou
 `rnaturalearthdata` (1.0.0) `rnaturalearth` (1.0.1) `ggnewscale` (0.5.0) `scico` (1.5.0)  `cowplot` (1.1.3) `MASS` (7.3-60.2) `duckdb` (1.0.0)  `DBI` (1.2.3) `terra`(1.7-78) `sf` (1.0-16) `lubridate` (1.9.3) `forcats` (1.0.0) `stringr` (1.5.1) `dplyr` (1.1.4) `purrr` (1.0.2) `readr` (2.1.5) `tidyr` (1.3.1) `tibble` (3.2.1)  `ggplot2` (3.5.1) `tidyverse` (2.0.0) `zoo` (1.8-12)  `splines` 
 
 
-## todo
-
-- [ ] Make sure all plots are reproducible from github repo
-  - [x] Validation (F3)
-  - [x] Trajectories + Niche (F4) 
-  - [x] Maps Regression (F5) 
-  - [x] Random Forest (F6)
-  - [ ] Appendix
-- [ ] Make sure all final data is reproducible from zenodo database
-  - [x] Validation (F3): 
-  - [x] Trajectories + Niche (F4) 
-  - [x] Maps Regression (F5) 
-  - [x] Random Forest (F6) 
-- [ ] Random forest model
-  - [x] Expand on documentation
-  - [x] Link to Mohit's code
-- [ ] Document dependencies between scripts
 

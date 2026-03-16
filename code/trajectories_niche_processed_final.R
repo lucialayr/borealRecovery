@@ -1,5 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 
 library(tidyverse)
@@ -8,11 +8,11 @@ library(terra)
 library(grid)
 
 
-install.packages("scico")
-install.packages("ggnewscale")
-install.packages("cowplot")
-install.packages("rnaturalearth")
-install.packages("rnaturalearthdata")
+# install.packages("scico")
+# install.packages("ggnewscale")
+# install.packages("cowplot")
+# install.packages("rnaturalearth")
+# install.packages("rnaturalearthdata")
 library(cowplot)
 library(scico)
 library(ggnewscale)
@@ -25,7 +25,7 @@ get_single_pfts_scenario = function(s) {
   
   for (p in c("ibs", "bne", "tebs", "tundra", "otherc")) {
     
-    df = read.table(paste0("data/single_pft/cmass_", s, "_", p, ".out"), header = T) %>%
+    df = read.table(paste0(here("data", "raw", "single_pft"), "/cmass_", s, "_", p, ".out"), header = T) %>%
       filter(Year == 2100,
              Total > 0.05) %>%
       terra::rast(crs = "EPSG:4326") %>% # convert to  raster
@@ -51,7 +51,7 @@ get_single_pfts_scenario = function(s) {
 final_trajectories_niche_B = function() {
   
   # this is a file from my last study that is used to get a shapefile of the study region)
-  study_region = st_read("data/external/vegetation_ssp585_d0.003_fpc_30years2100.shp") %>%
+  study_region = st_read(here("data", "external", "vegetation_ssp585_d0.003_fpc_30years2100.shp")) %>%
     st_make_valid() %>%
     st_union() %>%
     st_geometry() %>%
@@ -67,7 +67,7 @@ final_trajectories_niche_B = function() {
   for (s in c("picontrol", "ssp126", "ssp585")) {
     for (p in c("IBS")) {
       
-      df = read.table(paste0("data/raw/multi_pft/", s, "_d150/cmass.out"), header = T) %>%
+      df = read.table(paste0(here("data", "raw"), "/multi_pft/", s, "_d150/cmass.out"), header = T) %>%
         filter(Year == 2100) %>%
         dplyr::select(all_of(c("Lon", "Lat", p, "Total"))) %>%
         mutate(relative = !!rlang::sym(p)/ Total) %>%
@@ -108,7 +108,7 @@ final_trajectories_niche_B = function() {
   polygons_to_plot = bind_rows(list(polygon_A, B_minus_A, C_minus_B, Theory_minus_C))
   
   
-  st_write(polygons_to_plot, "data/final/shp/trajectories_niche_B.shp")
+  st_write(polygons_to_plot, here("data", "final", "shp", "trajectories_niche_B.shp"), delete_dsn = TRUE)
 }
 
 final_trajectories_niche_B()
@@ -117,7 +117,7 @@ trajectories_species_composition = function(start_year, end_year) {
   data = list()
   
   for (s in c("picontrol", "ssp126", "ssp585")) {
-    df_timeseries = read_csv(paste0("data/processed/trajectories_", s, "_", start_year, "_", end_year, "_timeseries_rf.csv" )) %>%
+    df_timeseries = read_csv(paste0(here("data", "processed"), "/trajectories_", s, "_", start_year, "_", end_year, "_timeseries_rf.csv" )) %>%
       mutate(s = s)
     
     data = append(data, list(df_timeseries))
@@ -144,8 +144,8 @@ trajectories_species_composition = function(start_year, end_year) {
   df_trajectories = df %>%
     semi_join(sampled_ids, by = c("Lon", "Lat", "PID"))
   
-  write_csv(df_mean, paste0("data/final/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
-  write_csv(df_trajectories, paste0("data/final/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
+  write_csv(df_mean, paste0(here("data", "final"), "/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
+  write_csv(df_trajectories, paste0(here("data", "final"), "/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
 }
 
 trajectories_agb = function(start_year, end_year) {
@@ -154,18 +154,18 @@ trajectories_agb = function(start_year, end_year) {
   
   for (s in c("picontrol", "ssp126", "ssp585")) {
     
-    df_carbon = read_csv(paste0("data/processed/agc_recovery_", s, "_", start_year, "_", end_year, "_.csv" )) %>%
+    df_carbon = read_csv(paste0(here("data", "processed"), "/agc_recovery_", s, "_", start_year, "_", end_year, "_.csv" )) %>%
       mutate(s = s)
     
     data_carbon = append(data_carbon, list(df_carbon))
   }
 
-  df_class_script = read_csv(paste0("data/processed/classified_trajectories_processed__", start_year, "_", end_year, ".csv")) %>%
+  df_class_script = read_csv(paste0(here("data", "processed"), "/classified_trajectories_processed__", start_year, "_", end_year, ".csv")) %>%
     select(Lon, Lat, PID, class) 
  
   df_cmass = purrr::reduce(data_carbon, bind_rows) %>%
     filter(time_since_dist > 100) %>%
-    left_join(df_class)
+    left_join(df_class_script)
   
   df_cmass_mean = df_cmass %>%
     group_by(s, age) %>%
@@ -181,8 +181,8 @@ trajectories_agb = function(start_year, end_year) {
            class = if_else(class == 0, "Direct conifer recovery", "Deciduous transient"),
            mean_diff = if_else(mean_diff > 1,  NA ,mean_diff))
   
-  write_csv(df_cmass_mean, paste0("data/final/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
-  write_csv(df_cmass_mean_class, paste0("data/final/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
+  write_csv(df_cmass_mean, paste0(here("data", "final"), "/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
+  write_csv(df_cmass_mean_class, paste0(here("data", "final"), "/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
   
 }
 

@@ -1,10 +1,10 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper") #specify working directory. data should lie in this folder too, in a folder called data
-source("utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 library(duckdb)
 library(tidyverse)
 
-con = dbConnect(duckdb(), dbdir = "patches3.duckdb", read_only = FALSE) #create the database
+con = dbConnect(duckdb(), dbdir = here("patches3.duckdb"), read_only = FALSE) #create the database
 dbListTables(con) #check, should be empty
 
 read_write_dataset_var = function(configuration, run, variable) {
@@ -13,7 +13,7 @@ read_write_dataset_var = function(configuration, run, variable) {
   configuration = as.character(configuration)
   variable = as.character(variable)
   
-  df = readr::read_table(paste0("data/", configuration, "/run", run, "/vegstruct_patch.out"), show_col_types = F) %>%
+  df = readr::read_table(paste0(here("data", "", configuration, "/run", run, "/vegstruct_patch.out"), show_col_types = F) %>%
     filter(!is.na(Year)) %>%
     dplyr::select(Year, age, Lon, Lat, PID, PFT, !!rlang::sym(variable)) %>%
     pivot_wider(names_from = PFT, values_from = !!rlang::sym(variable)) %>%

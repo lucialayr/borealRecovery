@@ -1,5 +1,4 @@
-setwd("~/Desktop/PhD/disturbanceBorealLPJ")
-source("code/utils.R")
+library(here)
 
 library(duckdb)
 library(purrr)
@@ -10,7 +9,9 @@ library(cowplot)
 library(tidyverse)
 library(MASS)
 
-con = dbConnect(duckdb(), dbdir = "patches2.duckdb", read_only = FALSE) #create the database
+source(here("code", "utils.R"))
+
+con = dbConnect(duckdb(), dbdir = here("patches2.duckdb"), read_only = FALSE) #create the database
 dbListTables(con)
 
 
@@ -85,15 +86,15 @@ dominant_share_data = function(variable, pft, start_year, end_year) {
     mutate(scenario =  sub("_(.*)", "", long_names_scenarios_twolines(scenario)),
            delta = delta*100)
   
-  write_csv(df, paste0("data/processed/P1.A_", variable, "_", pft, "_", start_year, "_", end_year, ".csv"))
+  write_csv(df, paste0(here("data", "processed"), "/P1.A_", variable, "_", pft, "_", start_year, "_", end_year, ".csv"))
   
 }
 
 dominant_share_plot = function(variable, pft, start_year, end_year) {
   
-  if (file.exists(paste0("data/processed/P1.A_", variable, "_", pft, "_", start_year, "_", end_year, ".csv"))) {
+  if (file.exists(paste0(here("data", "processed"), "/P1.A_", variable, "_", pft, "_", start_year, "_", end_year, ".csv"))) {
     print("Loading data")
-    df = read_csv(paste0("data/processed/P1.A_", variable, "_", pft, "_", start_year, "_", end_year, ".csv"), show_col_types = F)
+    df = read_csv(paste0(here("data", "processed"), "/P1.A_", variable, "_", pft, "_", start_year, "_", end_year, ".csv"), show_col_types = F)
   } else {
     print("Creating data")
     df = dominant_share_data(variable, pft, start_year, end_year)
@@ -158,14 +159,14 @@ share_data = function(variable, scenario, year){
   
   df = purrr::reduce(data, bind_rows)
   
-  write_csv(df, paste0("data/processed/P1.B_", variable, "_", year, "_share.csv"))
+  write_csv(df, paste0(here("data", "processed"), "/P1.B_", variable, "_", year, "_share.csv"))
 } 
 
 share_plot = function(variable, scenario, year) {
   
-  if (file.exists(paste0("data/processed/P1.B_", variable, "_", year, "_share.csv"))) {
+  if (file.exists(paste0(here("data", "processed"), "/P1.B_", variable, "_", year, "_share.csv"))) {
     print("Loading data")
-    df = read_csv(paste0("data/processed/P1.B_", variable, "_", year, "_share.csv"), show_col_types = F)
+    df = read_csv(paste0(here("data", "processed"), "/P1.B_", variable, "_", year, "_share.csv"), show_col_types = F)
   } else {
     print("Creating data")
     df = share_data(variable, scenario, year)
@@ -230,14 +231,14 @@ dominant_pfts_data = function(variable, scenario, year, data){
   
   df = purrr::reduce(data, bind_rows)
   
-  write_csv(df, paste0("data/processed/P1.B_", variable, "_", year, ".csv"))
+  write_csv(df, paste0(here("data", "processed"), "/P1.B_", variable, "_", year, ".csv"))
 } 
 
 dominant_pfts_plot = function(variable, scenario, year) {
   
-  if (file.exists(paste0("data/processed/P1.B_", variable, "_", year, ".csv"))) {
+  if (file.exists(paste0(here("data", "processed"), "/P1.B_", variable, "_", year, ".csv"))) {
     print("Loading data")
-    df = read_csv(paste0("data/processed/P1.B_", variable, "_", year, ".csv"), show_col_types = F)
+    df = read_csv(paste0(here("data", "processed"), "/P1.B_", variable, "_", year, ".csv"), show_col_types = F)
   } else {
     print("Creating data")
     df = dominant_pfts_data(variable, pft, start_year, end_year)
@@ -282,7 +283,7 @@ get_2d_density <- function(x, y, ...) {
 
 create_one_scenario_density = function(var_climate, variable,  scenario, year, pft, data){
   
-  df_climate = terra::rast(paste0("data/external/mri-esm2-0_r1i1p1f1_", scenario, "_", var_climate, "_", year, "_cropped.nc")) %>%
+  df_climate = terra::rast(paste0(here("data", "external"), "/mri-esm2-0_r1i1p1f1_", scenario, "_", var_climate, "_", year, "_cropped.nc")) %>%
     terra::as.polygons(aggregate = F) %>%
     st_as_sf() %>%
     st_make_valid() %>%
@@ -339,7 +340,7 @@ density_2d_data = function(variable, scenario, pft) {
   df = purrr::reduce(data, bind_rows) %>%
     mutate(tas = tas - 273.15)
   
- write_csv(df, paste0("data/processed/P1.C_", variable, "_", pft, ".csv"))
+ write_csv(df, paste0(here("data", "processed"), "/P1.C_", variable, "_", pft, ".csv"))
   
   return(df)
 }
@@ -348,9 +349,9 @@ density_2d_plot = function(variable, scenario, pft) {
   
   print(pft)
   
-  if (file.exists(paste0("data/processed/P1.C_", variable, "_", pft, ".csv"))) {
+  if (file.exists(paste0(here("data", "processed"), "/P1.C_", variable, "_", pft, ".csv"))) {
     print("Loading data")
-    df = read_csv(paste0("data/processed/P1.C_", variable, "_", pft, ".csv"), show_col_types = F)
+    df = read_csv(paste0(here("data", "processed"), "/P1.C_", variable, "_", pft, ".csv"), show_col_types = F)
   } else {
     print("Creating data")
     df = density_2d_data(variable, scenario, pft)

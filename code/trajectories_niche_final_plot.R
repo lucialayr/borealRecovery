@@ -1,5 +1,4 @@
-setwd("~/Desktop/PhD/borealRecovery")
-source("code/utils.R")
+library(here)
 
 
 library(tidyverse)
@@ -12,10 +11,12 @@ library(ggnewscale)
 library(rnaturalearth)
 library(rnaturalearthdata)
 
+source(here("code", "utils.R"))
+
 
 plot_trajectories_niche_B = function() {
   
-  shp = st_read("data/final/shp/trajectories_niche_B.shp")
+  shp = st_read(paste0(here("data", "final", "shp"), "/trajectories_niche_B.shp"))
   
   load_basemap()
   #color are obtained from 
@@ -44,10 +45,10 @@ plot_trajectories_niche_B = function() {
 
 plot_trajectories_niche_A = function(start_year, end_year) {
   
-  df_mean = read_csv(paste0("data/final/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
-  df_trajectories = read_csv(paste0("data/final/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
-  df_cmass_mean = read_csv(paste0("data/final/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
-  df_cmass_mean_class = read_csv(paste0("data/final/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
+  df_mean = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
+  df_trajectories = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
+  df_cmass_mean = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
+  df_cmass_mean_class = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
   
   (p2 = ggplot() + 
       geom_hline(yintercept = 1, color = "grey") +
@@ -82,10 +83,10 @@ plot_trajectories_niche_A = function(start_year, end_year) {
 
 plot_trajectories_niche_A_png = function(start_year, end_year) {
   
-  df_mean = read_csv(paste0("data/final/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
-  df_trajectories = read_csv(paste0("data/final/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
-  df_cmass_mean = read_csv(paste0("data/final/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
-  df_cmass_mean_class = read_csv(paste0("data/final/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
+  df_mean = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_mean_", start_year, "_", end_year, ".csv"))
+  df_trajectories = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_sample_", start_year, "_", end_year, ".csv"))
+  df_cmass_mean = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_agc_", start_year, "_", end_year, ".csv"))
+  df_cmass_mean_class = read_csv(paste0(here("data", "final"), "/trajectories_mean_A_agc_classes_", start_year, "_", end_year, ".csv"))
   
   (p2 = ggplot() + 
       geom_hline(yintercept = 1, color = "grey") +
@@ -134,7 +135,7 @@ plot_trajectories_niche = function(start_year, end_year) {
                            line_grob, legend, rel_heights = c(0.66, 0.05, 0.3), ncol = 1),
                  ncol = 2, rel_widths = c(1, 1), labels = c( "(a)", "(b)"), hjust = 0))
   
-  ggsave(paste0("plots/trajectories_niche_", start_year, "_", end_year, ".pdf"), width = 10, height = 7.75, scale = 1) 
+  ggsave(paste0(here("plots"), "/trajectories_niche_",  start_year, "_", end_year, ".pdf"), width = 10, height = 7.75, scale = 1)
   
   
   (trajectories_niche_A = plot_trajectories_niche_A_png(start_year, end_year))
@@ -147,7 +148,7 @@ plot_trajectories_niche = function(start_year, end_year) {
                            line_grob, legend, rel_heights = c(0.66, 0.05, 0.3), ncol = 1),
                  ncol = 2, rel_widths = c(1, 1), labels = c( "(a)", "(b)"), hjust = 0))
   
-  ggsave(paste0("plots/trajectories_niche_", start_year, "_", end_year, ".png"), width = 10, height = 7.75, scale = 1, dpi = 600) 
+  ggsave(paste0(here("plots"), "/trajectories_niche_",  start_year, "_", end_year, ".png"), width = 10, height = 7.75, scale = 1, dpi = 600)
   
   return(p)
   

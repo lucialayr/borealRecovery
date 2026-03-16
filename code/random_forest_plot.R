@@ -1,14 +1,15 @@
-setwd("~/Desktop/PhD/borealRecovery")
-source("code/utils.R")
+library(here)
 
 library(tidyverse)
 library(scico)
 library(cowplot)
 library(ggnewscale)
 
+source(here("code", "utils.R"))
+
 random_forest_A_plot = function(timespan) {
   
-  df_predictive_power = read_csv(paste0("data/final/random_forest_A_", timespan, ".csv"))
+  df_predictive_power = read_csv(paste0(here("data", "final"), "/random_forest_A_", timespan, ".csv"))
 
   df_predictive_power$true_labels = factor(df_predictive_power$true_labels, levels = c(1,0))
   df_predictive_power$class = factor(df_predictive_power$class, levels = (c("Conifer recovery", "Deciduous transient")))
@@ -35,7 +36,7 @@ random_forest_A_plot = function(timespan) {
 
 random_forest_B_plot = function(timespan) {
 
-  importance_ranking = read_csv(paste0("data/final/random_forest_B_", timespan, ".csv")) 
+  importance_ranking = read_csv(paste0(here("data", "final"), "/random_forest_B_", timespan, ".csv")) 
   
   importance_ranking$names = factor(importance_ranking$names, levels = rev(c("pr_yearlysum_1", "pr_yearlysum_2", "pr_yearlysum_3",
                                                                              "tas_gs_dailyavg_1", "tas_gs_dailyavg_2", "tas_gs_dailyavg_3",
@@ -89,8 +90,8 @@ random_forest_plot = function(timespan) {
   
   plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"))
   
-  ggsave(paste0("plots/results_rf_", timespan, ".pdf"),  width = 12, height = 6.75, scale = 0.95)
-  ggsave(paste0("plots/results_rf_", timespan, ".png"),  width = 12, height = 6.75, scale = 0.95)
+  ggsave(paste0(here("plots"), "/results_rf_",  timespan, ".pdf"),  width = 12, height = 6.75, scale = 0.95)
+  ggsave(paste0(here("plots"), "/results_rf_",  timespan, ".png"),  width = 12, height = 6.75, scale = 0.95)
   
 }
 

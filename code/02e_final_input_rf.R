@@ -1,5 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 library(duckdb)
 library(tidyverse)
@@ -9,11 +9,11 @@ library(zoo)
 
 add_climate_to_trajectories = function(scenario, start_year, end_year) {
   
-  df_timeseries = read_csv(paste0("data/processed/trajectories_", scenario, "_", start_year, "_", end_year, "_timeseries_rf.csv" ))
+  df_timeseries = read_csv(paste0(here("data", "processed"), "/trajectories_", scenario, "_", start_year, "_", end_year, "_timeseries_rf.csv" ))
   
-  df_point_values = read_csv(paste0("data/processed/trajectories_", scenario, "_", start_year, "_", end_year, "_pointvalues_rf.csv" ))
+  df_point_values = read_csv(paste0(here("data", "processed"), "/trajectories_", scenario, "_", start_year, "_", end_year, "_pointvalues_rf.csv" ))
   
-  df_covariates = read_csv(paste0(paste0("data/processed/covariates_", scenario, "_", start_year, "_", end_year, "_growingseason.csv")), show_col_types = F)
+  df_covariates = read_csv(paste0(paste0(here("data", "processed"), "/covariates_", scenario, "_", start_year, "_", end_year, "_growingseason.csv")), show_col_types = F)
   
   years_disturbance = df_timeseries %>%
     ungroup() %>%
@@ -41,7 +41,7 @@ add_climate_to_trajectories = function(scenario, start_year, end_year) {
     left_join(df_point_values) %>%
     left_join(df_covariates_point)
   
-  write_csv(df, paste0("data/random_forest/data_", scenario, "_", start_year, "_", end_year, ".csv" ))
+  write_csv(df, paste0(here("data", "random_forest"), "/data_", scenario, "_", start_year, "_", end_year, ".csv" ))
   
   na_count <-sapply(df, function(y) sum(length(which(is.na(y)))))
   

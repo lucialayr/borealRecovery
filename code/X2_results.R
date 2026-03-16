@@ -1,22 +1,28 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
 
 library(tidyverse)
 library(stats)
 library(zoo)
 library(splines)
+library(cowplot)
+
+source(here("code", "utils.R"))
 
 histograms_length_transient = function() {
   
-  df1 = read_csv(paste0("data/final/maps_regression_B_patches_2015_2040.csv")) %>%
+  df1 = read_csv(paste0(here("data", "final", "maps_regression_B_patches_2015_2040.csv"))) %>%
     mutate(type = "Transient climate")
   
-  df2 = read_csv(paste0("data/final/maps_regression_B_patches_2075_2100.csv")) %>%
+  df2 = read_csv(paste0(here("data", "final", "maps_regression_B_patches_2075_2100.csv"))) %>%
     mutate(type = "Equilibrium climate")
   
   df = bind_rows(df2, df1) 
   
   df$type = factor(df$type, levels = c("Transient climate", "Equilibrium climate"))
+  
+  df_text = df %>%
+    group_by(type, s, class) %>%
+    summarise(mean_length_transient = mean(length_transient))
   
   ggplot() + 
     geom_histogram(data = df[df$length_transient != 0,], aes(x = length_transient, fill = s), color = "black", linewidth = .25, binwidth = 1) +
@@ -26,18 +32,17 @@ histograms_length_transient = function() {
     scale_y_continuous(expand = c(0,0), name = "Frequency") +
     theme(legend.position = c(0.15,0.88))
   
-  ggsave("plots/histogram_transient_length.pdf", width = 10, height = 5.5, scale = 1)
-  ggsave("plots/histogram_transient_length.png", width = 10, height = 5.5, scale = 1)
-  
-  
+  ggsave(here("plots", "histogram_transient_length.pdf"), width = 10, height = 5.5, scale = 1)
+  ggsave(here("plots", "histogram_transient_length.png"), width = 10, height = 5.5, scale = 1)
   
 }
+
 histograms_length_transient()
 
 maps_regression_B_plot_linear = function(start_year, end_year) {
   
-  df_log = read_csv(paste0("data/final/maps_regression_B_patches_", start_year, "_", end_year,".csv"))
-  df_logistic = read_csv(paste0("data/final/maps_regression_B_model_", start_year, "_", end_year,".csv"))
+  df_log = read_csv(paste0(here("data", "final"), "/maps_regression_B_patches_", start_year, "_", end_year,".csv"))
+  df_logistic = read_csv(paste0(here("data", "final"), "/maps_regression_B_model_", start_year, "_", end_year,".csv"))
   
   
   (p1 = ggplot() +
@@ -73,8 +78,8 @@ create_plot_linear = function() {
   
   plot_grid(p1, p2, nrow = 1, labels = c("(a)", "(b)"), hjust = 0.07)
   
-  ggsave("plots/regression_unscaled.pdf", width = 11)
-  ggsave("plots/regression_unscaled.png", width = 11, height = 6.5)
+  ggsave(here("plots", "regression_unscaled.pdf"), width = 11)
+  ggsave(here("plots", "regression_unscaled.png"), width = 11, height = 6.5, dpi = 300)
   
 }
 create_plot_linear()

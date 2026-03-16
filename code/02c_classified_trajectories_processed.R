@@ -1,5 +1,5 @@
-setwd("/dss/dssfs02/lwp-dss-0001/pr48va/pr48va-dss-0000/ge96dul2/patch_analysis_paper")
-source("code/utils.R")
+library(here)
+source(here("code", "utils.R"))
 
 library(tidyverse)
 library(stats)
@@ -12,7 +12,7 @@ library(splines)
 
 classify_trajectories_scenario = function(s, start_year, end_year) {
   
-  df_dominant = read_csv(paste0("data/processed/trajectories_", s, "_", start_year, "_", end_year, "_timeseries_rf.csv"))  %>%
+  df_dominant = read_csv(paste0(here("data", "processed"), "/trajectories_", s, "_", start_year, "_", end_year, "_timeseries_rf.csv"))  %>%
     filter(age < 101) %>%
     group_by(Lon, Lat, PID, age) %>%
     mutate(max_relative = max(relative)) %>%
@@ -109,7 +109,7 @@ classify_trajectories_processed = function(start_year, end_year) {
     
     df = purrr::reduce(data, bind_rows)
     
-    write_csv(df, paste0("data/processed/classified_trajectories_processed__", start_year, "_", end_year, ".csv"))
+    write_csv(df, paste0(here("data", "processed"), "/classified_trajectories_processed__", start_year, "_", end_year, ".csv"))
 }
 
 classify_trajectories_processed(2015, 2040)
